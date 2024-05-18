@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "288784479892",
+    "project_id": "long-laoshi",
+    "storage_bucket": "long-laoshi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288784479892:android:48866b1134589f63e16681",
+        "android_client_info": {
+          "package_name": "com.mateoalejandrosapplication.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJ6kcLFJn1rsQOjXuHZfUwvcf36s3KchQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
