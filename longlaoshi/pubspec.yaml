@@ -17,6 +17,7 @@ dependencies:
   intl: ^0.18.0
   dash_chat_2: ^0.0.18
   chat_gpt_sdk: ^2.2.8
+  firebase_core: ^2.31.0
 dev_dependencies: 
   flutter_test: 
     sdk: flutter
