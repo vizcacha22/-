@@ -1,5 +1,6 @@
 part of 'chat_chinese_notifier.dart';
 
+// ignore: must_be_immutable
 class ChatState extends Equatable{
   ChatState({this.chatModelObj}); 
   ChatModel? chatModelObj;

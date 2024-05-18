@@ -20,7 +20,6 @@ class MyApp extends ConsumerWidget {
     BuildContext context,
     WidgetRef ref,
   ) {
-    final themeType = ref.watch(themeNotifier).themeType;
     return Sizer(
       builder: (context, orientation, deviceType) {
         return MaterialApp(

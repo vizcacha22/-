@@ -2,12 +2,6 @@ import 'package:flutter/material.dart';
 import '../core/app_export.dart';
 
 extension on TextStyle {
-  TextStyle get mukta {
-    return copyWith(
-      fontFamily: 'Mukta',
-    );
-  }
-
   TextStyle get inter {
     return copyWith(
       fontFamily: 'Inter',
