@@ -54,9 +54,10 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDJ6kcLFJn1rsQOjXuHZfUwvcf36s3KchQ',
-    appId: '1:288784479892:android:48866b1134589f63e16681',
+    appId: '1:288784479892:android:4c0f5bb20ce92291e16681',
     messagingSenderId: '288784479892',
     projectId: 'long-laoshi',
     storageBucket: 'long-laoshi.appspot.com',
   );
+
 }
