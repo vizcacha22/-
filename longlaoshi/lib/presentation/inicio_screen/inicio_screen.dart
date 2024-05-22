@@ -61,11 +61,17 @@ class InicioScreenState extends ConsumerState<InicioScreen> {
                                       text: "lbl_empezar".tr,
                                       buttonStyle: CustomButtonStyles.none,
                                       buttonTextStyle:
-                                          theme.textTheme.displayMedium!,
+                                          theme.textTheme.displayMedium,
+                                      onPressed: () {
+                                        onTapRegistrarse(context);
+                                      },
                                     ),
                                     SizedBox(height: 77.v),
                                     CustomElevatedButton(
                                       text: "msg_tengo_una_cuenta".tr,
+                                      onPressed: () {
+                                        onTapTengoUnaCuenta(context);
+                                      },
                                     )
                                   ],
                                 ),
@@ -98,4 +104,15 @@ class InicioScreenState extends ConsumerState<InicioScreen> {
       ),
     );
   }
+}
+
+onTapTengoUnaCuenta(BuildContext context){
+  NavigatorService.pushNamed(
+    AppRoutes.chatScreen
+  );
+}
+onTapRegistrarse(BuildContext context){
+  NavigatorService.pushNamed(
+    AppRoutes.chatScreen
+  );
 }

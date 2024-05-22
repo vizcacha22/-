@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:label="mateo_alejandro_s_application1"
+        android:label="LongLaoshi"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -25,7 +25,7 @@ class MyApp extends ConsumerWidget {
       builder: (context, orientation, deviceType) {
         return MaterialApp(
           theme: theme,
-          title: 'mateo_alejandro_s_application1',
+          title: 'LongLaoshi',
           navigatorKey: NavigatorService.navigatorKey,
           debugShowCheckedModeBanner: false,
           localizationsDelegates: [
@@ -40,7 +40,7 @@ class MyApp extends ConsumerWidget {
               '',
             )
           ],
-          initialRoute: AppRoutes.initialRoute,
+          initialRoute: AppRoutes.chatScreen,
           routes: AppRoutes.routes,
         );
       },

@@ -26,6 +26,13 @@ extension on TextStyle {
 /// Additionally, this class includes extensions on [TextStyle] to easily apply specific font families to text.
 class CustomTextStyles {
   // Display text style
+  static get displayMediumInterOnPrimary =>
+    theme.textTheme.displayMedium!.inter.copyWith(
+      color: theme.colorScheme.onPrimary,
+      fontSize: 40.fSize,
+      fontWeight: FontWeight.w400, 
+    );
+
   static get displayMediumJosefinSansGray600 =>
       theme.textTheme.displayMedium!.josefinSans.copyWith(
         color: appTheme.gray600,
