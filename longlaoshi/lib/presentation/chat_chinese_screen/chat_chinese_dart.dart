@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/app_export.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 
-const OPENAI_API_KEY = "sk-proj-9VQ88UCudj3wMx3W6jO7T3BlbkFJ2FK0ZyvlBSp9iuOJESf4";
+const OPENAI_API_KEY = "";
 
 class ChatScreen extends ConsumerStatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
