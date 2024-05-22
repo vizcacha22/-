@@ -8,7 +8,6 @@ extension LocalizationExtension on String {
 }
 // ignore_for_file: must_be_immutable
 
-// ignore_for_file: must_be_immutable
 class AppLocalization {
   AppLocalization(this.locale);
 

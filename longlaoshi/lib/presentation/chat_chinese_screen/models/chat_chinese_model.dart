@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import '../../../core/app_export.dart';
 
 class ChatModel extends Equatable {
   ChatModel();

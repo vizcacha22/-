@@ -9,11 +9,13 @@ const OPENAI_API_KEY = "";
 class ChatScreen extends ConsumerStatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
 
-  @override
-  ChatScreenState createState() => ChatScreenState();
-}
+class ChatScreen extends ConsumerStatefulWidget{
+  const ChatScreen({Key? key})
+    : super(
+      key: key,
+      );
 
-class ChatScreenState extends ConsumerState<ChatScreen> {
+ class ChatScreenState extends ConsumerState<ChatScreen> {
   final OpenAI _openAI = OpenAI.instance.build(
     token: OPENAI_API_KEY,
     baseOption: HttpSetup(
