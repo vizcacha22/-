@@ -2,9 +2,9 @@ import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/app_export.dart';
-import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 
-const OPENAI_API_KEY = "";
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class ChatScreen extends ConsumerStatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
@@ -14,14 +14,6 @@ class ChatScreen extends ConsumerStatefulWidget {
 }
 
 class ChatScreenState extends ConsumerState<ChatScreen> {
-  final OpenAI _openAI = OpenAI.instance.build(
-    token: OPENAI_API_KEY,
-    baseOption: HttpSetup(
-      receiveTimeout: const Duration(seconds: 5),
-    ),
-    enableLog: true,
-  );
-
   final ChatUser _user = ChatUser(
     id: '1',
     firstName: 'Eduardo',
@@ -30,53 +22,76 @@ class ChatScreenState extends ConsumerState<ChatScreen> {
 
   final ChatUser _gptChatUser = ChatUser(
     id: '2',
-    firstName: 'Chat',
-    lastName: 'GPT',
+    firstName: 'Ryu',
+    lastName: 'Laoshi',
   );
 
   List<ChatMessage> _messages = <ChatMessage>[];
   List<ChatUser> _typingUsers = <ChatUser>[];
+  late String _threadId;
 
   @override
   void initState() {
     super.initState();
+    getThread();
   }
 
+  Future<void> getThread() async {
+    final response = await http.get(Uri.parse('https://longlaoshi-server.shuttleapp.rs/longlaoshi/create-conversation'));
+
+    if (response.statusCode == 200) {
+      final responseData = jsonDecode(response.body);
+      final threadId = responseData['thread'];
+      setState(() {
+        _threadId = threadId;
+      });
+    } else {
+      throw Exception('Failed to load data');
+    }
+  }
+  
   Future<void> getChatResponse(ChatMessage m) async {
     setState(() {
       _messages.insert(0, m);
       _typingUsers.add(_gptChatUser);
     });
 
-    List<Messages> messagesHistory = _messages.reversed.toList().map((m) {
-      if (m.user == _user) {
-        return Messages(role: Role.user, content: m.text);
+    try {
+      final response = await http.get(Uri.parse(
+          'https://longlaoshi-server.shuttleapp.rs/longlaoshi/chat-with-your-own-assistant/$_threadId?msg=${Uri.encodeComponent(m.text)}'));
+
+      print(response.statusCode);
+      print(response.body);
+      if (response.statusCode == 200) {
+        try {
+          final responseData = jsonDecode(utf8.decode(response.bodyBytes)); // Ensure UTF-8 decoding
+          if (responseData.containsKey('response')) {
+            final botMessage = responseData['response'];
+
+            setState(() {
+              _messages.insert(
+                0,
+                ChatMessage(
+                  user: _gptChatUser,
+                  createdAt: DateTime.now(),
+                  text: botMessage,
+                ),
+              );
+            });
+          } else {
+            print('Error: Missing "response" field in JSON');
+            print('Response body: ${response.body}');
+          }
+        } catch (e) {
+          print('Error decoding JSON: $e');
+          print('Response body: ${response.body}');
+        }
       } else {
-        return Messages(role: Role.assistant, content: m.text);
+        throw Exception('Failed to load data');
       }
-    }).toList();
-
-    final request = ChatCompleteText(
-      messages: messagesHistory,
-      maxToken: 200,
-      model: GptTurbo0301ChatModel(),
-    );
-
-    final response = await _openAI.onChatCompletion(request: request);
-
-    for (var element in response!.choices) {
-      if (element.message != null) {
-        setState(() {
-          _messages.insert(
-            0,
-            ChatMessage(
-              user: _gptChatUser,
-              createdAt: DateTime.now(),
-              text: element.message!.content,
-            ),
-          );
-        });
-      }
+    } catch (e) {
+      // Handle error
+      print('Error: $e');
     }
 
     setState(() {
@@ -92,8 +107,8 @@ class ChatScreenState extends ConsumerState<ChatScreen> {
           children: [
             SizedBox(height: 12.v),
             Container(
-              margin: EdgeInsets.only(bottom: 10.v),
-              padding: EdgeInsets.symmetric(horizontal: 13.h),
+              margin: EdgeInsets.only(bottom: 1.v),
+              padding: EdgeInsets.symmetric(horizontal: 1.h),
               child: Column(
                 children: [
                   Align(
@@ -115,17 +130,13 @@ class ChatScreenState extends ConsumerState<ChatScreen> {
                             ),
                             child: Text(
                               "lbl".tr,
-                              style: CustomTextStyles.displayMediumInterOnPrimary,
+                              style:
+                                  CustomTextStyles.displayMediumInterOnPrimary,
                             ),
                           ),
                         ],
                       ),
                     ),
-                  ),
-                  SizedBox(height: 18.v),
-                  Text(
-                    "msg_resuelve_tus_dudas".tr,
-                    style: theme.textTheme.displayMedium,
                   ),
                 ],
               ),
@@ -143,6 +154,28 @@ class ChatScreenState extends ConsumerState<ChatScreen> {
                 },
                 messages: _messages,
                 typingUsers: _typingUsers,
+                inputOptions: InputOptions(
+                  inputDecoration: InputDecoration(
+                    hintText: "Escribe un mensaje",
+                  )
+                ),
+                messageListOptions: MessageListOptions(
+                  typingBuilder: (context) {
+                  return Row(
+                  children: <Widget>[
+                    Text("Ryu Laoshi esta escribiendo"),
+                          SizedBox(width: 6.0.v),
+                            SizedBox(
+                              width: 10.0.v,
+                              height: 10.0.h,
+                              child: CircularProgressIndicator(
+                              strokeWidth: 1.5.v,
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                ),
               ),
             ),
           ],
