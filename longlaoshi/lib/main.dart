@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/app_export.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'home_screen.dart'; // Import the new HomeScreen
 
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -43,7 +46,7 @@ class MyApp extends ConsumerWidget {
               '',
             )
           ],
-          initialRoute: AppRoutes.chatScreen,
+          home: HomeScreen(), // Set the HomeScreen as the initial route
           routes: AppRoutes.routes,
         );
       },
