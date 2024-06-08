@@ -105,13 +105,10 @@ class InicioScreenState extends ConsumerState<InicioScreen> {
   }
 }
 
-onTapTengoUnaCuenta(BuildContext context){
-  NavigatorService.pushNamed(
-    AppRoutes.chatScreen
-  );
+onTapTengoUnaCuenta(BuildContext context) {
+  NavigatorService.pushNamed(AppRoutes.loginScreen);
 }
-onTapRegistrarse(BuildContext context){
-  NavigatorService.pushNamed(
-    AppRoutes.chatScreen
-  );
+
+onTapRegistrarse(BuildContext context) {
+  NavigatorService.pushNamed(AppRoutes.registroScreen);
 }

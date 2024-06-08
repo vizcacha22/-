@@ -1,3 +1,4 @@
+import 'package:LongLaoshi/presentation/auth/registro_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -46,7 +47,7 @@ class MyApp extends ConsumerWidget {
               '',
             )
           ],
-          home: HomeScreen(), // Set the HomeScreen as the initial route
+          home: RegistroScreen(), // Set the HomeScreen as the initial route
           routes: AppRoutes.routes,
         );
       },
