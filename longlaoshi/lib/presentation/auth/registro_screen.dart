@@ -1,4 +1,4 @@
-import 'package:LongLaoshi/home_screen.dart';
+import 'package:LongLaoshi/core/app_export.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:LongLaoshi/presentation/auth/firebase_auth_service.dart';
@@ -145,8 +145,7 @@ class _RegistroScreenState extends State<RegistroScreen> {
     });
     if (user != null) {
       print("Usuario creado con éxito");
-      HomeScreen();
-      //Navigator.pushNamed(context, "/home");
+      NavigatorService.pushNamed(AppRoutes.homeScreen);
     } else {
       print("Error al crear el usuario");
     }

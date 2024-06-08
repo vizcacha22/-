@@ -1,4 +1,3 @@
-import 'package:LongLaoshi/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
@@ -180,7 +179,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     if (user != null) {
       print("Inicio de sesión exitoso");
-      Navigator.pushNamed(context, "/home");
+      NavigatorService.pushNamed(AppRoutes.homeScreen);
     } else {
       print("Ocurrió algún error");
     }
@@ -203,8 +202,7 @@ class _LoginScreenState extends State<LoginScreen> {
         );
 
         await _firebaseAuth.signInWithCredential(credential);
-        HomeScreen();
-        //Navigator.pushNamed(context, "/home");
+        NavigatorService.pushNamed(AppRoutes.homeScreen);
       }
     } catch (e) {
       print("Ocurrió algún error $e");
