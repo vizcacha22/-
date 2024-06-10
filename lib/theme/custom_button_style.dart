@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomButtonStyles {
   static ButtonStyle get none => ButtonStyle(
-        backgroundColor: WidgetStateProperty.all<Color>(Colors.transparent),
-        elevation: WidgetStateProperty.all<double>(0),
+        backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+        elevation: MaterialStateProperty.all<double>(0),
       );
 }
