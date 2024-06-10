@@ -2,9 +2,9 @@ import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/app_export.dart';
-
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ChatScreen extends ConsumerStatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
@@ -34,6 +34,7 @@ class ChatScreenState extends ConsumerState<ChatScreen> {
   void initState() {
     super.initState();
     getThread();
+    loadMessages();
   }
 
   Future<void> getThread() async {
@@ -49,54 +50,76 @@ class ChatScreenState extends ConsumerState<ChatScreen> {
       throw Exception('Failed to load data');
     }
   }
-  
+
   Future<void> getChatResponse(ChatMessage m) async {
     setState(() {
       _messages.insert(0, m);
       _typingUsers.add(_gptChatUser);
+      saveMessages();
     });
 
     try {
       final response = await http.get(Uri.parse(
           'https://longlaoshi-server.shuttleapp.rs/longlaoshi/chat-with-your-own-assistant/$_threadId?msg=${Uri.encodeComponent(m.text)}'));
 
-      print(response.statusCode);
-      print(response.body);
       if (response.statusCode == 200) {
-        try {
-          final responseData = jsonDecode(utf8.decode(response.bodyBytes)); // Ensure UTF-8 decoding
-          if (responseData.containsKey('response')) {
-            final botMessage = responseData['response'];
+        final responseData = jsonDecode(utf8.decode(response.bodyBytes));
+        if (responseData.containsKey('response')) {
+          final botMessage = responseData['response'];
 
-            setState(() {
-              _messages.insert(
-                0,
-                ChatMessage(
-                  user: _gptChatUser,
-                  createdAt: DateTime.now(),
-                  text: botMessage,
-                ),
-              );
-            });
-          } else {
-            print('Error: Missing "response" field in JSON');
-            print('Response body: ${response.body}');
-          }
-        } catch (e) {
-          print('Error decoding JSON: $e');
-          print('Response body: ${response.body}');
+          setState(() {
+            _messages.insert(
+              0,
+              ChatMessage(
+                user: _gptChatUser,
+                createdAt: DateTime.now(),
+                text: botMessage,
+              ),
+            );
+            saveMessages();
+          });
+        } else {
+          print('Error: Missing "response" field in JSON');
         }
       } else {
         throw Exception('Failed to load data');
       }
     } catch (e) {
-      // Handle error
       print('Error: $e');
     }
 
     setState(() {
       _typingUsers.remove(_gptChatUser);
     });
+  }
+
+  Future<void> saveMessages() async {
+    final prefs = await SharedPreferences.getInstance();
+    final List<String> messages = _messages.map((message) {
+      return jsonEncode({
+        'user': message.user.id,
+        'text': message.text,
+        'createdAt': message.createdAt.toIso8601String(),
+      });
+    }).toList();
+    prefs.setStringList('chat_messages', messages);
+  }
+
+  Future<void> loadMessages() async {
+    final prefs = await SharedPreferences.getInstance();
+    final List<String>? messages = prefs.getStringList('chat_messages');
+    if (messages != null) {
+      setState(() {
+        _messages = messages.map((message) {
+          final Map<String, dynamic> messageMap = jsonDecode(message);
+          return ChatMessage(
+            user: messageMap['user'] == '1' ? _user : _gptChatUser,
+            text: messageMap['text'],
+            createdAt: DateTime.parse(messageMap['createdAt']),
+          );
+        }).toList();
+      });
+    }
   }
 
   @override
@@ -130,8 +153,7 @@ class ChatScreenState extends ConsumerState<ChatScreen> {
                             ),
                             child: Text(
                               "lbl".tr,
-                              style:
-                                  CustomTextStyles.displayMediumInterOnPrimary,
+                              style: CustomTextStyles.displayMediumInterOnPrimary,
                             ),
                           ),
                         ],
@@ -161,15 +183,15 @@ class ChatScreenState extends ConsumerState<ChatScreen> {
                 ),
                 messageListOptions: MessageListOptions(
                   typingBuilder: (context) {
-                  return Row(
-                  children: <Widget>[
-                    Text("Ryu Laoshi esta escribiendo"),
-                          SizedBox(width: 6.0.v),
-                            SizedBox(
-                              width: 10.0.v,
-                              height: 10.0.h,
-                              child: CircularProgressIndicator(
-                              strokeWidth: 1.5.v,
+                    return Row(
+                      children: <Widget>[
+                        Text("Ryu Laoshi está escribiendo"),
+                        SizedBox(width: 6.0.v),
+                        SizedBox(
+                          width: 10.0.v,
+                          height: 10.0.h,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 1.5.v,
                           ),
                         ),
                       ],
