@@ -1,10 +1,10 @@
+import 'package:LongLaoshi/language_selection_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/app_export.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'home_screen.dart'; // Import the new HomeScreen
 
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 
@@ -48,7 +48,8 @@ class MyApp extends ConsumerWidget {
           ],
           initialRoute: AppRoutes
               .registroScreen, // Set the initial route to the RegistroScreen
-          home: HomeScreen(), // Set the HomeScreen as the home route
+          home:
+              LanguageSelectionScreen(), // Set the HomeScreen as the home route
           routes: AppRoutes.routes,
         );
       },

@@ -5,4 +5,6 @@ class CustomButtonStyles {
         backgroundColor: WidgetStateProperty.all<Color>(Colors.transparent),
         elevation: WidgetStateProperty.all<double>(0),
       );
+
+  static get WidgetStateProperty => null;
 }

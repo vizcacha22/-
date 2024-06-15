@@ -125,12 +125,14 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
     super.dispose();
   }
 
-  List<Widget> _buildFlashcardColumns(List<Flashcard> flashcards, List<String> headers) {
+  List<Widget> _buildFlashcardColumns(
+      List<Flashcard> flashcards, List<String> headers) {
     List<Widget> columns = [];
     int index = 0;
     for (String header in headers) {
       List<Widget> columnContent = [
-        Text(header, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+        Text(header,
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
         Divider(),
       ];
       for (int i = 0; i < 4; i++) {
@@ -148,7 +150,9 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
                 child: Container(
                   alignment: Alignment.center,
                   child: Text(
-                    flashcards[index].showFront ? flashcards[index].front : flashcards[index].back ?? '',
+                    flashcards[index].showFront
+                        ? flashcards[index].front
+                        : flashcards[index].back ?? '',
                     style: TextStyle(fontSize: 30),
                   ),
                 ),
@@ -207,7 +211,7 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
         child: _currentCategory == 'Frutas'
             ? GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 5, // Number of columns
+                  crossAxisCount: 2, // Number of columns
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
                 ),
@@ -224,7 +228,9 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
                       child: Container(
                         alignment: Alignment.center,
                         child: Text(
-                          flashcard.showFront ? flashcard.front : flashcard.back ?? '',
+                          flashcard.showFront
+                              ? flashcard.front
+                              : flashcard.back ?? '',
                           style: TextStyle(fontSize: 30),
                         ),
                       ),
