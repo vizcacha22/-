@@ -1,4 +1,5 @@
 import 'package:LongLaoshi/presentation/chat_chinese_screen/chat_chinese_dart.dart';
+import 'package:LongLaoshi/presentation/flashcards/flascards_chinese.dart';
 import 'package:LongLaoshi/presentation/flashcards/flashcards_japanese.dart';
 import 'package:LongLaoshi/presentation/auth/login_screen.dart';
 import 'package:LongLaoshi/presentation/auth/registro_screen.dart';
@@ -13,7 +14,9 @@ class AppRoutes {
 
   static const String initialRoute = '/initialRoute';
 
-  static const String flashcards = "/flashcards_japanese";
+  static const String flashcards_jp= "/flashcards_japanese";
+
+  static const String flashcards_cn= "/flashcards_chinese";
 
   static const String loginScreen = "/login_screen";
 
@@ -21,11 +24,13 @@ class AppRoutes {
 
   static const String homeScreen = "/home_screen";
 
+
   static Map<String, WidgetBuilder> routes = {
     inicioScreen: (context) => InicioScreen(),
     initialRoute: (context) => InicioScreen(),
     chatScreen: (context) => ChatScreen(),
-    flashcards: (context) => FlashcardScreen(),
+    flashcards_jp: (context) => FlashcardScreenJP(),
+    flashcards_cn: (context) => FlashcardScreenCN(),
     loginScreen: (context) => LoginScreen(),
     registroScreen: (context) => RegistroScreen(),
     homeScreen: (context) => HomeScreen(),

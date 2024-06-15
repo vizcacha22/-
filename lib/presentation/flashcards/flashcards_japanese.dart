@@ -12,14 +12,14 @@ class Flashcard {
   });
 }
 
-class FlashcardScreen extends StatefulWidget {
-  const FlashcardScreen({Key? key}) : super(key: key);
+class FlashcardScreenJP extends StatefulWidget {
+  const FlashcardScreenJP({Key? key}) : super(key: key);
 
   @override
   FlashcardScreenState createState() => FlashcardScreenState();
 }
 
-class FlashcardScreenState extends State<FlashcardScreen> {
+class FlashcardScreenState extends State<FlashcardScreenJP> {
   bool _isHiragana = true; // Initial mode is Hiragana
   late List<Flashcard> _flashcards;
 
