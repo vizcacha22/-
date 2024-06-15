@@ -4,6 +4,8 @@ import 'package:LongLaoshi/presentation/flashcards/flascards_chinese.dart';
 import 'package:LongLaoshi/presentation/flashcards/flashcards_japanese.dart';
 import 'package:LongLaoshi/presentation/auth/login_screen.dart';
 import 'package:LongLaoshi/presentation/auth/registro_screen.dart';
+import 'package:LongLaoshi/presentation/submenu/chinese_submenu.dart';
+import 'package:LongLaoshi/presentation/submenu/japanese_submenu.dart';
 import 'package:flutter/material.dart';
 import '../presentation/inicio_screen/inicio_screen.dart'; // ignore_for_file: must_be_immutable
 
@@ -24,6 +26,10 @@ class AppRoutes {
 
   static const String homeScreen = "/home_screen";
 
+  static const String japanese = "/japanese";
+
+  static const String chinese = "/chinese";
+
   static Map<String, WidgetBuilder> routes = {
     inicioScreen: (context) => InicioScreen(),
     initialRoute: (context) => InicioScreen(),
@@ -33,5 +39,7 @@ class AppRoutes {
     loginScreen: (context) => LoginScreen(),
     registroScreen: (context) => RegistroScreen(),
     homeScreen: (context) => LanguageSelectionScreen(),
+    japanese: (context) => LearningJapaneseScreen(),
+    chinese: (context) => LearningChineseScreen(),
   };
 }

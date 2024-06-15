@@ -1,5 +1,6 @@
 import 'package:LongLaoshi/presentation/chat_chinese_screen/chat_chinese_dart.dart';
 import 'package:LongLaoshi/presentation/flashcards/flascards_chinese.dart';
+import 'package:LongLaoshi/presentation/submenu/chinese_submenu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -16,6 +17,7 @@ class HomeScreenState extends ConsumerState<HomeScreenCN> {
     return Scaffold(
       body: PageView(
         children: [
+          LearningChineseScreen(),
           FlashcardScreenCN(),
           ChatScreen(),
         ],

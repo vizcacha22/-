@@ -147,6 +147,7 @@ class FlashcardScreenState extends State<FlashcardScreenJP> {
     return Scaffold(
       appBar: AppBar(
         title: Text(_isHiragana ? 'Hiragana' : 'Katakana'),
+        backgroundColor: Colors.redAccent,
         actions: [
           IconButton(
             icon: Icon(Icons.compare_arrows),

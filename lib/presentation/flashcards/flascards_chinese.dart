@@ -189,6 +189,7 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
     return Scaffold(
       appBar: AppBar(
         title: Text(_currentCategory),
+        backgroundColor: Colors.greenAccent,
         actions: [
           DropdownButton<String>(
             value: _currentCategory,
