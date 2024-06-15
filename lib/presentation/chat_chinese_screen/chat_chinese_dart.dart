@@ -16,8 +16,7 @@ class ChatScreen extends ConsumerStatefulWidget {
 class ChatScreenState extends ConsumerState<ChatScreen> {
   final ChatUser _user = ChatUser(
     id: '1',
-    firstName: 'Eduardo',
-    lastName: 'Calle',
+    firstName: 'User',
   );
 
   final ChatUser _gptChatUser = ChatUser(
@@ -37,8 +36,22 @@ class ChatScreenState extends ConsumerState<ChatScreen> {
     loadMessages();
   }
 
+  Future<void> loadThreadId() async {
+    final prefs = await SharedPreferences.getInstance();
+    final storedThreadId = prefs.getString('thread_id');
+
+    if (storedThreadId != null) {
+      setState(() {
+        _threadId = storedThreadId;
+      });
+    } else {
+      getThread();
+    }
+  }
+
   Future<void> getThread() async {
-    final response = await http.get(Uri.parse('https://longlaoshi-server.shuttleapp.rs/longlaoshi/create-conversation'));
+    final response = await http.get(Uri.parse(
+        'https://longlaoshi-server.shuttleapp.rs/longlaoshi/create-conversation'));
 
     if (response.statusCode == 200) {
       final responseData = jsonDecode(response.body);
@@ -46,6 +59,10 @@ class ChatScreenState extends ConsumerState<ChatScreen> {
       setState(() {
         _threadId = threadId;
       });
+
+      // Save the thread ID to SharedPreferences
+      final prefs = await SharedPreferences.getInstance();
+      prefs.setString('thread_id', threadId);
     } else {
       throw Exception('Failed to load data');
     }
@@ -153,7 +170,8 @@ class ChatScreenState extends ConsumerState<ChatScreen> {
                             ),
                             child: Text(
                               "lbl".tr,
-                              style: CustomTextStyles.displayMediumInterOnPrimary,
+                              style:
+                                  CustomTextStyles.displayMediumInterOnPrimary,
                             ),
                           ),
                         ],
@@ -177,10 +195,9 @@ class ChatScreenState extends ConsumerState<ChatScreen> {
                 messages: _messages,
                 typingUsers: _typingUsers,
                 inputOptions: InputOptions(
-                  inputDecoration: InputDecoration(
-                    hintText: "Escribe un mensaje",
-                  )
-                ),
+                    inputDecoration: InputDecoration(
+                  hintText: "Escribe un mensaje",
+                )),
                 messageListOptions: MessageListOptions(
                   typingBuilder: (context) {
                     return Row(
