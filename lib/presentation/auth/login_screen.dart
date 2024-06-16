@@ -31,10 +31,6 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Text("Inicio de sesión"),
-      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -116,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           width: 5,
                         ),
                         Text(
-                          "Iniciar sesión con Google",
+                          "Continuar con Google",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
