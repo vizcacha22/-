@@ -3999,7 +3999,7 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Japanese Vocabulary - ${widget.level}',
+          'Vocabulario Japonés - ${widget.level}',
           style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.indigoAccent,
