@@ -1,4 +1,5 @@
 // import 'package:LongLaoshi/presentation/test/test_japanese.dart';
+// import 'package:LongLaoshi/presentation/flashcards/util/search_vocabulary_japanese.dart';
 import 'package:flutter/material.dart';
 
 class Flashcard {
@@ -17,6 +18,99 @@ class Flashcard {
   });
 }
 
+class FlashcardSearchDelegate extends SearchDelegate<Flashcard?> {
+  final List<Flashcard> flashcards;
+  final Function(Flashcard) onSelected;
+
+  FlashcardSearchDelegate(this.flashcards, this.onSelected);
+
+  @override
+  List<Widget>? buildActions(BuildContext context) {
+    return [
+      IconButton(
+        icon: Icon(Icons.clear),
+        onPressed: () {
+          query = '';
+        },
+      ),
+    ];
+  }
+
+  @override
+  Widget? buildLeading(BuildContext context) {
+    return IconButton(
+      icon: Icon(Icons.arrow_back),
+      onPressed: () {
+        close(context, null);
+      },
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    final List<Flashcard> results = flashcards
+        .where((flashcard) =>
+            flashcard.romaji.toLowerCase().contains(query.toLowerCase()))
+        .toList();
+
+    if (results.isEmpty) {
+      return Center(
+        child: Text(
+          'No results found',
+          style: TextStyle(fontSize: 18),
+        ),
+      );
+    }
+
+    return ListView.builder(
+      itemCount: results.length,
+      itemBuilder: (context, index) {
+        final flashcard = results[index];
+        return ListTile(
+          title: Text(flashcard.kanji),
+          subtitle: Text('${flashcard.romaji} - ${flashcard.meaning}'),
+          onTap: () {
+            onSelected(flashcard);
+            close(context, flashcard);
+          },
+        );
+      },
+    );
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    final List<Flashcard> suggestions = flashcards
+        .where((flashcard) =>
+            flashcard.romaji.toLowerCase().contains(query.toLowerCase()))
+        .toList();
+
+    if (suggestions.isEmpty) {
+      return Center(
+        child: Text(
+          'No suggestions found',
+          style: TextStyle(fontSize: 18),
+        ),
+      );
+    }
+
+    return ListView.builder(
+      itemCount: suggestions.length,
+      itemBuilder: (context, index) {
+        final flashcard = suggestions[index];
+        return ListTile(
+          title: Text(flashcard.kanji),
+          subtitle: Text(flashcard.romaji),
+          onTap: () {
+            query = flashcard.romaji;
+            showResults(context);
+          },
+        );
+      },
+    );
+  }
+}
+
 class VocabularyScreenJP extends StatefulWidget {
   final String level;
 
@@ -29,6 +123,7 @@ class VocabularyScreenJP extends StatefulWidget {
 class VocabularyScreenState extends State<VocabularyScreenJP> {
   late List<Flashcard> _flashcards;
   int? _selectedIndex;
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -3995,6 +4090,30 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
     });
   }
 
+  void _startSearch() {
+    showSearch(
+      context: context,
+      delegate: FlashcardSearchDelegate(_flashcards, (selectedFlashcard) {
+        final index = _flashcards.indexOf(selectedFlashcard);
+        if (index != -1) {
+          _scrollToIndex(index);
+        }
+      }),
+    );
+  }
+
+  void _scrollToIndex(int index) {
+    _scrollController.animateTo(
+      index * 55.0, // Approximate height of each card
+      duration: Duration(seconds: 1),
+      curve: Curves.easeInOut,
+    );
+    setState(() {
+      _selectedIndex = index;
+      _flashcards[index].showDetails = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -4004,6 +4123,12 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
           style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.indigoAccent,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: _startSearch,
+          ),
+        ],
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -4015,6 +4140,7 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         padding: const EdgeInsets.all(8.0),
         child: ListView.builder(
+          controller: _scrollController,
           itemCount: _flashcards.length,
           itemBuilder: (context, index) {
             final flashcard = _flashcards[index];
@@ -4023,7 +4149,7 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
               child: Card(
                 color: _selectedIndex == index
                     ? Colors.indigoAccent
-                    : Colors.grey[850], // Change color if selected
+                    : Colors.grey[850],
                 elevation: 4.0,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -4065,20 +4191,6 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
           },
         ),
       ),
-      // floatingActionButton: FloatingActionButton.extended(
-      //   onPressed: () {
-      //     Navigator.push(
-      //       context,
-      //       MaterialPageRoute(
-      //         builder: (context) =>
-      //             VocabularyTestScreenJP(flashcards: _flashcards),
-      //       ),
-      //     );
-      //   },
-      //   label: Text('Iniciar Test'),
-      //   icon: Icon(Icons.assignment),
-      //   backgroundColor: Colors.indigoAccent,
-      // ),
     );
   }
 }
