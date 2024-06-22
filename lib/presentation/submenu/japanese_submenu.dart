@@ -7,10 +7,9 @@ class LearningJapaneseScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Japonés',
-
         ),
         backgroundColor: Colors.indigoAccent,
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(color: Colors.black),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -25,7 +24,10 @@ class LearningJapaneseScreen extends StatelessWidget {
           children: [
             Text(
               'Pasos para Empezar a Aprender Japonés',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+              style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             ),
             SizedBox(height: 16),
             ListTile(
@@ -42,7 +44,10 @@ class LearningJapaneseScreen extends StatelessWidget {
             SizedBox(height: 16),
             Text(
               'Recursos Recomendados',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+              style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             ),
             SizedBox(height: 16),
             ListTile(
