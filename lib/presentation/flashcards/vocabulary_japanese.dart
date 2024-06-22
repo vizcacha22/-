@@ -56,7 +56,7 @@ class FlashcardSearchDelegate extends SearchDelegate<Flashcard?> {
     if (results.isEmpty) {
       return Center(
         child: Text(
-          'No results found',
+          'No se encontraron resultados',
           style: TextStyle(fontSize: 18),
         ),
       );
@@ -88,7 +88,7 @@ class FlashcardSearchDelegate extends SearchDelegate<Flashcard?> {
     if (suggestions.isEmpty) {
       return Center(
         child: Text(
-          'No suggestions found',
+          'No se encontraron resultados',
           style: TextStyle(fontSize: 18),
         ),
       );
