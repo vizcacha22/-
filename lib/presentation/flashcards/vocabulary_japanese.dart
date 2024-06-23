@@ -4068,16 +4068,2456 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
       ];
     } else if (widget.level == 'JLPT4') {
       return [
+        Flashcard(kanji: 'あ', hiragana: 'あ', romaji: 'a', meaning: 'Ah; oh'),
+        Flashcard(kanji: 'ああ', hiragana: 'ああ', romaji: 'aa', meaning: 'Ah; sí'),
         Flashcard(
-            kanji: 'ありがとう',
-            hiragana: 'ありがとう',
-            romaji: 'arigatou',
-            meaning: 'Thank you'),
+            kanji: 'アフリカ',
+            hiragana: 'アフリカ',
+            romaji: 'afurika',
+            meaning: 'África'),
         Flashcard(
-            kanji: 'すみません',
-            hiragana: 'すみません',
-            romaji: 'sumimasen',
-            meaning: 'Excuse me'),
+            kanji: '上がる', hiragana: 'あがる', romaji: 'agaru', meaning: 'Subir'),
+        Flashcard(
+            kanji: '挨拶',
+            hiragana: 'あいさつ',
+            romaji: 'aisatsu',
+            meaning: 'Saludo'),
+        Flashcard(kanji: '味', hiragana: 'あじ', romaji: 'aji', meaning: 'Sabor'),
+        Flashcard(
+            kanji: 'アジア', hiragana: 'アジア', romaji: 'ajia', meaning: 'Asia'),
+        Flashcard(
+            kanji: '赤ちゃん',
+            hiragana: 'あかちゃん',
+            romaji: 'akachan',
+            meaning: 'Bebé'),
+        Flashcard(
+            kanji: '赤ん坊',
+            hiragana: 'あかんぼう',
+            romaji: 'akanbou',
+            meaning: 'Bebé'),
+        Flashcard(
+            kanji: 'アクセサリー',
+            hiragana: 'アクセサリー',
+            romaji: 'akusesarii',
+            meaning: 'Accesorio'),
+        Flashcard(
+            kanji: 'アメリカ',
+            hiragana: 'アメリカ',
+            romaji: 'amerika',
+            meaning: 'América'),
+        Flashcard(
+            kanji: 'アナウンサー',
+            hiragana: 'アナウンサー',
+            romaji: 'anaunsaa',
+            meaning: 'Locutor'),
+        Flashcard(
+            kanji: 'あんな', hiragana: 'あんな', romaji: 'anna', meaning: 'Tal; así'),
+        Flashcard(
+            kanji: '案内', hiragana: 'あんない', romaji: 'annai', meaning: 'Guía'),
+        Flashcard(
+            kanji: '安心',
+            hiragana: 'あんしん',
+            romaji: 'anshin',
+            meaning: 'Tranquilidad'),
+        Flashcard(
+            kanji: '安全',
+            hiragana: 'あんぜん',
+            romaji: 'anzen',
+            meaning: 'Seguridad'),
+        Flashcard(
+            kanji: 'アルバイト',
+            hiragana: 'アルバイト',
+            romaji: 'arubaito',
+            meaning: 'Trabajo a tiempo parcial'),
+        Flashcard(
+            kanji: 'アルコール',
+            hiragana: 'アルコール',
+            romaji: 'arukooru',
+            meaning: 'Alcohol'),
+        Flashcard(
+            kanji: '浅い',
+            hiragana: 'あさい',
+            romaji: 'asai',
+            meaning: 'Superficial'),
+        Flashcard(
+            kanji: '遊び', hiragana: 'あそび', romaji: 'asobi', meaning: 'Juego'),
+        Flashcard(
+            kanji: '集まる',
+            hiragana: 'あつまる',
+            romaji: 'atsumaru',
+            meaning: 'Reunirse'),
+        Flashcard(
+            kanji: '集める',
+            hiragana: 'あつめる',
+            romaji: 'atsumeru',
+            meaning: 'Recolectar'),
+        Flashcard(
+            kanji: '謝る',
+            hiragana: 'あやまる',
+            romaji: 'ayamaru',
+            meaning: 'Disculparse'),
+        Flashcard(kanji: '倍', hiragana: 'ばい', romaji: 'bai', meaning: 'Doble'),
+        Flashcard(
+            kanji: '番組',
+            hiragana: 'ばんぐみ',
+            romaji: 'bangumi',
+            meaning: 'Programa (por ejemplo, de TV)'),
+        Flashcard(
+            kanji: '場所', hiragana: 'ばしょ', romaji: 'basho', meaning: 'Lugar'),
+        Flashcard(
+            kanji: 'ベル', hiragana: 'ベル', romaji: 'beru', meaning: 'Campana'),
+        Flashcard(
+            kanji: '美術館',
+            hiragana: 'びじゅつかん',
+            romaji: 'bijutsukan',
+            meaning: 'Galería de arte; museo de arte'),
+        Flashcard(
+            kanji: 'びっくり',
+            hiragana: 'びっくり',
+            romaji: 'bikkuri',
+            meaning: 'Sorprendido'),
+        Flashcard(
+            kanji: 'ビル', hiragana: 'ビル', romaji: 'biru', meaning: 'Edificio'),
+        Flashcard(
+            kanji: '僕',
+            hiragana: 'ぼく',
+            romaji: 'boku',
+            meaning: 'Yo (usado por hombres)'),
+        Flashcard(
+            kanji: '貿易',
+            hiragana: 'ぼうえき',
+            romaji: 'boueki',
+            meaning: 'Comercio'),
+        Flashcard(
+            kanji: '部長',
+            hiragana: 'ぶちょう',
+            romaji: 'buchou',
+            meaning: 'Jefe de sección o departamento'),
+        Flashcard(
+            kanji: 'ぶどう', hiragana: 'ぶどう', romaji: 'budou', meaning: 'Uvas'),
+        Flashcard(
+            kanji: '文学',
+            hiragana: 'ぶんがく',
+            romaji: 'bungaku',
+            meaning: 'Literatura'),
+        Flashcard(
+            kanji: '文化', hiragana: 'ぶんか', romaji: 'bunka', meaning: 'Cultura'),
+        Flashcard(
+            kanji: '文法',
+            hiragana: 'ぶんぽう',
+            romaji: 'bunpou',
+            meaning: 'Gramática'),
+        Flashcard(
+            kanji: 'ちゃん',
+            hiragana: 'ちゃん',
+            romaji: 'chan',
+            meaning: 'Sufijo para persona femenina familiar'),
+        Flashcard(
+            kanji: 'チェック',
+            hiragana: 'チェック',
+            romaji: 'chekku',
+            meaning: 'Chequear'),
+        Flashcard(kanji: '血', hiragana: 'ち', romaji: 'chi', meaning: 'Sangre'),
+        Flashcard(
+            kanji: '力',
+            hiragana: 'ちから',
+            romaji: 'chikara',
+            meaning: 'Energía; fuerza'),
+        Flashcard(
+            kanji: '地理', hiragana: 'ちり', romaji: 'chiri', meaning: 'Geografía'),
+        Flashcard(
+            kanji: '中学校',
+            hiragana: 'ちゅうがっこう',
+            romaji: 'chuugakkou',
+            meaning: 'Escuela secundaria'),
+        Flashcard(
+            kanji: '注意',
+            hiragana: 'ちゅうい',
+            romaji: 'chuui',
+            meaning: 'Atención; precaución'),
+        Flashcard(
+            kanji: '注射',
+            hiragana: 'ちゅうしゃ',
+            romaji: 'chuusha',
+            meaning: 'Inyección'),
+        Flashcard(
+            kanji: '駐車場',
+            hiragana: 'ちゅうしゃじょう',
+            romaji: 'chuushajou',
+            meaning: 'Estacionamiento'),
+        Flashcard(
+            kanji: '大分',
+            hiragana: 'だいぶ',
+            romaji: 'daibu',
+            meaning: 'Considerablemente; mucho'),
+        Flashcard(
+            kanji: '大学生',
+            hiragana: 'だいがくせい',
+            romaji: 'daigakusei',
+            meaning: 'Estudiante universitario'),
+        Flashcard(
+            kanji: '大事',
+            hiragana: 'だいじ',
+            romaji: 'daiji',
+            meaning: 'Importante; serio; crucial'),
+        Flashcard(
+            kanji: '大体',
+            hiragana: 'だいたい',
+            romaji: 'daitai',
+            meaning: 'Aproximadamente'),
+        Flashcard(
+            kanji: '暖房',
+            hiragana: 'だんぼう',
+            romaji: 'danbou',
+            meaning: 'Calefacción'),
+        Flashcard(
+            kanji: '男性',
+            hiragana: 'だんせい',
+            romaji: 'dansei',
+            meaning: 'Hombre; masculino'),
+        Flashcard(
+            kanji: 'できるだけ',
+            hiragana: 'できるだけ',
+            romaji: 'dekiru dake',
+            meaning: 'Tanto como sea posible'),
+        Flashcard(
+            kanji: '電報',
+            hiragana: 'でんぽう',
+            romaji: 'denpou',
+            meaning: 'Telegrama'),
+        Flashcard(
+            kanji: '電灯',
+            hiragana: 'でんとう',
+            romaji: 'dentou',
+            meaning: 'Luz eléctrica'),
+        Flashcard(
+            kanji: 'どんどん',
+            hiragana: 'どんどん',
+            romaji: 'dondon',
+            meaning: 'Rápidamente; cada vez más'),
+        Flashcard(
+            kanji: '泥棒',
+            hiragana: 'どろぼう',
+            romaji: 'dorobou',
+            meaning: 'Ladrón'),
+        Flashcard(
+            kanji: '動物園',
+            hiragana: 'どうぶつえん',
+            romaji: 'doubutsuen',
+            meaning: 'Zoológico'),
+        Flashcard(
+            kanji: '道具',
+            hiragana: 'どうぐ',
+            romaji: 'dougu',
+            meaning: 'Herramienta'),
+        Flashcard(kanji: '枝', hiragana: 'えだ', romaji: 'eda', meaning: 'Rama'),
+        Flashcard(
+            kanji: '遠慮',
+            hiragana: 'えんりょ',
+            romaji: 'enryo',
+            meaning: 'Reserva; abstención'),
+        Flashcard(
+            kanji: '選ぶ', hiragana: 'えらぶ', romaji: 'erabu', meaning: 'Elegir'),
+        Flashcard(
+            kanji: 'エスカレーター',
+            hiragana: 'エスカレーター',
+            romaji: 'esukareetaa',
+            meaning: 'Escalera mecánica'),
+        Flashcard(
+            kanji: 'ファックス',
+            hiragana: 'ファックス',
+            romaji: 'fakkusu',
+            meaning: 'Fax'),
+        Flashcard(
+            kanji: '不便',
+            hiragana: 'ふべん',
+            romaji: 'fuben',
+            meaning: 'Inconveniente'),
+        Flashcard(
+            kanji: '増える',
+            hiragana: 'ふえる',
+            romaji: 'fueru',
+            meaning: 'Aumentar'),
+        Flashcard(
+            kanji: '深い', hiragana: 'ふかい', romaji: 'fukai', meaning: 'Profundo'),
+        Flashcard(
+            kanji: '復習',
+            hiragana: 'ふくしゅう',
+            romaji: 'fukushuu',
+            meaning: 'Revisión'),
+        Flashcard(
+            kanji: '複雑',
+            hiragana: 'ふくざつ',
+            romaji: 'fukuzatsu',
+            meaning: 'Complejidad'),
+        Flashcard(
+            kanji: '踏む', hiragana: 'ふむ', romaji: 'fumu', meaning: 'Pisar'),
+        Flashcard(kanji: '舟', hiragana: 'ふね', romaji: 'fune', meaning: 'Barco'),
+        Flashcard(
+            kanji: '降り出す',
+            hiragana: 'ふりだす',
+            romaji: 'furidasu',
+            meaning: 'Empezar a llover'),
+        Flashcard(
+            kanji: '布団', hiragana: 'ふとん', romaji: 'futon', meaning: 'Futón'),
+        Flashcard(
+            kanji: '太る',
+            hiragana: 'ふとる',
+            romaji: 'futoru',
+            meaning: 'Engordar'),
+        Flashcard(
+            kanji: '普通',
+            hiragana: 'ふつう',
+            romaji: 'futsuu',
+            meaning: 'Normalmente'),
+        Flashcard(
+            kanji: 'ガラス', hiragana: 'ガラス', romaji: 'garasu', meaning: 'Vidrio'),
+        Flashcard(
+            kanji: 'ガソリン',
+            hiragana: 'ガソリン',
+            romaji: 'gasorin',
+            meaning: 'Gasolina; nafta'),
+        Flashcard(
+            kanji: 'ガソリンスタンド',
+            hiragana: 'ガソリンスタンド',
+            romaji: 'gasorin sutando',
+            meaning: 'Estación de servicio'),
+        Flashcard(kanji: 'ガス', hiragana: 'ガス', romaji: 'gasu', meaning: 'Gas'),
+        Flashcard(
+            kanji: '原因', hiragana: 'げんいん', romaji: 'genin', meaning: 'Causa'),
+        Flashcard(
+            kanji: '下宿',
+            hiragana: 'げしゅく',
+            romaji: 'geshuku',
+            meaning: 'Pensión'),
+        Flashcard(
+            kanji: '技術',
+            hiragana: 'ぎじゅつ',
+            romaji: 'gijutsu',
+            meaning: 'Técnica; habilidad técnica'),
+        Flashcard(
+            kanji: 'ごちそう',
+            hiragana: 'ごちそう',
+            romaji: 'gochisou',
+            meaning: 'Banquete'),
+        Flashcard(
+            kanji: 'ごみ', hiragana: 'ごみ', romaji: 'gomi', meaning: 'Basura'),
+        Flashcard(
+            kanji: 'ご覧になる',
+            hiragana: 'ごらんになる',
+            romaji: 'goran ni naru',
+            meaning: 'Ver (forma respetuosa)'),
+        Flashcard(
+            kanji: 'ご主人',
+            hiragana: 'ごしゅじん',
+            romaji: 'goshujin',
+            meaning: 'Tu esposo; su esposo'),
+        Flashcard(
+            kanji: 'ご存じ',
+            hiragana: 'ごぞんじ',
+            romaji: 'gozonji',
+            meaning: 'Saber'),
+        Flashcard(
+            kanji: '具合',
+            hiragana: 'ぐあい',
+            romaji: 'guai',
+            meaning: 'Estado; salud'),
+        Flashcard(
+            kanji: '葉', hiragana: 'は', romaji: 'ha', meaning: 'Hojas; hoja'),
+        Flashcard(
+            kanji: '拝見',
+            hiragana: 'はいけん',
+            romaji: 'haiken',
+            meaning: 'Ver (forma respetuosa)'),
+        Flashcard(
+            kanji: '歯医者',
+            hiragana: 'はいしゃ',
+            romaji: 'haisha',
+            meaning: 'Dentista'),
+        Flashcard(
+            kanji: 'はっきり',
+            hiragana: 'はっきり',
+            romaji: 'hakkiri',
+            meaning: 'Claramente'),
+        Flashcard(
+            kanji: '運ぶ', hiragana: 'はこぶ', romaji: 'hakobu', meaning: 'Llevar'),
+        Flashcard(
+            kanji: '花見',
+            hiragana: 'はなみ',
+            romaji: 'hanami',
+            meaning: 'Ver los cerezos en flor; paseo para ver flores'),
+        Flashcard(
+            kanji: 'ハンドバッグ',
+            hiragana: 'ハンドバッグ',
+            romaji: 'handobaggu',
+            meaning: 'Bolso de mano'),
+        Flashcard(
+            kanji: '反対',
+            hiragana: 'はんたい',
+            romaji: 'hantai',
+            meaning: 'Oposición; en contra'),
+        Flashcard(
+            kanji: '払う', hiragana: 'はらう', romaji: 'harau', meaning: 'Pagar'),
+        Flashcard(
+            kanji: '発音',
+            hiragana: 'はつおん',
+            romaji: 'hatsuon',
+            meaning: 'Pronunciación'),
+        Flashcard(
+            kanji: '林', hiragana: 'はやし', romaji: 'hayashi', meaning: 'Bosque'),
+        Flashcard(
+            kanji: '恥ずかしい',
+            hiragana: 'はずかしい',
+            romaji: 'hazukashii',
+            meaning: 'Avergonzado; vergonzoso'),
+        Flashcard(
+            kanji: '変',
+            hiragana: 'へん',
+            romaji: 'hen',
+            meaning: 'extraño; peculiar; raro'),
+        Flashcard(
+            kanji: '返事',
+            hiragana: 'へんじ',
+            romaji: 'henji',
+            meaning: 'respuesta; contestación'),
+        Flashcard(kanji: '火', hiragana: 'ひ', romaji: 'hi', meaning: 'fuego'),
+        Flashcard(
+            kanji: '酷い',
+            hiragana: 'ひどい',
+            romaji: 'hidoi',
+            meaning: 'terrible; horrible'),
+        Flashcard(
+            kanji: '冷える',
+            hiragana: 'ひえる',
+            romaji: 'hieru',
+            meaning: 'enfriarse'),
+        Flashcard(kanji: '髭', hiragana: 'ひげ', romaji: 'hige', meaning: 'barba'),
+        Flashcard(
+            kanji: '非常に',
+            hiragana: 'ひじょうに',
+            romaji: 'hijou ni',
+            meaning: 'extremadamente'),
+        Flashcard(
+            kanji: '光', hiragana: 'ひかり', romaji: 'hikari', meaning: 'luz'),
+        Flashcard(
+            kanji: '光る', hiragana: 'ひかる', romaji: 'hikaru', meaning: 'brillar'),
+        Flashcard(
+            kanji: '引き出し',
+            hiragana: 'ひきだし',
+            romaji: 'hikidashi',
+            meaning: 'cajón'),
+        Flashcard(
+            kanji: '引き出す',
+            hiragana: 'ひきだす',
+            romaji: 'hikidasu',
+            meaning: 'sacar; retirar'),
+        Flashcard(
+            kanji: '引っ越す',
+            hiragana: 'ひっこす',
+            romaji: 'hikkosu',
+            meaning: 'mudarse'),
+        Flashcard(
+            kanji: '飛行場',
+            hiragana: 'ひこうじょう',
+            romaji: 'hikoujou',
+            meaning: 'aeropuerto'),
+        Flashcard(
+            kanji: '開く', hiragana: 'ひらく', romaji: 'hiraku', meaning: 'abrir'),
+        Flashcard(
+            kanji: '拾う', hiragana: 'ひろう', romaji: 'hirou', meaning: 'recoger'),
+        Flashcard(
+            kanji: '昼間',
+            hiragana: 'ひるま',
+            romaji: 'hiruma',
+            meaning: 'durante el día'),
+        Flashcard(
+            kanji: '昼休み',
+            hiragana: 'ひるやすみ',
+            romaji: 'hiruyasumi',
+            meaning: 'descanso del mediodía'),
+        Flashcard(
+            kanji: '久しぶり',
+            hiragana: 'ひさしぶり',
+            romaji: 'hisashiburi',
+            meaning: 'después de mucho tiempo; hacía mucho que no...'),
+        Flashcard(
+            kanji: '褒める',
+            hiragana: 'ほめる',
+            romaji: 'homeru',
+            meaning: 'alabar; elogiar'),
+        Flashcard(
+            kanji: '翻訳',
+            hiragana: 'ほんやく',
+            romaji: 'honyaku',
+            meaning: 'traducción'),
+        Flashcard(
+            kanji: '星', hiragana: 'ほし', romaji: 'hoshi', meaning: 'estrella'),
+        Flashcard(
+            kanji: 'ほとんど',
+            hiragana: 'ほとんど',
+            romaji: 'hotondo',
+            meaning: 'casi; casi todo'),
+        Flashcard(
+            kanji: '法律', hiragana: 'ほうりつ', romaji: 'houritsu', meaning: 'ley'),
+        Flashcard(
+            kanji: '放送',
+            hiragana: 'ほうそう',
+            romaji: 'housou',
+            meaning: 'emisión; transmisión (radio o TV)'),
+        Flashcard(
+            kanji: '一度', hiragana: 'いちど', romaji: 'ichido', meaning: 'una vez'),
+        Flashcard(
+            kanji: '以外', hiragana: 'いがい', romaji: 'igai', meaning: 'excepto'),
+        Flashcard(
+            kanji: '医学',
+            hiragana: 'いがく',
+            romaji: 'igaku',
+            meaning: 'medicina; ciencia médica'),
+        Flashcard(
+            kanji: 'いじめる',
+            hiragana: 'いじめる',
+            romaji: 'ijimeru',
+            meaning: 'acosar; intimidar'),
+        Flashcard(
+            kanji: '以上',
+            hiragana: 'いじょう',
+            romaji: 'ijou',
+            meaning: 'más de; por encima de; superior a'),
+        Flashcard(
+            kanji: '以下',
+            hiragana: 'いか',
+            romaji: 'ika',
+            meaning: 'no más de; dentro de; inferior a'),
+        Flashcard(
+            kanji: '意見', hiragana: 'いけん', romaji: 'iken', meaning: 'opinión'),
+        Flashcard(
+            kanji: '生き物',
+            hiragana: 'いきもの',
+            romaji: 'ikimono',
+            meaning: 'ser vivo'),
+        Flashcard(
+            kanji: '生きる', hiragana: 'いきる', romaji: 'ikiru', meaning: 'vivir'),
+        Flashcard(
+            kanji: '以内',
+            hiragana: 'いない',
+            romaji: 'inai',
+            meaning: 'dentro de; no más de'),
+        Flashcard(
+            kanji: '田舎',
+            hiragana: 'いなか',
+            romaji: 'inaka',
+            meaning: 'campo; provincia; rural'),
+        Flashcard(
+            kanji: '祈る', hiragana: 'いのる', romaji: 'inoru', meaning: 'rezar'),
+        Flashcard(
+            kanji: 'いっぱい',
+            hiragana: 'いっぱい',
+            romaji: 'ippai',
+            meaning: 'lleno; completo'),
+        Flashcard(
+            kanji: '色んな',
+            hiragana: 'いろんな',
+            romaji: 'ironna',
+            meaning: 'varios; diversos'),
+        Flashcard(
+            kanji: '石', hiragana: 'いし', romaji: 'ishi', meaning: 'piedra'),
+        Flashcard(
+            kanji: '急ぐ',
+            hiragana: 'いそぐ',
+            romaji: 'isogu',
+            meaning: 'apresurarse; tener prisa'),
+        Flashcard(
+            kanji: '一生懸命',
+            hiragana: 'いっしょうけんめい',
+            romaji: 'isshoukenmei',
+            meaning: 'con todo el esfuerzo; con ahínco'),
+        Flashcard(
+            kanji: '頂く',
+            hiragana: 'いただく',
+            romaji: 'itadaku',
+            meaning: 'recibir (con humildad)'),
+        Flashcard(
+            kanji: '致す',
+            hiragana: 'いたす',
+            romaji: 'itasu',
+            meaning: 'hacer (con humildad)'),
+        Flashcard(kanji: '糸', hiragana: 'いと', romaji: 'ito', meaning: 'hilo'),
+        Flashcard(
+            kanji: 'ジャム',
+            hiragana: 'ジャム',
+            romaji: 'jamu',
+            meaning: 'mermelada'),
+        Flashcard(
+            kanji: '字',
+            hiragana: 'じ',
+            romaji: 'ji',
+            meaning: 'carácter; letra'),
+        Flashcard(
+            kanji: '時代',
+            hiragana: 'じだい',
+            romaji: 'jidai',
+            meaning: 'época; periodo'),
+        Flashcard(
+            kanji: '事故', hiragana: 'じこ', romaji: 'jiko', meaning: 'accidente'),
+        Flashcard(
+            kanji: '事務所',
+            hiragana: 'じむしょ',
+            romaji: 'jimusho',
+            meaning: 'oficina'),
+        Flashcard(
+            kanji: '神社',
+            hiragana: 'じんじゃ',
+            romaji: 'jinja',
+            meaning: 'santuario shintoísta'),
+        Flashcard(
+            kanji: '人口',
+            hiragana: 'じんこう',
+            romaji: 'jinkou',
+            meaning: 'población'),
+        Flashcard(
+            kanji: '人生',
+            hiragana: 'じんせい',
+            romaji: 'jinsei',
+            meaning: 'vida humana; vida'),
+        Flashcard(
+            kanji: '地震',
+            hiragana: 'じしん',
+            romaji: 'jishin',
+            meaning: 'terremoto'),
+        Flashcard(
+            kanji: '辞典',
+            hiragana: 'じてん',
+            romaji: 'jiten',
+            meaning: 'diccionario'),
+        Flashcard(
+            kanji: '自由', hiragana: 'じゆう', romaji: 'jiyuu', meaning: 'libertad'),
+        Flashcard(
+            kanji: '女性',
+            hiragana: 'じょせい',
+            romaji: 'josei',
+            meaning: 'mujer; sexo femenino'),
+        Flashcard(
+            kanji: '準備',
+            hiragana: 'じゅんび',
+            romaji: 'junbi',
+            meaning: 'preparación'),
+        Flashcard(
+            kanji: '十分',
+            hiragana: 'じゅうぶん',
+            romaji: 'juubun',
+            meaning: 'suficiente; bastante'),
+        Flashcard(
+            kanji: '柔道', hiragana: 'じゅうどう', romaji: 'juudou', meaning: 'judo'),
+        Flashcard(
+            kanji: '住所',
+            hiragana: 'じゅうしょ',
+            romaji: 'juusho',
+            meaning: 'dirección (postal)'),
+        Flashcard(
+            kanji: 'カーテン',
+            hiragana: 'カーテン',
+            romaji: 'kaaten',
+            meaning: 'cortina'),
+        Flashcard(
+            kanji: '壁', hiragana: 'かべ', romaji: 'kabe', meaning: 'pared; muro'),
+        Flashcard(
+            kanji: '課長',
+            hiragana: 'かちょう',
+            romaji: 'kachou',
+            meaning: 'jefe de sección'),
+        Flashcard(
+            kanji: '帰り',
+            hiragana: 'かえり',
+            romaji: 'kaeri',
+            meaning: 'regreso; vuelta'),
+        Flashcard(
+            kanji: '変える',
+            hiragana: 'かえる',
+            romaji: 'kaeru',
+            meaning: 'cambiar; alterar'),
+        Flashcard(
+            kanji: '科学', hiragana: 'かがく', romaji: 'kagaku', meaning: 'ciencia'),
+        Flashcard(
+            kanji: '鏡', hiragana: 'かがみ', romaji: 'kagami', meaning: 'espejo'),
+        Flashcard(
+            kanji: '海岸', hiragana: 'かいがん', romaji: 'kaigan', meaning: 'costa'),
+        Flashcard(
+            kanji: '会議',
+            hiragana: 'かいぎ',
+            romaji: 'kaigi',
+            meaning: 'reunión; conferencia'),
+        Flashcard(
+            kanji: '会議室',
+            hiragana: 'かいぎしつ',
+            romaji: 'kaigishitsu',
+            meaning: 'sala de conferencias'),
+        Flashcard(
+            kanji: '会場',
+            hiragana: 'かいじょう',
+            romaji: 'kaijou',
+            meaning: 'lugar de reunión; recinto'),
+        Flashcard(
+            kanji: '会話',
+            hiragana: 'かいわ',
+            romaji: 'kaiwa',
+            meaning: 'conversación; diálogo'),
+        Flashcard(
+            kanji: '火事', hiragana: 'かじ', romaji: 'kaji', meaning: 'incendio'),
+        Flashcard(
+            kanji: '格好',
+            hiragana: 'かっこう',
+            romaji: 'kakkou',
+            meaning: 'apariencia; aspecto'),
+        Flashcard(
+            kanji: '構う',
+            hiragana: 'かまう',
+            romaji: 'kamau',
+            meaning: 'preocuparse; importar'),
+        Flashcard(
+            kanji: '髪',
+            hiragana: 'かみ',
+            romaji: 'kami',
+            meaning: 'pelo; cabello'),
+        Flashcard(
+            kanji: '噛む',
+            hiragana: 'かむ',
+            romaji: 'kamu',
+            meaning: 'masticar; morder'),
+        Flashcard(
+            kanji: '家内',
+            hiragana: 'かない',
+            romaji: 'kanai',
+            meaning: 'mi esposa; dentro de la casa; familia'),
+        Flashcard(
+            kanji: '必ず',
+            hiragana: 'かならず',
+            romaji: 'kanarazu',
+            meaning: 'seguramente; sin falta'),
+        Flashcard(
+            kanji: '悲しい',
+            hiragana: 'かなしい',
+            romaji: 'kanashii',
+            meaning: 'triste'),
+        Flashcard(
+            kanji: '考える',
+            hiragana: 'かんがえる',
+            romaji: 'kangaeru',
+            meaning: 'pensar; considerar'),
+        Flashcard(
+            kanji: '看護婦',
+            hiragana: 'かんごふ',
+            romaji: 'kangofu',
+            meaning: 'enfermera'),
+        Flashcard(
+            kanji: '関係',
+            hiragana: 'かんけい',
+            romaji: 'kankei',
+            meaning: 'relación; conexión'),
+        Flashcard(
+            kanji: '彼女',
+            hiragana: 'かのじょ',
+            romaji: 'kanojo',
+            meaning: 'ella; novia'),
+        Flashcard(
+            kanji: '簡単',
+            hiragana: 'かんたん',
+            romaji: 'kantan',
+            meaning: 'fácil; sencillo'),
+        Flashcard(
+            kanji: '彼', hiragana: 'かれ', romaji: 'kare', meaning: 'él; novio'),
+        Flashcard(
+            kanji: '彼ら', hiragana: 'かれら', romaji: 'karera', meaning: 'ellos'),
+        Flashcard(
+            kanji: '形',
+            hiragana: 'かたち',
+            romaji: 'katachi',
+            meaning: 'forma; figura'),
+        Flashcard(
+            kanji: '片付ける',
+            hiragana: 'かたづける',
+            romaji: 'katadzukeru',
+            meaning: 'ordenar; arreglar'),
+        Flashcard(
+            kanji: '硬い',
+            hiragana: 'かたい',
+            romaji: 'katai',
+            meaning: 'duro; rígido'),
+        Flashcard(
+            kanji: '勝つ', hiragana: 'かつ', romaji: 'katsu', meaning: 'ganar'),
+        Flashcard(
+            kanji: '乾く', hiragana: 'かわく', romaji: 'kawaku', meaning: 'secarse'),
+        Flashcard(
+            kanji: '代わり',
+            hiragana: 'かわり',
+            romaji: 'kawari',
+            meaning: 'sustitución; cambio'),
+        Flashcard(
+            kanji: '変わる',
+            hiragana: 'かわる',
+            romaji: 'kawaru',
+            meaning: 'cambiar; transformarse'),
+        Flashcard(
+            kanji: '通う',
+            hiragana: 'かよう',
+            romaji: 'kayou',
+            meaning: 'ir (a algún lugar) regularmente; asistir'),
+        Flashcard(
+            kanji: '飾る',
+            hiragana: 'かざる',
+            romaji: 'kazaru',
+            meaning: 'adornar; decorar'),
+        Flashcard(
+            kanji: '毛', hiragana: 'け', romaji: 'ke', meaning: 'pelo; pelaje'),
+        Flashcard(
+            kanji: 'ケーキ',
+            hiragana: 'ケーキ',
+            romaji: 'keeki',
+            meaning: 'pastel; bizcocho'),
+        Flashcard(
+            kanji: '怪我',
+            hiragana: 'けが',
+            romaji: 'kega',
+            meaning: 'lesión; herida'),
+        Flashcard(
+            kanji: '計画',
+            hiragana: 'けいかく',
+            romaji: 'keikaku',
+            meaning: 'plan; proyecto'),
+        Flashcard(
+            kanji: '経験',
+            hiragana: 'けいけん',
+            romaji: 'keiken',
+            meaning: 'experiencia'),
+        Flashcard(
+            kanji: '警察',
+            hiragana: 'けいさつ',
+            romaji: 'keisatsu',
+            meaning: 'policía'),
+        Flashcard(
+            kanji: '経済',
+            hiragana: 'けいざい',
+            romaji: 'keizai',
+            meaning: 'finanzas; economía'),
+        Flashcard(
+            kanji: '見物',
+            hiragana: 'けんぶつ',
+            romaji: 'kenbutsu',
+            meaning: 'turismo; visita'),
+        Flashcard(
+            kanji: '喧嘩',
+            hiragana: 'けんか',
+            romaji: 'kenka',
+            meaning: 'pelea; discusión'),
+        Flashcard(
+            kanji: '研究',
+            hiragana: 'けんきゅう',
+            romaji: 'kenkyuu',
+            meaning: 'investigación; estudio'),
+        Flashcard(
+            kanji: '研究室',
+            hiragana: 'けんきゅうしつ',
+            romaji: 'kenkyuushitsu',
+            meaning: 'laboratorio'),
+        Flashcard(
+            kanji: '消しゴム',
+            hiragana: 'けしごむ',
+            romaji: 'keshigomu',
+            meaning: 'borrador'),
+        Flashcard(
+            kanji: '景色',
+            hiragana: 'けしき',
+            romaji: 'keshiki',
+            meaning: 'paisaje'),
+        Flashcard(
+            kanji: '気',
+            hiragana: 'き',
+            romaji: 'ki',
+            meaning: 'espíritu; ánimo'),
+        Flashcard(
+            kanji: '厳しい',
+            hiragana: 'きびしい',
+            romaji: 'kibishii',
+            meaning: 'estricto; severo'),
+        Flashcard(
+            kanji: '気分',
+            hiragana: 'きぶん',
+            romaji: 'kibun',
+            meaning: 'estado de ánimo; humor'),
+        Flashcard(
+            kanji: '機会',
+            hiragana: 'きかい',
+            romaji: 'kikai',
+            meaning: 'oportunidad'),
+        Flashcard(
+            kanji: '危険', hiragana: 'きけん', romaji: 'kiken', meaning: 'peligro'),
+        Flashcard(
+            kanji: '聞こえる',
+            hiragana: 'きこえる',
+            romaji: 'kikoeru',
+            meaning: 'escucharse; ser audible'),
+        Flashcard(
+            kanji: '決まる',
+            hiragana: 'きまる',
+            romaji: 'kimaru',
+            meaning: 'decidirse; estar decidido'),
+        Flashcard(
+            kanji: '決める',
+            hiragana: 'きめる',
+            romaji: 'kimeru',
+            meaning: 'decidir'),
+        Flashcard(
+            kanji: '君',
+            hiragana: 'きみ',
+            romaji: 'kimi',
+            meaning: 'tú; tú (uso familiar)'),
+        Flashcard(
+            kanji: '気持ち',
+            hiragana: 'きもち',
+            romaji: 'kimochi',
+            meaning: 'sentimiento'),
+        Flashcard(
+            kanji: '着物', hiragana: 'きもの', romaji: 'kimono', meaning: 'kimono'),
+        Flashcard(
+            kanji: '近所',
+            hiragana: 'きんじょ',
+            romaji: 'kinjo',
+            meaning: 'vecindario'),
+        Flashcard(kanji: '絹', hiragana: 'きぬ', romaji: 'kinu', meaning: 'seda'),
+        Flashcard(
+            kanji: '季節',
+            hiragana: 'きせつ',
+            romaji: 'kisetsu',
+            meaning: 'estación (del año)'),
+        Flashcard(
+            kanji: '汽車',
+            hiragana: 'きしゃ',
+            romaji: 'kisha',
+            meaning: 'tren a vapor'),
+        Flashcard(
+            kanji: '規則',
+            hiragana: 'きそく',
+            romaji: 'kisoku',
+            meaning: 'regla; norma'),
+        Flashcard(
+            kanji: '子', hiragana: 'こ', romaji: 'ko', meaning: 'niño; hijo'),
+        Flashcard(
+            kanji: '心',
+            hiragana: 'こころ',
+            romaji: 'kokoro',
+            meaning: 'corazón; mente; espíritu'),
+        Flashcard(
+            kanji: '国際',
+            hiragana: 'こくさい',
+            romaji: 'kokusai',
+            meaning: 'internacional'),
+        Flashcard(
+            kanji: '細かい',
+            hiragana: 'こまかい',
+            romaji: 'komakai',
+            meaning: 'pequeño; fino'),
+        Flashcard(
+            kanji: '米',
+            hiragana: 'こめ',
+            romaji: 'kome',
+            meaning: 'arroz (sin cáscara)'),
+        Flashcard(
+            kanji: '込む',
+            hiragana: 'こむ',
+            romaji: 'komu',
+            meaning: 'estar lleno; estar atestado'),
+        Flashcard(
+            kanji: '今度',
+            hiragana: 'こんど',
+            romaji: 'kondo',
+            meaning: 'esta vez; próxima vez'),
+        Flashcard(
+            kanji: 'この間',
+            hiragana: 'このあいだ',
+            romaji: 'kono aida',
+            meaning: 'el otro día; recientemente'),
+        Flashcard(
+            kanji: 'このごろ',
+            hiragana: 'このごろ',
+            romaji: 'kono goro',
+            meaning: 'estos días; últimamente'),
+        Flashcard(
+            kanji: 'コンピュータ',
+            hiragana: 'コンピュータ',
+            romaji: 'konpyuuta',
+            meaning: 'computadora'),
+        Flashcard(
+            kanji: 'コンサート',
+            hiragana: 'コンサート',
+            romaji: 'konsaato',
+            meaning: 'concierto'),
+        Flashcard(
+            kanji: '今夜',
+            hiragana: 'こんや',
+            romaji: 'konya',
+            meaning: 'esta noche'),
+        Flashcard(
+            kanji: 'これから',
+            hiragana: 'これから',
+            romaji: 'korekara',
+            meaning: 'de ahora en adelante'),
+        Flashcard(
+            kanji: '故障',
+            hiragana: 'こしょう',
+            romaji: 'koshou',
+            meaning: 'avería; fallo (mecánico)'),
+        Flashcard(
+            kanji: '答え',
+            hiragana: 'こたえ',
+            romaji: 'kotae',
+            meaning: 'respuesta'),
+        Flashcard(
+            kanji: '小鳥',
+            hiragana: 'ことり',
+            romaji: 'kotori',
+            meaning: 'pajarito'),
+        Flashcard(
+            kanji: '校長',
+            hiragana: 'こうちょう',
+            romaji: 'kouchou',
+            meaning: 'director de la escuela'),
+        Flashcard(
+            kanji: '講堂',
+            hiragana: 'こうどう',
+            romaji: 'koudou',
+            meaning: 'auditorio'),
+        Flashcard(
+            kanji: '郊外',
+            hiragana: 'こうがい',
+            romaji: 'kougai',
+            meaning: 'suburbio'),
+        Flashcard(
+            kanji: '講義',
+            hiragana: 'こうぎ',
+            romaji: 'kougi',
+            meaning: 'conferencia; clase'),
+        Flashcard(
+            kanji: '工業',
+            hiragana: 'こうぎょう',
+            romaji: 'kougyou',
+            meaning: 'industria'),
+        Flashcard(
+            kanji: '工場',
+            hiragana: 'こうじょう',
+            romaji: 'koujou',
+            meaning: 'fábrica'),
+        Flashcard(
+            kanji: '高校',
+            hiragana: 'こうこう',
+            romaji: 'koukou',
+            meaning: 'preparatoria; secundaria superior'),
+        Flashcard(
+            kanji: '高校生',
+            hiragana: 'こうこうせい',
+            romaji: 'koukousei',
+            meaning: 'estudiante de secundaria superior'),
+        Flashcard(
+            kanji: '公務員',
+            hiragana: 'こうむいん',
+            romaji: 'koumuin',
+            meaning: 'funcionario público'),
+        Flashcard(
+            kanji: '高等学校',
+            hiragana: 'こうとうがっこう',
+            romaji: 'koutougakkou',
+            meaning: 'preparatoria'),
+        Flashcard(
+            kanji: '交通',
+            hiragana: 'こうつう',
+            romaji: 'koutsuu',
+            meaning: 'tráfico'),
+        Flashcard(
+            kanji: '怖い',
+            hiragana: 'こわい',
+            romaji: 'kowai',
+            meaning: 'aterrador; temible'),
+        Flashcard(
+            kanji: '壊れる',
+            hiragana: 'こわれる',
+            romaji: 'kowareru',
+            meaning: 'romperse'),
+        Flashcard(
+            kanji: '壊す', hiragana: 'こわす', romaji: 'kowasu', meaning: 'romper'),
+        Flashcard(
+            kanji: '首', hiragana: 'くび', romaji: 'kubi', meaning: 'cuello'),
+        Flashcard(
+            kanji: '下さる',
+            hiragana: 'くださる',
+            romaji: 'kudasaru',
+            meaning: 'dar (respetuoso)'),
+        Flashcard(kanji: '雲', hiragana: 'くも', romaji: 'kumo', meaning: 'nube'),
+        Flashcard(
+            kanji: '君',
+            hiragana: 'くん',
+            romaji: 'kun',
+            meaning: 'sufijo para jóvenes varones (familiar)'),
+        Flashcard(
+            kanji: '比べる',
+            hiragana: 'くらべる',
+            romaji: 'kuraberu',
+            meaning: 'comparar'),
+        Flashcard(
+            kanji: '暮れる',
+            hiragana: 'くれる',
+            romaji: 'kureru',
+            meaning: 'oscurecer; anochecer'),
+        Flashcard(
+            kanji: '草', hiragana: 'くさ', romaji: 'kusa', meaning: 'hierba'),
+        Flashcard(
+            kanji: '空気', hiragana: 'くうき', romaji: 'kuuki', meaning: 'aire'),
+        Flashcard(
+            kanji: '空港',
+            hiragana: 'くうこう',
+            romaji: 'kuukou',
+            meaning: 'aeropuerto'),
+        Flashcard(
+            kanji: '客',
+            hiragana: 'きゃく',
+            romaji: 'kyaku',
+            meaning: 'invitado; cliente'),
+        Flashcard(
+            kanji: '教育',
+            hiragana: 'きょういく',
+            romaji: 'kyouiku',
+            meaning: 'educación'),
+        Flashcard(
+            kanji: '教会',
+            hiragana: 'きょうかい',
+            romaji: 'kyoukai',
+            meaning: 'iglesia'),
+        Flashcard(
+            kanji: '興味',
+            hiragana: 'きょうみ',
+            romaji: 'kyoumi',
+            meaning: 'interés'),
+        Flashcard(
+            kanji: '競争',
+            hiragana: 'きょうそう',
+            romaji: 'kyousou',
+            meaning: 'competencia'),
+        Flashcard(
+            kanji: '急',
+            hiragana: 'きゅう',
+            romaji: 'kyuu',
+            meaning: 'repentino; abrupto'),
+        Flashcard(
+            kanji: '急行',
+            hiragana: 'きゅうこう',
+            romaji: 'kyuukou',
+            meaning: 'tren expreso'),
+        Flashcard(
+            kanji: '間違える',
+            hiragana: 'まちがえる',
+            romaji: 'machigaeru',
+            meaning: 'cometer un error'),
+        Flashcard(
+            kanji: '参る',
+            hiragana: 'まいる',
+            romaji: 'mairu',
+            meaning: '(irrespetuoso) ir; venir'),
+        Flashcard(
+            kanji: '負ける', hiragana: 'まける', romaji: 'makeru', meaning: 'perder'),
+        Flashcard(
+            kanji: '漫画',
+            hiragana: 'まんが',
+            romaji: 'manga',
+            meaning: 'manga; cómic'),
+        Flashcard(
+            kanji: '間に合う',
+            hiragana: 'まにあう',
+            romaji: 'maniau',
+            meaning: 'llegar a tiempo'),
+        Flashcard(
+            kanji: '真ん中',
+            hiragana: 'まんなか',
+            romaji: 'mannaka',
+            meaning: 'centro; medio'),
+        Flashcard(
+            kanji: '周り',
+            hiragana: 'まわり',
+            romaji: 'mawari',
+            meaning: 'alrededor'),
+        Flashcard(
+            kanji: '回る',
+            hiragana: 'まわる',
+            romaji: 'mawaru',
+            meaning: 'dar vueltas; girar'),
+        Flashcard(
+            kanji: 'まず',
+            hiragana: 'まず',
+            romaji: 'mazu',
+            meaning: 'primero que nada'),
+        Flashcard(
+            kanji: '召し上がる',
+            hiragana: 'めしあがる',
+            romaji: 'meshiagaru',
+            meaning: '(comida) comer; (bebida) beber'),
+        Flashcard(
+            kanji: '珍しい',
+            hiragana: 'めずらしい',
+            romaji: 'mezurashii',
+            meaning: 'inusual; raro'),
+        Flashcard(
+            kanji: '見える',
+            hiragana: 'みえる',
+            romaji: 'mieru',
+            meaning: 'ser visto; estar a la vista; parecer'),
+        Flashcard(
+            kanji: '港', hiragana: 'みなと', romaji: 'minato', meaning: 'puerto'),
+        Flashcard(
+            kanji: '味噌',
+            hiragana: 'みそ',
+            romaji: 'miso',
+            meaning: 'pasta de soya fermentada'),
+        Flashcard(
+            kanji: '見つかる',
+            hiragana: 'みつかる',
+            romaji: 'mitsukaru',
+            meaning: 'ser encontrado'),
+        Flashcard(
+            kanji: '見つける',
+            hiragana: 'みつける',
+            romaji: 'mitsukeru',
+            meaning: 'encontrar'),
+        Flashcard(
+            kanji: '都', hiragana: 'みやこ', romaji: 'miyako', meaning: 'capital'),
+        Flashcard(
+            kanji: '湖', hiragana: 'みずうみ', romaji: 'mizuumi', meaning: 'lago'),
+        Flashcard(
+            kanji: '戻る',
+            hiragana: 'もどる',
+            romaji: 'modoru',
+            meaning: 'volver; regresar'),
+        Flashcard(
+            kanji: '木綿', hiragana: 'もめん', romaji: 'momen', meaning: 'algodón'),
+        Flashcard(
+            kanji: '森', hiragana: 'もり', romaji: 'mori', meaning: 'bosque'),
+        Flashcard(
+            kanji: 'もし',
+            hiragana: 'もし',
+            romaji: 'moshi',
+            meaning: 'si; en caso de'),
+        Flashcard(
+            kanji: '申し上げる',
+            hiragana: 'もうしあげる',
+            romaji: 'moushiageru',
+            meaning: 'decir (respetuoso)'),
+        Flashcard(
+            kanji: '申す',
+            hiragana: 'もうす',
+            romaji: 'mousu',
+            meaning: '(humble) llamarse; decir'),
+        Flashcard(
+            kanji: 'もうすぐ',
+            hiragana: 'もうすぐ',
+            romaji: 'mousugu',
+            meaning: 'pronto'),
+        Flashcard(
+            kanji: '迎える',
+            hiragana: 'むかえる',
+            romaji: 'mukaeru',
+            meaning: 'ir a buscar; recibir'),
+        Flashcard(
+            kanji: '昔',
+            hiragana: 'むかし',
+            romaji: 'mukashi',
+            meaning: 'antiguamente; pasado'),
+        Flashcard(
+            kanji: '向かう',
+            hiragana: 'むかう',
+            romaji: 'mukau',
+            meaning: 'dirigirse a; ir hacia'),
+        Flashcard(
+            kanji: '無理', hiragana: 'むり', romaji: 'muri', meaning: 'imposible'),
+        Flashcard(
+            kanji: '虫', hiragana: 'むし', romaji: 'mushi', meaning: 'insecto'),
+        Flashcard(
+            kanji: '息子', hiragana: 'むすこ', romaji: 'musuko', meaning: 'hijo'),
+        Flashcard(
+            kanji: '娘', hiragana: 'むすめ', romaji: 'musume', meaning: 'hija'),
+        Flashcard(
+            kanji: '投げる',
+            hiragana: 'なげる',
+            romaji: 'nageru',
+            meaning: 'lanzar; arrojar'),
+        Flashcard(
+            kanji: '泣く', hiragana: 'なく', romaji: 'naku', meaning: 'llorar'),
+        Flashcard(
+            kanji: '無くなる',
+            hiragana: 'なくなる',
+            romaji: 'naku naru',
+            meaning: 'desaparecer; perderse'),
+        Flashcard(
+            kanji: '亡くなる',
+            hiragana: 'なくなる',
+            romaji: 'nakunaru',
+            meaning: 'fallecer; morir'),
+        Flashcard(
+            kanji: '生',
+            hiragana: 'なま',
+            romaji: 'nama',
+            meaning: 'crudo; fresco'),
+        Flashcard(
+            kanji: '直る',
+            hiragana: 'なおる',
+            romaji: 'naoru',
+            meaning: 'ser arreglado; ser reparado'),
+        Flashcard(
+            kanji: '治る',
+            hiragana: 'なおる',
+            romaji: 'naoru',
+            meaning: 'sanar; curarse'),
+        Flashcard(
+            kanji: '慣れる',
+            hiragana: 'なれる',
+            romaji: 'nareru',
+            meaning: 'acostumbrarse a'),
+        Flashcard(
+            kanji: '鳴る', hiragana: 'なる', romaji: 'naru', meaning: 'sonar'),
+        Flashcard(
+            kanji: 'なるほど',
+            hiragana: 'なるほど',
+            romaji: 'naruhodo',
+            meaning: 'ya veo; entiendo'),
+        Flashcard(
+            kanji: '寝坊',
+            hiragana: 'ねぼう',
+            romaji: 'nebou',
+            meaning: 'levantarse tarde; quedarse dormido'),
+        Flashcard(
+            kanji: '値段',
+            hiragana: 'ねだん',
+            romaji: 'nedan',
+            meaning: 'precio; coste'),
+        Flashcard(
+            kanji: '眠い',
+            hiragana: 'ねむい',
+            romaji: 'nemui',
+            meaning: 'soñoliento; adormecido'),
+        Flashcard(
+            kanji: '眠る', hiragana: 'ねむる', romaji: 'nemuru', meaning: 'dormir'),
+        Flashcard(
+            kanji: '熱', hiragana: 'ねつ', romaji: 'netsu', meaning: 'fiebre'),
+        Flashcard(
+            kanji: '苦い', hiragana: 'にがい', romaji: 'nigai', meaning: 'amargo'),
+        Flashcard(
+            kanji: '逃げる',
+            hiragana: 'にげる',
+            romaji: 'nigeru',
+            meaning: 'escapar'),
+        Flashcard(
+            kanji: '二階建て',
+            hiragana: 'にかいだて',
+            romaji: 'nikaidate',
+            meaning: 'edificio de dos pisos'),
+        Flashcard(
+            kanji: '人形',
+            hiragana: 'にんぎょう',
+            romaji: 'ningyou',
+            meaning: 'muñeca'),
+        Flashcard(
+            kanji: '匂い', hiragana: 'におい', romaji: 'nioi', meaning: 'olor'),
+        Flashcard(
+            kanji: '似る', hiragana: 'にる', romaji: 'niru', meaning: 'parecerse'),
+        Flashcard(
+            kanji: '喉', hiragana: 'のど', romaji: 'nodo', meaning: 'garganta'),
+        Flashcard(
+            kanji: '残る',
+            hiragana: 'のこる',
+            romaji: 'nokoru',
+            meaning: 'quedar; permanecer'),
+        Flashcard(
+            kanji: '乗り換える',
+            hiragana: 'のりかえる',
+            romaji: 'norikaeru',
+            meaning: 'cambiar (de tren, autobús, etc.)'),
+        Flashcard(
+            kanji: '乗り物',
+            hiragana: 'のりもの',
+            romaji: 'norimono',
+            meaning: 'vehículo'),
+        Flashcard(
+            kanji: '濡れる',
+            hiragana: 'ぬれる',
+            romaji: 'nureru',
+            meaning: 'mojarse'),
+        Flashcard(
+            kanji: '塗る',
+            hiragana: 'ぬる',
+            romaji: 'nuru',
+            meaning: 'pintar; enlucir'),
+        Flashcard(
+            kanji: '盗む', hiragana: 'ぬすむ', romaji: 'nusumu', meaning: 'robar'),
+        Flashcard(
+            kanji: '入学',
+            hiragana: 'にゅうがく',
+            romaji: 'nyuugaku',
+            meaning: 'entrada a la escuela o universidad; matrícula'),
+        Flashcard(
+            kanji: '入院',
+            hiragana: 'にゅういん',
+            romaji: 'nyuuin',
+            meaning: 'hospitalización'),
+        Flashcard(
+            kanji: '落ちる',
+            hiragana: 'おちる',
+            romaji: 'ochiru',
+            meaning: 'caer; precipitarse'),
+        Flashcard(
+            kanji: '踊り', hiragana: 'おどり', romaji: 'odori', meaning: 'baile'),
+        Flashcard(
+            kanji: '驚く',
+            hiragana: 'おどろく',
+            romaji: 'odoroku',
+            meaning: 'asombrarse; sorprenderse'),
+        Flashcard(
+            kanji: '踊る', hiragana: 'おどる', romaji: 'odoru', meaning: 'bailar'),
+        Flashcard(
+            kanji: 'お出でになる',
+            hiragana: 'おいでになる',
+            romaji: 'oide ni naru',
+            meaning: '(ir respetuoso) ser'),
+        Flashcard(
+            kanji: 'お祝い',
+            hiragana: 'おいわい',
+            romaji: 'oiwai',
+            meaning: 'celebración; felicitación'),
+        Flashcard(
+            kanji: 'お嬢さん',
+            hiragana: 'おじょうさん',
+            romaji: 'ojousan',
+            meaning: '(se refiere a la hija de alguien) señorita'),
+        Flashcard(
+            kanji: '可笑しい',
+            hiragana: 'おかしい',
+            romaji: 'okashii',
+            meaning: 'extraño; gracioso'),
+        Flashcard(
+            kanji: '行う',
+            hiragana: 'おこなう',
+            romaji: 'okonau',
+            meaning: 'realizar; llevar a cabo'),
+        Flashcard(
+            kanji: '怒る',
+            hiragana: 'おこる',
+            romaji: 'okoru',
+            meaning: 'enojarse; enfadarse'),
+        Flashcard(
+            kanji: '起こす',
+            hiragana: 'おこす',
+            romaji: 'okosu',
+            meaning: 'despertar; causar'),
+        Flashcard(
+            kanji: '億',
+            hiragana: 'おく',
+            romaji: 'oku',
+            meaning: 'cien millones'),
+        Flashcard(
+            kanji: '屋上',
+            hiragana: 'おくじょう',
+            romaji: 'okujou',
+            meaning: 'azotea; terraza'),
+        Flashcard(
+            kanji: '遅れる',
+            hiragana: 'おくれる',
+            romaji: 'okureru',
+            meaning: 'retrasarse'),
+        Flashcard(
+            kanji: '贈り物',
+            hiragana: 'おくりもの',
+            romaji: 'okurimono',
+            meaning: 'regalo; presente'),
+        Flashcard(
+            kanji: '送る',
+            hiragana: 'おくる',
+            romaji: 'okuru',
+            meaning: 'enviar; mandar'),
+        Flashcard(
+            kanji: 'お祭り',
+            hiragana: 'おまつり',
+            romaji: 'omatsuri',
+            meaning: 'festival'),
+        Flashcard(
+            kanji: 'お見舞い',
+            hiragana: 'おみまい',
+            romaji: 'omimai',
+            meaning: 'visitar a una persona enferma o afligida'),
+        Flashcard(
+            kanji: 'お土産',
+            hiragana: 'おみやげ',
+            romaji: 'omiyage',
+            meaning: 'recuerdo; souvenir'),
+        Flashcard(
+            kanji: 'おもちゃ',
+            hiragana: 'おもちゃ',
+            romaji: 'omocha',
+            meaning: 'juguete'),
+        Flashcard(
+            kanji: '思い出す',
+            hiragana: 'おもいだす',
+            romaji: 'omoidasu',
+            meaning: 'recordar'),
+        Flashcard(
+            kanji: '表',
+            hiragana: 'おもて',
+            romaji: 'omote',
+            meaning: 'parte delantera; cara'),
+        Flashcard(
+            kanji: 'オートバイ',
+            hiragana: 'オートバイ',
+            romaji: 'ootobai',
+            meaning: 'motocicleta'),
+        Flashcard(
+            kanji: 'お礼',
+            hiragana: 'おれい',
+            romaji: 'orei',
+            meaning: 'gracias; expresión de gratitud'),
+        Flashcard(
+            kanji: '折れる',
+            hiragana: 'おれる',
+            romaji: 'oreru',
+            meaning: 'romperse; doblarse'),
+        Flashcard(
+            kanji: '下りる',
+            hiragana: 'おりる',
+            romaji: 'oriru',
+            meaning: 'bajarse (de un vehículo); descender'),
+        Flashcard(
+            kanji: '折る',
+            hiragana: 'おる',
+            romaji: 'oru',
+            meaning: 'romper; doblar'),
+        Flashcard(
+            kanji: '押し入れ',
+            hiragana: 'おしいれ',
+            romaji: 'oshiire',
+            meaning: 'armario empotrado; ropero'),
+        Flashcard(
+            kanji: '仰る',
+            hiragana: 'おっしゃる',
+            romaji: 'ossharu',
+            meaning: '(hablar respetuosamente) decir'),
+        Flashcard(
+            kanji: 'お宅',
+            hiragana: 'おたく',
+            romaji: 'otaku',
+            meaning: 'su hogar; casa de alguien'),
+        Flashcard(
+            kanji: '音',
+            hiragana: 'おと',
+            romaji: 'oto',
+            meaning: 'sonido; ruido'),
+        Flashcard(
+            kanji: '落とす',
+            hiragana: 'おとす',
+            romaji: 'otosu',
+            meaning: 'dejar caer; soltar'),
+        Flashcard(
+            kanji: 'お釣り',
+            hiragana: 'おつり',
+            romaji: 'otsuri',
+            meaning: 'cambio (de dinero)'),
+        Flashcard(
+            kanji: '夫',
+            hiragana: 'おっと',
+            romaji: 'otto',
+            meaning: 'esposo; marido'),
+        Flashcard(
+            kanji: '終わり',
+            hiragana: 'おわり',
+            romaji: 'owari',
+            meaning: 'fin; término'),
+        Flashcard(kanji: '親', hiragana: 'おや', romaji: 'oya', meaning: 'padres'),
+        Flashcard(
+            kanji: '泳ぎ方',
+            hiragana: 'およぎかた',
+            romaji: 'oyogikata',
+            meaning: 'manera de nadar'),
+        Flashcard(
+            kanji: 'パート',
+            hiragana: 'パート',
+            romaji: 'paato',
+            meaning: 'trabajo a tiempo parcial'),
+        Flashcard(
+            kanji: 'パソコン',
+            hiragana: 'パソコン',
+            romaji: 'pasokon',
+            meaning: 'ordenador personal; PC'),
+        Flashcard(
+            kanji: 'ピアノ', hiragana: 'ピアノ', romaji: 'piano', meaning: 'piano'),
+        Flashcard(
+            kanji: 'プレゼント',
+            hiragana: 'プレゼント',
+            romaji: 'purezento',
+            meaning: 'regalo; obsequio'),
+        Flashcard(
+            kanji: '冷房',
+            hiragana: 'れいぼう',
+            romaji: 'reibou',
+            meaning: 'aire acondicionado'),
+        Flashcard(
+            kanji: 'レジ',
+            hiragana: 'レジ',
+            romaji: 'reji',
+            meaning: 'caja (en una tienda)'),
+        Flashcard(
+            kanji: '歴史',
+            hiragana: 'れきし',
+            romaji: 'rekishi',
+            meaning: 'historia'),
+        Flashcard(
+            kanji: '連絡',
+            hiragana: 'れんらく',
+            romaji: 'renraku',
+            meaning: 'contacto; ponerse en contacto'),
+        Flashcard(
+            kanji: 'レポート',
+            hiragana: 'レポート',
+            romaji: 'repooto',
+            meaning: 'informe; reporte'),
+        Flashcard(
+            kanji: '利用',
+            hiragana: 'りよう',
+            romaji: 'riyou',
+            meaning: 'uso; utilización'),
+        Flashcard(
+            kanji: '理由',
+            hiragana: 'りゆう',
+            romaji: 'riyuu',
+            meaning: 'razón; motivo'),
+        Flashcard(
+            kanji: '留守', hiragana: 'るす', romaji: 'rusu', meaning: 'ausencia'),
+        Flashcard(
+            kanji: '旅館',
+            hiragana: 'りょかん',
+            romaji: 'ryokan',
+            meaning: 'posada tradicional japonesa'),
+        Flashcard(
+            kanji: '両方',
+            hiragana: 'りょうほう',
+            romaji: 'ryouhou',
+            meaning: 'ambos lados; ambos'),
+        Flashcard(
+            kanji: '寂しい',
+            hiragana: 'さびしい',
+            romaji: 'sabishii',
+            meaning: 'solitario; solo'),
+        Flashcard(
+            kanji: '下がる',
+            hiragana: 'さがる',
+            romaji: 'sagaru',
+            meaning: 'bajarse; descender'),
+        Flashcard(
+            kanji: '探す', hiragana: 'さがす', romaji: 'sagasu', meaning: 'buscar'),
+        Flashcard(
+            kanji: '下げる',
+            hiragana: 'さげる',
+            romaji: 'sageru',
+            meaning: 'bajar; descender'),
+        Flashcard(
+            kanji: '最後',
+            hiragana: 'さいご',
+            romaji: 'saigo',
+            meaning: 'último; final'),
+        Flashcard(
+            kanji: '最近',
+            hiragana: 'さいきん',
+            romaji: 'saikin',
+            meaning: 'últimamente; recientemente'),
+        Flashcard(
+            kanji: '最初',
+            hiragana: 'さいしょ',
+            romaji: 'saisho',
+            meaning: 'primero; principio'),
+        Flashcard(
+            kanji: '坂',
+            hiragana: 'さか',
+            romaji: 'saka',
+            meaning: 'cuesta; pendiente'),
+        Flashcard(
+            kanji: '盛ん',
+            hiragana: 'さかん',
+            romaji: 'sakan',
+            meaning: 'activo; próspero'),
+        Flashcard(
+            kanji: '昨夜', hiragana: 'さくや', romaji: 'sakuya', meaning: 'anoche'),
+        Flashcard(
+            kanji: 'サンダル',
+            hiragana: 'サンダル',
+            romaji: 'sandaru',
+            meaning: 'sandalias'),
+        Flashcard(
+            kanji: 'サンドイッチ',
+            hiragana: 'サンドイッチ',
+            romaji: 'sandoicchi',
+            meaning: 'sándwich'),
+        Flashcard(
+            kanji: '産業',
+            hiragana: 'さんぎょう',
+            romaji: 'sangyou',
+            meaning: 'industria'),
+        Flashcard(
+            kanji: 'サラダ',
+            hiragana: 'サラダ',
+            romaji: 'sarada',
+            meaning: 'ensalada'),
+        Flashcard(
+            kanji: '再来月',
+            hiragana: 'さらいげつ',
+            romaji: 'saraigetsu',
+            meaning: 'mes que viene'),
+        Flashcard(
+            kanji: '再来週',
+            hiragana: 'さらいしゅう',
+            romaji: 'saraishuu',
+            meaning: 'semana que viene; semana después de la próxima'),
+        Flashcard(
+            kanji: '差し上げる',
+            hiragana: 'さしあげる',
+            romaji: 'sashiageru',
+            meaning: 'dar (con respeto)'),
+        Flashcard(
+            kanji: '騒ぐ',
+            hiragana: 'さわぐ',
+            romaji: 'sawagu',
+            meaning: 'hacer ruido; estar emocionado'),
+        Flashcard(
+            kanji: '触る', hiragana: 'さわる', romaji: 'sawaru', meaning: 'tocar'),
+        Flashcard(
+            kanji: '生物',
+            hiragana: 'せいぶつ',
+            romaji: 'seibutsu',
+            meaning: 'ser vivo'),
+        Flashcard(
+            kanji: '政治', hiragana: 'せいじ', romaji: 'seiji', meaning: 'política'),
+        Flashcard(
+            kanji: '生活',
+            hiragana: 'せいかつ',
+            romaji: 'seikatsu',
+            meaning: 'vida diaria; subsistencia'),
+        Flashcard(
+            kanji: '生命',
+            hiragana: 'せいめい',
+            romaji: 'seimei',
+            meaning: 'vida (como concepto biológico)'),
+        Flashcard(
+            kanji: '生産',
+            hiragana: 'せいさん',
+            romaji: 'seisan',
+            meaning: 'producción'),
+        Flashcard(
+            kanji: '西洋',
+            hiragana: 'せいよう',
+            romaji: 'seiyou',
+            meaning: 'occidente; países occidentales'),
+        Flashcard(
+            kanji: '世界', hiragana: 'せかい', romaji: 'sekai', meaning: 'mundo'),
+        Flashcard(
+            kanji: '席', hiragana: 'せき', romaji: 'seki', meaning: 'asiento'),
+        Flashcard(kanji: '線', hiragana: 'せん', romaji: 'sen', meaning: 'línea'),
+        Flashcard(
+            kanji: '背中', hiragana: 'せなか', romaji: 'senaka', meaning: 'espalda'),
+        Flashcard(
+            kanji: '先輩',
+            hiragana: 'せんぱい',
+            romaji: 'senpai',
+            meaning: 'persona mayor; senior'),
+        Flashcard(
+            kanji: '戦争', hiragana: 'せんそう', romaji: 'sensou', meaning: 'guerra'),
+        Flashcard(
+            kanji: '説明',
+            hiragana: 'せつめい',
+            romaji: 'setsumei',
+            meaning: 'explicación'),
+        Flashcard(
+            kanji: '社長',
+            hiragana: 'しゃちょう',
+            romaji: 'shachou',
+            meaning: 'presidente de la compañía; director general'),
+        Flashcard(
+            kanji: '社会',
+            hiragana: 'しゃかい',
+            romaji: 'shakai',
+            meaning: 'sociedad'),
+        Flashcard(kanji: '市', hiragana: 'し', romaji: 'shi', meaning: 'ciudad'),
+        Flashcard(
+            kanji: '試合',
+            hiragana: 'しあい',
+            romaji: 'shiai',
+            meaning: 'partido; juego; competencia'),
+        Flashcard(
+            kanji: '叱る',
+            hiragana: 'しかる',
+            romaji: 'shikaru',
+            meaning: 'regañar'),
+        Flashcard(
+            kanji: '仕方',
+            hiragana: 'しかた',
+            romaji: 'shikata',
+            meaning: 'manera; método'),
+        Flashcard(
+            kanji: '試験', hiragana: 'しけん', romaji: 'shiken', meaning: 'examen'),
+        Flashcard(
+            kanji: 'しっかり',
+            hiragana: 'しっかり',
+            romaji: 'shikkari',
+            meaning: 'firmemente; con fuerza'),
+        Flashcard(kanji: '島', hiragana: 'しま', romaji: 'shima', meaning: 'isla'),
+        Flashcard(
+            kanji: '市民',
+            hiragana: 'しみん',
+            romaji: 'shimin',
+            meaning: 'ciudadano'),
+        Flashcard(
+            kanji: '品物',
+            hiragana: 'しなもの',
+            romaji: 'shinamono',
+            meaning: 'producto; artículo'),
+        Flashcard(
+            kanji: '新聞社',
+            hiragana: 'しんぶんしゃ',
+            romaji: 'shinbunsha',
+            meaning: 'compañía de periódicos'),
+        Flashcard(
+            kanji: '親切',
+            hiragana: 'しんせつ',
+            romaji: 'shinsetsu',
+            meaning: 'amable; bondadoso'),
+        Flashcard(
+            kanji: '失敗',
+            hiragana: 'しっぱい',
+            romaji: 'shippai',
+            meaning: 'fracaso'),
+        Flashcard(
+            kanji: '調べる',
+            hiragana: 'しらべる',
+            romaji: 'shiraberu',
+            meaning: 'investigar'),
+        Flashcard(
+            kanji: '知らせる',
+            hiragana: 'しらせる',
+            romaji: 'shiraseru',
+            meaning: 'notificar'),
+        Flashcard(
+            kanji: '下着',
+            hiragana: 'したぎ',
+            romaji: 'shitagi',
+            meaning: 'ropa interior'),
+        Flashcard(
+            kanji: '食料品',
+            hiragana: 'しょくりょうひん',
+            romaji: 'shokuryouhin',
+            meaning: 'alimentos; comestibles'),
+        Flashcard(
+            kanji: '小学校',
+            hiragana: 'しょうがっこう',
+            romaji: 'shougakkou',
+            meaning: 'escuela primaria'),
+        Flashcard(
+            kanji: '生じる',
+            hiragana: 'しょうじる',
+            romaji: 'shoujiru',
+            meaning: 'producirse; originarse'),
+        Flashcard(
+            kanji: '紹介',
+            hiragana: 'しょうかい',
+            romaji: 'shoukai',
+            meaning: 'introducción'),
+        Flashcard(
+            kanji: '将来',
+            hiragana: 'しょうらい',
+            romaji: 'shourai',
+            meaning: 'futuro'),
+        Flashcard(
+            kanji: '小説',
+            hiragana: 'しょうせつ',
+            romaji: 'shousetsu',
+            meaning: 'novela'),
+        Flashcard(
+            kanji: '趣味',
+            hiragana: 'しゅみ',
+            romaji: 'shumi',
+            meaning: 'pasatiempo; afición'),
+        Flashcard(
+            kanji: '習慣',
+            hiragana: 'しゅうかん',
+            romaji: 'shuukan',
+            meaning: 'costumbre; hábito'),
+        Flashcard(
+            kanji: '祖母', hiragana: 'そぼ', romaji: 'sobo', meaning: 'abuela'),
+        Flashcard(
+            kanji: '育てる',
+            hiragana: 'そだてる',
+            romaji: 'sodateru',
+            meaning: 'criar; educar'),
+        Flashcard(
+            kanji: '祖父', hiragana: 'そふ', romaji: 'sofu', meaning: 'abuelo'),
+        Flashcard(
+            kanji: 'ソフト',
+            hiragana: 'そふと',
+            romaji: 'sofuto',
+            meaning: 'software; suave'),
+        Flashcard(
+            kanji: 'そんな',
+            hiragana: 'そんな',
+            romaji: 'sonna',
+            meaning: 'tal; así'),
+        Flashcard(
+            kanji: 'それで',
+            hiragana: 'それで',
+            romaji: 'sore de',
+            meaning: 'por lo tanto; así que'),
+        Flashcard(
+            kanji: 'それほど',
+            hiragana: 'それほど',
+            romaji: 'sore hodo',
+            meaning: 'tan; tanto'),
+        Flashcard(
+            kanji: 'そろそろ',
+            hiragana: 'そろそろ',
+            romaji: 'sorosoro',
+            meaning: 'poco a poco; gradualmente'),
+        Flashcard(
+            kanji: '卒業',
+            hiragana: 'そつぎょう',
+            romaji: 'sotsugyou',
+            meaning: 'graduación'),
+        Flashcard(
+            kanji: '相談',
+            hiragana: 'そうだん',
+            romaji: 'soudan',
+            meaning: 'consulta; discusión'),
+        Flashcard(
+            kanji: '素晴らしい',
+            hiragana: 'すばらしい',
+            romaji: 'subarashii',
+            meaning: 'maravilloso'),
+        Flashcard(
+            kanji: '滑る',
+            hiragana: 'すべる',
+            romaji: 'suberu',
+            meaning: 'resbalar; deslizarse'),
+        Flashcard(
+            kanji: '凄い',
+            hiragana: 'すごい',
+            romaji: 'sugoi',
+            meaning: 'tremendo; asombroso'),
+        Flashcard(
+            kanji: '水道',
+            hiragana: 'すいどう',
+            romaji: 'suidou',
+            meaning: 'suministro de agua; agua corriente'),
+        Flashcard(
+            kanji: '水泳',
+            hiragana: 'すいえい',
+            romaji: 'suiei',
+            meaning: 'natación'),
+        Flashcard(
+            kanji: 'すっかり',
+            hiragana: 'すっかり',
+            romaji: 'sukkari',
+            meaning: 'completamente; totalmente'),
+        Flashcard(
+            kanji: '空く',
+            hiragana: 'すく',
+            romaji: 'suku',
+            meaning: 'tener hambre'),
+        Flashcard(
+            kanji: 'スクリーン',
+            hiragana: 'すくりーん',
+            romaji: 'sukuriin',
+            meaning: 'pantalla'),
+        Flashcard(
+            kanji: '隅', hiragana: 'すみ', romaji: 'sumi', meaning: 'rincón'),
+        Flashcard(
+            kanji: '済む',
+            hiragana: 'すむ',
+            romaji: 'sumu',
+            meaning: 'terminar; acabar'),
+        Flashcard(kanji: '砂', hiragana: 'すな', romaji: 'suna', meaning: 'arena'),
+        Flashcard(
+            kanji: 'すり', hiragana: 'すり', romaji: 'suri', meaning: 'carterista'),
+        Flashcard(
+            kanji: 'スーツケース',
+            hiragana: 'すーつけーす',
+            romaji: 'sustsukeesu',
+            meaning: 'maleta; maletín'),
+        Flashcard(
+            kanji: '進む',
+            hiragana: 'すすむ',
+            romaji: 'susumu',
+            meaning: 'avanzar; progresar'),
+        Flashcard(
+            kanji: 'ステーキ',
+            hiragana: 'すてーき',
+            romaji: 'suteeki',
+            meaning: 'filete; steak'),
+        Flashcard(
+            kanji: 'ステレオ',
+            hiragana: 'すてれお',
+            romaji: 'sutereo',
+            meaning: 'estéreo; sistema de sonido'),
+        Flashcard(
+            kanji: '捨てる',
+            hiragana: 'すてる',
+            romaji: 'suteru',
+            meaning: 'tirar; desechar'),
+        Flashcard(
+            kanji: '数学',
+            hiragana: 'すうがく',
+            romaji: 'suugaku',
+            meaning: 'matemáticas'),
+        Flashcard(
+            kanji: 'スーツ', hiragana: 'すーつ', romaji: 'suutsu', meaning: 'traje'),
+        Flashcard(
+            kanji: '正しい',
+            hiragana: 'ただしい',
+            romaji: 'tadashii',
+            meaning: 'correcto; justo'),
+        Flashcard(
+            kanji: '退院',
+            hiragana: 'たいいん',
+            romaji: 'taiin',
+            meaning: 'alta hospitalaria'),
+        Flashcard(
+            kanji: '台風', hiragana: 'たいふう', romaji: 'taifuu', meaning: 'tifón'),
+        Flashcard(
+            kanji: 'タイプ',
+            hiragana: 'たいぷ',
+            romaji: 'taipu',
+            meaning: 'tipo; estilo'),
+        Flashcard(
+            kanji: 'たいてい',
+            hiragana: 'たいてい',
+            romaji: 'taitei',
+            meaning: 'generalmente; por lo general'),
+        Flashcard(
+            kanji: 'たまに',
+            hiragana: 'たまに',
+            romaji: 'tamani',
+            meaning: 'de vez en cuando; ocasionalmente'),
+        Flashcard(
+            kanji: '棚',
+            hiragana: 'たな',
+            romaji: 'tana',
+            meaning: 'estante; repisa'),
+        Flashcard(
+            kanji: '誕生',
+            hiragana: 'たんじょう',
+            romaji: 'tanjou',
+            meaning: 'nacimiento'),
+        Flashcard(
+            kanji: '楽しみ',
+            hiragana: 'たのしみ',
+            romaji: 'tanoshimi',
+            meaning: 'expectativa; anticipación'),
+        Flashcard(
+            kanji: '倒れる',
+            hiragana: 'たおれる',
+            romaji: 'taoreru',
+            meaning: 'caerse; desplomarse'),
+        Flashcard(
+            kanji: '足りる',
+            hiragana: 'たりる',
+            romaji: 'tariru',
+            meaning: 'ser suficiente; bastar'),
+        Flashcard(
+            kanji: '足す',
+            hiragana: 'たす',
+            romaji: 'tasu',
+            meaning: 'sumar; añadir'),
+        Flashcard(
+            kanji: '畳',
+            hiragana: 'たたみ',
+            romaji: 'tatami',
+            meaning: 'tatami (esteras de paja japonesas)'),
+        Flashcard(
+            kanji: '建てる',
+            hiragana: 'たてる',
+            romaji: 'tateru',
+            meaning: 'construir; erigir'),
+        Flashcard(
+            kanji: '訪ねる',
+            hiragana: 'たずねる',
+            romaji: 'tazuneru',
+            meaning: 'visitar'),
+        Flashcard(
+            kanji: '尋ねる',
+            hiragana: 'たずねる',
+            romaji: 'tazuneru',
+            meaning: 'preguntar; inquirir'),
+        Flashcard(
+            kanji: '手袋',
+            hiragana: 'てぶくろ',
+            romaji: 'tebukuro',
+            meaning: 'guantes'),
+        Flashcard(
+            kanji: '丁寧',
+            hiragana: 'ていねい',
+            romaji: 'teinei',
+            meaning: 'educado; cortés'),
+        Flashcard(
+            kanji: 'テキスト',
+            hiragana: 'てきすと',
+            romaji: 'tekisuto',
+            meaning: 'texto; libro de texto'),
+        Flashcard(
+            kanji: '適当',
+            hiragana: 'てきとう',
+            romaji: 'tekitou',
+            meaning: 'apropiado; adecuado'),
+        Flashcard(
+            kanji: '点',
+            hiragana: 'てん',
+            romaji: 'ten',
+            meaning: 'punto; punto decimal'),
+        Flashcard(
+            kanji: '店員',
+            hiragana: 'てんいん',
+            romaji: 'ten in',
+            meaning: 'dependiente; empleado de tienda'),
+        Flashcard(
+            kanji: 'テニス', hiragana: 'てにす', romaji: 'tenisu', meaning: 'tenis'),
+        Flashcard(
+            kanji: '天気予報',
+            hiragana: 'てんきよほう',
+            romaji: 'tenkiyohou',
+            meaning: 'pronóstico del tiempo'),
+        Flashcard(
+            kanji: '展覧会',
+            hiragana: 'てんらんかい',
+            romaji: 'tenrankai',
+            meaning: 'exposición; feria'),
+        Flashcard(
+            kanji: '寺', hiragana: 'てら', romaji: 'tera', meaning: 'templo'),
+        Flashcard(
+            kanji: '手伝う',
+            hiragana: 'てつだう',
+            romaji: 'tetsudau',
+            meaning: 'ayudar'),
+        Flashcard(
+            kanji: '途中',
+            hiragana: 'とちゅう',
+            romaji: 'tochuu',
+            meaning: 'en el camino; a medio camino'),
+        Flashcard(
+            kanji: '届ける',
+            hiragana: 'とどける',
+            romaji: 'todokeru',
+            meaning: 'entregar; enviar'),
+        Flashcard(
+            kanji: '特急',
+            hiragana: 'とっきゅう',
+            romaji: 'tokkyuu',
+            meaning: 'tren expreso limitado (más rápido que un expreso)'),
+        Flashcard(
+            kanji: '床屋',
+            hiragana: 'とこや',
+            romaji: 'tokoya',
+            meaning: 'barbería'),
+        Flashcard(
+            kanji: '特別',
+            hiragana: 'とくべつ',
+            romaji: 'tokubetsu',
+            meaning: 'especial; particular; extraordinario'),
+        Flashcard(
+            kanji: '特に',
+            hiragana: 'とくに',
+            romaji: 'tokuni',
+            meaning: 'especialmente; en particular; expresamente'),
+        Flashcard(
+            kanji: '泊まる',
+            hiragana: 'とまる',
+            romaji: 'tomaru',
+            meaning: 'alojarse; quedarse'),
+        Flashcard(
+            kanji: '止める',
+            hiragana: 'とめる',
+            romaji: 'tomeru',
+            meaning: 'detener algo'),
+        Flashcard(
+            kanji: '遠く', hiragana: 'とおく', romaji: 'tooku', meaning: 'distante'),
+        Flashcard(
+            kanji: '通る',
+            hiragana: 'とおる',
+            romaji: 'tooru',
+            meaning: 'pasar por; atravesar'),
+        Flashcard(
+            kanji: '取り替える',
+            hiragana: 'とりかえる',
+            romaji: 'torikaeru',
+            meaning: 'cambiar; reemplazar'),
+        Flashcard(
+            kanji: '到頭',
+            hiragana: 'とうとう',
+            romaji: 'toutou',
+            meaning: 'finalmente; después de todo'),
+        Flashcard(
+            kanji: '続ける',
+            hiragana: 'つづける',
+            romaji: 'tsudzukeru',
+            meaning: 'continuar; seguir'),
+        Flashcard(
+            kanji: '続く',
+            hiragana: 'つづく',
+            romaji: 'tsudzuku',
+            meaning: 'continuar'),
+        Flashcard(
+            kanji: '都合',
+            hiragana: 'つごう',
+            romaji: 'tsugou',
+            meaning: 'conveniencia; circunstancias'),
+        Flashcard(
+            kanji: '捕まえる',
+            hiragana: 'つかまえる',
+            romaji: 'tsukamaeru',
+            meaning: 'atrapar; capturar'),
+        Flashcard(
+            kanji: '漬ける',
+            hiragana: 'つける',
+            romaji: 'tsukeru',
+            meaning: 'remojar; sumergir'),
+        Flashcard(kanji: '月', hiragana: 'つき', romaji: 'tsuki', meaning: 'luna'),
+        Flashcard(
+            kanji: '付く',
+            hiragana: 'つく',
+            romaji: 'tsuku',
+            meaning: 'estar adherido; estar presente'),
+        Flashcard(
+            kanji: '妻',
+            hiragana: 'つま',
+            romaji: 'tsuma',
+            meaning: 'esposa (forma humilde)'),
+        Flashcard(
+            kanji: '連れる',
+            hiragana: 'つれる',
+            romaji: 'tsureru',
+            meaning: 'llevar consigo'),
+        Flashcard(
+            kanji: '釣る', hiragana: 'つる', romaji: 'tsuru', meaning: 'pescar'),
+        Flashcard(
+            kanji: '伝える',
+            hiragana: 'つたえる',
+            romaji: 'tsutaeru',
+            meaning: 'transmitir; comunicar'),
+        Flashcard(
+            kanji: '包む',
+            hiragana: 'つつむ',
+            romaji: 'tsutsumu',
+            meaning: 'envolver'),
+        Flashcard(kanji: '腕', hiragana: 'うで', romaji: 'ude', meaning: 'brazo'),
+        Flashcard(
+            kanji: '植える', hiragana: 'うえる', romaji: 'ueru', meaning: 'plantar'),
+        Flashcard(
+            kanji: '動く', hiragana: 'うごく', romaji: 'ugoku', meaning: 'moverse'),
+        Flashcard(
+            kanji: '伺う',
+            hiragana: 'うかがう',
+            romaji: 'ukagau',
+            meaning: 'visitar (humilde)'),
+        Flashcard(
+            kanji: '受ける',
+            hiragana: 'うける',
+            romaji: 'ukeru',
+            meaning: 'tomar (una lección o examen)'),
+        Flashcard(
+            kanji: '受付',
+            hiragana: 'うけつけ',
+            romaji: 'uketsuke',
+            meaning: 'recepción'),
+        Flashcard(
+            kanji: '生まれ',
+            hiragana: 'うまれ',
+            romaji: 'umare',
+            meaning: 'nacimiento'),
+        Flashcard(
+            kanji: '運転手',
+            hiragana: 'うんてんしゅ',
+            romaji: 'untenshu',
+            meaning: 'conductor; chofer'),
+        Flashcard(
+            kanji: '裏', hiragana: 'うら', romaji: 'ura', meaning: 'reverso'),
+        Flashcard(
+            kanji: '嬉しい',
+            hiragana: 'うれしい',
+            romaji: 'ureshii',
+            meaning: 'feliz; contento'),
+        Flashcard(
+            kanji: '売り場',
+            hiragana: 'うりば',
+            romaji: 'uriba',
+            meaning: 'área de venta'),
+        Flashcard(
+            kanji: '嘘', hiragana: 'うそ', romaji: 'uso', meaning: 'mentira'),
+        Flashcard(
+            kanji: '打つ', hiragana: 'うつ', romaji: 'utsu', meaning: 'golpear'),
+        Flashcard(
+            kanji: '美しい',
+            hiragana: 'うつくしい',
+            romaji: 'utsukushii',
+            meaning: 'hermoso'),
+        Flashcard(
+            kanji: '移る',
+            hiragana: 'うつる',
+            romaji: 'utsuru',
+            meaning: 'mudarse; transferirse'),
+        Flashcard(
+            kanji: '写す',
+            hiragana: 'うつす',
+            romaji: 'utsusu',
+            meaning: 'copiar; fotografiar'),
+        Flashcard(
+            kanji: 'ワープロ',
+            hiragana: 'わーぷろ',
+            romaji: 'waapuro',
+            meaning: 'procesador de texto'),
+        Flashcard(
+            kanji: '別れる',
+            hiragana: 'わかれる',
+            romaji: 'wakareru',
+            meaning: 'separarse'),
+        Flashcard(
+            kanji: '沸かす',
+            hiragana: 'わかす',
+            romaji: 'wakasu',
+            meaning: 'hervir; calentar'),
+        Flashcard(
+            kanji: '沸く', hiragana: 'わく', romaji: 'waku', meaning: 'hervir'),
+        Flashcard(
+            kanji: '笑う',
+            hiragana: 'わらう',
+            romaji: 'warau',
+            meaning: 'reírse; sonreír'),
+        Flashcard(
+            kanji: '割れる',
+            hiragana: 'われる',
+            romaji: 'wareru',
+            meaning: 'romperse'),
+        Flashcard(
+            kanji: '割合',
+            hiragana: 'わりあい',
+            romaji: 'wariai',
+            meaning: 'proporción; tasa'),
+        Flashcard(
+            kanji: '忘れ物',
+            hiragana: 'わすれもの',
+            romaji: 'wasuremono',
+            meaning: 'objeto olvidado'),
+        Flashcard(
+            kanji: '焼ける',
+            hiragana: 'やける',
+            romaji: 'yakeru',
+            meaning: 'quemarse; tostarse'),
+        Flashcard(
+            kanji: '焼く',
+            hiragana: 'やく',
+            romaji: 'yaku',
+            meaning: 'hornear; asar'),
+        Flashcard(
+            kanji: '役に立つ',
+            hiragana: 'やくにたつ',
+            romaji: 'yakunitatsu',
+            meaning: 'ser útil'),
+        Flashcard(
+            kanji: '約束',
+            hiragana: 'やくそく',
+            romaji: 'yakusoku',
+            meaning: 'promesa'),
+        Flashcard(
+            kanji: '止む',
+            hiragana: 'やむ',
+            romaji: 'yamu',
+            meaning: 'parar; cesar (de llover, etc.)'),
+        Flashcard(
+            kanji: 'やっぱり',
+            hiragana: 'やっぱり',
+            romaji: 'yappari',
+            meaning: 'como pensaba; después de todo'),
+        Flashcard(
+            kanji: '優しい',
+            hiragana: 'やさしい',
+            romaji: 'yasashii',
+            meaning: 'amable; gentil'),
+        Flashcard(
+            kanji: '痩せる',
+            hiragana: 'やせる',
+            romaji: 'yaseru',
+            meaning: 'adelgazar; volverse delgado'),
+        Flashcard(
+            kanji: '柔らかい',
+            hiragana: 'やわらかい',
+            romaji: 'yawarakai',
+            meaning: 'blando; suave'),
+        Flashcard(
+            kanji: '汚れる',
+            hiragana: 'よごれる',
+            romaji: 'yogoreru',
+            meaning: 'ensuciarse'),
+        Flashcard(
+            kanji: '喜ぶ',
+            hiragana: 'よろこぶ',
+            romaji: 'yorokobu',
+            meaning: 'alegrarse; estar contento'),
+        Flashcard(
+            kanji: '寄る',
+            hiragana: 'よる',
+            romaji: 'yoru',
+            meaning: 'visitar; acercarse'),
+        Flashcard(
+            kanji: '予習',
+            hiragana: 'よしゅう',
+            romaji: 'yoshuu',
+            meaning: 'preparación (para una lección)'),
+        Flashcard(
+            kanji: '予定',
+            hiragana: 'よてい',
+            romaji: 'yotei',
+            meaning: 'plan; programa'),
+        Flashcard(
+            kanji: '用',
+            hiragana: 'よう',
+            romaji: 'you',
+            meaning: 'tarea; negocio; propósito'),
+        Flashcard(
+            kanji: '用意',
+            hiragana: 'ようい',
+            romaji: 'youi',
+            meaning: 'preparación; arreglo'),
+        Flashcard(
+            kanji: '用事',
+            hiragana: 'ようじ',
+            romaji: 'youji',
+            meaning: 'asuntos que hacer; tareas'),
+        Flashcard(
+            kanji: '予約', hiragana: 'よやく', romaji: 'yoyaku', meaning: 'reserva'),
+        Flashcard(
+            kanji: '湯', hiragana: 'ゆ', romaji: 'yu', meaning: 'agua caliente'),
+        Flashcard(kanji: '指', hiragana: 'ゆび', romaji: 'yubi', meaning: 'dedo'),
+        Flashcard(
+            kanji: '指輪',
+            hiragana: 'ゆびわ',
+            romaji: 'yubiwa',
+            meaning: 'anillo (de dedo)'),
+        Flashcard(kanji: '夢', hiragana: 'ゆめ', romaji: 'yume', meaning: 'sueño'),
+        Flashcard(
+            kanji: '揺れる',
+            hiragana: 'ゆれる',
+            romaji: 'yureru',
+            meaning: 'mecerse; balancearse'),
+        Flashcard(
+            kanji: '残念',
+            hiragana: 'ざんねん',
+            romaji: 'zannen',
+            meaning: 'lamentable; desafortunado'),
+        Flashcard(
+            kanji: '全然',
+            hiragana: 'ぜんぜん',
+            romaji: 'zenzen',
+            meaning: 'en absoluto; nada en absoluto')
       ];
     }
     return [];
@@ -4130,7 +6570,7 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Vocabulario Japonés - ${widget.level}',
+          '${widget.level}',
           style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.indigoAccent,
