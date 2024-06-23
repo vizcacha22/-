@@ -1,5 +1,6 @@
 // import 'package:LongLaoshi/presentation/test/test_japanese.dart';
 // import 'package:LongLaoshi/presentation/flashcards/util/search_vocabulary_japanese.dart';
+import 'package:LongLaoshi/presentation/tests/test_japanese_hiragana.dart';
 import 'package:flutter/material.dart';
 
 class Flashcard {
@@ -132,7 +133,6 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
   }
 
   List<Flashcard> _generateFlashcards() {
-    // This is a simplified example, replace this with your logic to generate flashcards based on the level
     if (widget.level == 'JLPT5') {
       return [
         Flashcard(
@@ -2580,7 +2580,7 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'ニュース',
-          hiragana: 'nyuusu',
+          hiragana: 'ニュース',
           romaji: 'nyuusu',
           meaning: 'Noticias - Katakana',
         ),
@@ -2865,37 +2865,37 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'パーティー',
-          hiragana: 'paatii',
+          hiragana: 'パーティー',
           romaji: 'paatii',
           meaning: 'Fiesta, party (en inglés) - Katakana',
         ),
         Flashcard(
           kanji: 'パン',
-          hiragana: 'pan',
+          hiragana: 'パン',
           romaji: 'pan',
           meaning: 'Pan - Katakana',
         ),
         Flashcard(
           kanji: 'ページ',
-          hiragana: 'peeji',
+          hiragana: 'ページ',
           romaji: 'peeji',
           meaning: 'Página - Katakana',
         ),
         Flashcard(
           kanji: 'ペン',
-          hiragana: 'pen',
+          hiragana: 'ペン',
           romaji: 'pen',
           meaning: 'Bolígrafo, pluma - Katakana',
         ),
         Flashcard(
           kanji: 'ペット',
-          hiragana: 'petto',
+          hiragana: 'ペット',
           romaji: 'petto',
           meaning: 'Mascota, animal doméstico - Katakana',
         ),
         Flashcard(
           kanji: 'ポケット',
-          hiragana: 'poketto',
+          hiragana: 'ポケット',
           romaji: 'poketto',
           meaning: 'Bolsillo (Ej. De pantalón) - Katakana',
         ),
@@ -2907,7 +2907,7 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'プール',
-          hiragana: 'puuru',
+          hiragana: 'プール',
           romaji: 'puuru',
           meaning: 'Piscina - Katakana',
         ),
@@ -3274,32 +3274,32 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'そば',
-          hiragana: 'soba',
+          hiragana: 'そば',
           romaji: 'soba',
           meaning: 'Cerca (de algo o alguien), fideos de trigo sarraceno',
         ),
         Flashcard(
           kanji: 'そっち',
-          hiragana: 'socchi',
+          hiragana: 'そっち',
           romaji: 'socchi',
           meaning:
               'Allí, por ahí (referente a un lugar cercano al hablante y al oyente)',
         ),
         Flashcard(
           kanji: 'そちら',
-          hiragana: 'sochira',
+          hiragana: 'そちら',
           romaji: 'sochira',
           meaning: 'Allí, por ahí (forma más formal que ' 'そっち' ')',
         ),
         Flashcard(
           kanji: 'そこ',
-          hiragana: 'soko',
+          hiragana: 'そこ',
           romaji: 'soko',
           meaning: 'Ahí (lugar)',
         ),
         Flashcard(
           kanji: 'その',
-          hiragana: 'sono',
+          hiragana: 'その',
           romaji: 'sono',
           meaning: 'Ese, esa, esos, esas - Adj. Posustantivo',
         ),
@@ -3311,19 +3311,19 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'それ',
-          hiragana: 'sore',
+          hiragana: 'それ',
           romaji: 'sore',
           meaning: 'Eso, eso allí, aquel, aquello',
         ),
         Flashcard(
           kanji: 'それでは',
-          hiragana: 'soredewa',
+          hiragana: 'それでは',
           romaji: 'soredewa',
           meaning: 'Bueno entonces, en ese caso',
         ),
         Flashcard(
           kanji: 'そして',
-          hiragana: 'soshite',
+          hiragana: 'そして',
           romaji: 'soshite',
           meaning: 'Y, además',
         ),
@@ -3341,13 +3341,13 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'すぎる',
-          hiragana: '',
+          hiragana: 'すぎる',
           romaji: 'sugiru',
           meaning: 'Demasiado, excesivo',
         ),
         Flashcard(
           kanji: 'すぐに',
-          hiragana: '',
+          hiragana: 'すぐに',
           romaji: 'suguni',
           meaning: 'Inmediatamente, pronto - Adverbio',
         ),
@@ -3359,7 +3359,7 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'スカート',
-          hiragana: '',
+          hiragana: 'スカート',
           romaji: 'sukaato',
           meaning: 'Falda - Katakana',
         ),
@@ -3389,25 +3389,25 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'スポーツ',
-          hiragana: '',
+          hiragana: 'スポーツ',
           romaji: 'supootsu',
           meaning: 'Deportes - Katakana',
         ),
         Flashcard(
           kanji: 'スプーン',
-          hiragana: '',
+          hiragana: 'スプーン',
           romaji: 'supuun',
           meaning: 'Cuchara - Katakana',
         ),
         Flashcard(
           kanji: 'スリッパ',
-          hiragana: '',
+          hiragana: 'スリッパ',
           romaji: 'surippa',
           meaning: 'Pantuflas, zapatillas de estar en casa - Katakana',
         ),
         Flashcard(
           kanji: 'ストーブ',
-          hiragana: '',
+          hiragana: 'ストーブ',
           romaji: 'sutoobu',
           meaning: 'Estufa, calentador - Katakana',
         ),
@@ -3431,7 +3431,7 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'タバコ',
-          hiragana: '',
+          hiragana: 'タバコ',
           romaji: 'tabako',
           meaning: 'Tabaco',
         ),
@@ -3485,7 +3485,7 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'タクシー',
-          hiragana: '',
+          hiragana: 'タクシー',
           romaji: 'takushii',
           meaning: 'Taxi - Katakana',
         ),
@@ -3539,19 +3539,19 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'テーブル',
-          hiragana: '',
+          hiragana: 'テーブル',
           romaji: 'teeburu',
           meaning: 'Mesa - Katakana',
         ),
         Flashcard(
           kanji: 'テープ',
-          hiragana: '',
+          hiragana: 'テープ',
           romaji: 'teepu',
           meaning: 'Cinta (adhesiva) - Katakana',
         ),
         Flashcard(
           kanji: 'テープレコーダー',
-          hiragana: '',
+          hiragana: 'テープレコーダー',
           romaji: 'teepurekooda',
           meaning: 'Grabadora de cinta - Katakana',
         ),
@@ -3569,13 +3569,13 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'テレビ',
-          hiragana: '',
+          hiragana: 'テレビ',
           romaji: 'terebi',
           meaning: 'Televisión - Katakana',
         ),
         Flashcard(
           kanji: 'テスト',
-          hiragana: '',
+          hiragana: 'テスト',
           romaji: 'tesuto',
           meaning: 'Prueba, test - Katakana',
         ),
@@ -3593,7 +3593,7 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'トイレ',
-          hiragana: '',
+          hiragana: 'トイレ',
           romaji: 'toire',
           meaning: 'Toilet, baño, inodoro, aseo, servicio, váter - Katakana',
         ),
@@ -3837,7 +3837,7 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'ワイシャツ',
-          hiragana: '',
+          hiragana: 'ワイシャツ',
           romaji: 'wai shatsu',
           meaning: 'Camisa blanca (De negocios, de botones) - Katakana',
         ),
@@ -4055,7 +4055,7 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'ズボン',
-          hiragana: '',
+          hiragana: 'ズボン',
           romaji: 'zubon',
           meaning: 'Pantalones',
         ),
@@ -4071,7 +4071,7 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         Flashcard(
             kanji: 'ありがとう',
             hiragana: 'ありがとう',
-            romaji: 'arigatō',
+            romaji: 'arigatou',
             meaning: 'Thank you'),
         Flashcard(
             kanji: 'すみません',
@@ -4082,6 +4082,8 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
     }
     return [];
   }
+
+  List<Flashcard> get flashcards => _flashcards;
 
   void _toggleFlashcardDetails(int index) {
     setState(() {
@@ -4112,6 +4114,15 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
       _selectedIndex = index;
       _flashcards[index].showDetails = true;
     });
+  }
+
+  void _startTest() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => VocabularyTestScreenJP(flashcards: _flashcards),
+      ),
+    );
   }
 
   @override
@@ -4190,6 +4201,12 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
             );
           },
         ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: _startTest,
+        label: Text('Iniciar Test'),
+        icon: Icon(Icons.assignment),
+        backgroundColor: Colors.indigoAccent,
       ),
     );
   }
