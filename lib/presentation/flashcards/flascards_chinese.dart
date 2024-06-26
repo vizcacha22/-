@@ -67,28 +67,22 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
   }
 
   List<Flashcard> _generateSyllableFlashcards() {
-    return [
-      Flashcard(front: 'bā', sound: 'sounds/ba1.mp3'),
-      Flashcard(front: 'bá', sound: 'sounds/ba2.mp3'),
-      Flashcard(front: 'bǎ', sound: 'sounds/ba3.mp3'),
-      Flashcard(front: 'bà', sound: 'sounds/ba4.mp3'),
-      Flashcard(front: 'bē', sound: 'sounds/be1.mp3'),
-      Flashcard(front: 'bé', sound: 'sounds/be2.mp3'),
-      Flashcard(front: 'bě', sound: 'sounds/be3.mp3'),
-      Flashcard(front: 'bè', sound: 'sounds/be4.mp3'),
-      Flashcard(front: 'bī', sound: 'sounds/bi1.mp3'),
-      Flashcard(front: 'bí', sound: 'sounds/bi2.mp3'),
-      Flashcard(front: 'bǐ', sound: 'sounds/bi3.mp3'),
-      Flashcard(front: 'bì', sound: 'sounds/bi4.mp3'),
-      Flashcard(front: 'bō', sound: 'sounds/bo1.mp3'),
-      Flashcard(front: 'bó', sound: 'sounds/bo2.mp3'),
-      Flashcard(front: 'bǒ', sound: 'sounds/bo3.mp3'),
-      Flashcard(front: 'bò', sound: 'sounds/bo4.mp3'),
-      Flashcard(front: 'bū', sound: 'sounds/bu1.mp3'),
-      Flashcard(front: 'bú', sound: 'sounds/bu2.mp3'),
-      Flashcard(front: 'bǔ', sound: 'sounds/bu3.mp3'),
-      Flashcard(front: 'bù', sound: 'sounds/bu4.mp3'),
-    ];
+    List<String> initials = ['b', 'p', 'm', 'f', 'd', 't', 'n', 'l', 'g', 'k', 'h', 'j', 'q', 'x', 'zh', 'ch', 'sh', 'r', 'z', 'c', 's'];
+    List<String> finals = ['a', 'e', 'i', 'o', 'u', 'ü'];
+    List<String> tones = ['1', '2', '3', '4'];
+
+    List<Flashcard> flashcards = [];
+
+    for (String initial in initials) {
+      for (String final_ in finals) {
+        for (String tone in tones) {
+          String front = initial + final_ + tone;
+          String sound = 'sounds/${initial}${final_}${tone}.mp3';
+          flashcards.add(Flashcard(front: front, sound: sound));
+        }
+      }
+    }
+    return flashcards;
   }
 
   List<Flashcard> _generateFruitFlashcards() {
@@ -123,6 +117,130 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
   void dispose() {
     _audioPlayer.dispose();
     super.dispose();
+  }
+
+  List<Widget> _buildSyllableRows(List<Flashcard> flashcards) {
+    List<Widget> rows = [];
+    Map<String, List<Flashcard>> syllableMap = {};
+
+    for (var flashcard in flashcards) {
+      String key = flashcard.front.substring(0, flashcard.front.length - 1);
+      if (syllableMap.containsKey(key)) {
+        syllableMap[key]!.add(flashcard);
+      } else {
+        syllableMap[key] = [flashcard];
+      }
+    }
+
+    syllableMap.forEach((key, value) {
+      rows.add(
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(key, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+            Divider(),
+            Row(
+              children: value.map((flashcard) {
+                return GestureDetector(
+                  onTap: () {
+                    _playSound(flashcard.sound);
+                  },
+                  child: Card(
+                    elevation: 4.0,
+                    child: Container(
+                      padding: EdgeInsets.all(8.0),
+                      alignment: Alignment.center,
+                      child: Text(
+                        flashcard.front,
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
+                  ),
+                );
+              }).toList(),
+            ),
+            SizedBox(height: 20),
+          ],
+        ),
+      );
+    });
+
+    return rows;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    List<Flashcard> _flashcards;
+    if (_currentCategory == 'Vocales') {
+      _flashcards = _vowelFlashcards;
+    } else if (_currentCategory == 'Sílabas') {
+      _flashcards = _syllableFlashcards;
+    } else {
+      _flashcards = _fruitFlashcards;
+    }
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(_currentCategory),
+        backgroundColor: Colors.greenAccent,
+        actions: [
+          DropdownButton<String>(
+            value: _currentCategory,
+            items: <String>['Vocales', 'Sílabas', 'Frutas'].map((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
+              );
+            }).toList(),
+            onChanged: (String? newValue) {
+              if (newValue != null) {
+                _toggleCategory(newValue);
+              }
+            },
+          ),
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: _currentCategory == 'Sílabas'
+            ? ListView(
+                children: _buildSyllableRows(_flashcards),
+              )
+            : _currentCategory == 'Frutas'
+                ? GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2, // Number of columns
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                    ),
+                    itemCount: _flashcards.length,
+                    itemBuilder: (context, index) {
+                      final flashcard = _flashcards[index];
+                      return GestureDetector(
+                        onTap: () {
+                          _playSound(flashcard.sound);
+                          _flipFlashcard(_flashcards, index);
+                        },
+                        child: Card(
+                          elevation: 4.0,
+                          child: Container(
+                            alignment: Alignment.center,
+                            child: Text(
+                              flashcard.showFront
+                                  ? flashcard.front
+                                  : flashcard.back ?? '',
+                              style: TextStyle(fontSize: 30),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  )
+                : Row(
+                    children: _buildFlashcardColumns(_flashcards, ['A', 'E', 'I', 'O', 'U', 'Ü']),
+                  ),
+      ),
+    );
   }
 
   List<Widget> _buildFlashcardColumns(
@@ -169,80 +287,5 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
       ));
     }
     return columns;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    List<Flashcard> _flashcards;
-    List<String> _headers;
-    if (_currentCategory == 'Vocales') {
-      _flashcards = _vowelFlashcards;
-      _headers = ['a', 'e', 'i', 'o', 'u', 'ü'];
-    } else if (_currentCategory == 'Sílabas') {
-      _flashcards = _syllableFlashcards;
-      _headers = ['ba', 'be', 'bi', 'bo', 'bu'];
-    } else {
-      _flashcards = _fruitFlashcards;
-      _headers = [];
-    }
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(_currentCategory),
-        backgroundColor: Colors.greenAccent,
-        actions: [
-          DropdownButton<String>(
-            value: _currentCategory,
-            items: <String>['Vocales', 'Sílabas', 'Frutas'].map((String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Text(value),
-              );
-            }).toList(),
-            onChanged: (String? newValue) {
-              if (newValue != null) {
-                _toggleCategory(newValue);
-              }
-            },
-          ),
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: _currentCategory == 'Frutas'
-            ? GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, // Number of columns
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                ),
-                itemCount: _flashcards.length,
-                itemBuilder: (context, index) {
-                  final flashcard = _flashcards[index];
-                  return GestureDetector(
-                    onTap: () {
-                      _playSound(flashcard.sound);
-                      _flipFlashcard(_flashcards, index);
-                    },
-                    child: Card(
-                      elevation: 4.0,
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Text(
-                          flashcard.showFront
-                              ? flashcard.front
-                              : flashcard.back ?? '',
-                          style: TextStyle(fontSize: 30),
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              )
-            : Row(
-                children: _buildFlashcardColumns(_flashcards, _headers),
-              ),
-      ),
-    );
   }
 }
