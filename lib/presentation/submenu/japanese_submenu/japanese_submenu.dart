@@ -1,3 +1,6 @@
+import 'package:LongLaoshi/presentation/submenu/japanese_submenu/nh_capitulo1.dart';
+import 'package:LongLaoshi/presentation/submenu/japanese_submenu/nh_capitulo2.dart';
+import 'package:LongLaoshi/presentation/submenu/japanese_submenu/nh_capitulo3.dart';
 import 'package:flutter/material.dart';
 
 class LearningJapaneseScreen extends StatelessWidget {
@@ -23,7 +26,7 @@ class LearningJapaneseScreen extends StatelessWidget {
         child: ListView(
           children: [
             Text(
-              'Pasos para Empezar a Aprender Japonés',
+              'Guía para ser un autodidacta en el Japonés',
               style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -31,14 +34,39 @@ class LearningJapaneseScreen extends StatelessWidget {
             ),
             SizedBox(height: 16),
             ListTile(
-              leading: Icon(Icons.book, color: Colors.white),
-              title: Text(
-                '1. Aprender Hiragana y Katakana',
-                style: TextStyle(color: Colors.white),
+              leading: Icon(Icons.book),
+              title: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NhCapitulo1()),
+                  );
+                },
+                child: Text('1. Sudor y lágrimas'),
               ),
-              subtitle: Text(
-                'Empieza con lo básico: Hiragana y Katakana, los dos alfabetos fonéticos.',
-                style: TextStyle(color: Colors.white),
+            ),
+            ListTile(
+              leading: Icon(Icons.book),
+              title: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NhCapitulo2()),
+                  );
+                },
+                child: Text('2. La escritura Japonesa'),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.book),
+              title: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NhCapitulo3()),
+                  );
+                },
+                child: Text('3. Un poquito de palabras'),
               ),
             ),
             SizedBox(height: 16),

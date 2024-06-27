@@ -5,7 +5,7 @@ import 'package:LongLaoshi/presentation/flashcards/flashcards_japanese.dart';
 import 'package:LongLaoshi/presentation/auth/login_screen.dart';
 import 'package:LongLaoshi/presentation/auth/registro_screen.dart';
 import 'package:LongLaoshi/presentation/submenu/chinese_submenu/chinese_submenu.dart';
-import 'package:LongLaoshi/presentation/submenu/japanese_submenu.dart';
+import 'package:LongLaoshi/presentation/submenu/japanese_submenu/japanese_submenu.dart';
 import 'package:LongLaoshi/presentation/submenu/chinese_submenu/zh_capitulo1.dart';
 import 'package:flutter/material.dart';
 import '../presentation/inicio_screen/inicio_screen.dart';
