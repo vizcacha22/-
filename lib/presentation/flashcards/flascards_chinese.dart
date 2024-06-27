@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class Flashcard {
   final String front;
-  final String? back; // back can be null
+  final String? back;
   final String sound;
   bool showFront;
 
@@ -24,8 +24,6 @@ class FlashcardScreenCN extends StatefulWidget {
 
 class FlashcardScreenState extends State<FlashcardScreenCN> {
   late List<Flashcard> _vowelFlashcards;
-  late List<Flashcard> _syllableFlashcards;
-  late List<Flashcard> _fruitFlashcards;
   final AudioPlayer _audioPlayer = AudioPlayer();
   String _currentCategory = 'Vocales';
 
@@ -33,8 +31,6 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
   void initState() {
     super.initState();
     _vowelFlashcards = _generateVowelFlashcards();
-    _syllableFlashcards = _generateSyllableFlashcards();
-    _fruitFlashcards = _generateFruitFlashcards();
   }
 
   List<Flashcard> _generateVowelFlashcards() {
@@ -63,37 +59,6 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
       Flashcard(front: 'ǘ', sound: 'sounds/ü2.mp3'),
       Flashcard(front: 'ǚ', sound: 'sounds/ü3.mp3'),
       Flashcard(front: 'ǜ', sound: 'sounds/ü4.mp3'),
-    ];
-  }
-
-  List<Flashcard> _generateSyllableFlashcards() {
-    List<String> initials = ['b', 'p', 'm', 'f', 'd', 't', 'n', 'l', 'g', 'k', 'h', 'j', 'q', 'x', 'zh', 'ch', 'sh', 'r', 'z', 'c', 's'];
-    List<String> finals = ['a', 'e', 'i', 'o', 'u', 'ü'];
-    List<String> tones = ['1', '2', '3', '4'];
-
-    List<Flashcard> flashcards = [];
-
-    for (String initial in initials) {
-      for (String final_ in finals) {
-        for (String tone in tones) {
-          String front = initial + final_ + tone;
-          String sound = 'sounds/${initial}${final_}${tone}.mp3';
-          flashcards.add(Flashcard(front: front, sound: sound));
-        }
-      }
-    }
-    return flashcards;
-  }
-
-  List<Flashcard> _generateFruitFlashcards() {
-    return [
-      Flashcard(front: 'píngguǒ', back: '苹果', sound: 'sounds/pingguo.mp3'),
-      Flashcard(front: 'xiāngjiāo', back: '香蕉', sound: 'sounds/xiangjiao.mp3'),
-      Flashcard(front: 'xīguā', back: '西瓜', sound: 'sounds/xigua.mp3'),
-      Flashcard(front: 'cǎoméi', back: '草莓', sound: 'sounds/caomei.mp3'),
-      Flashcard(front: 'chéngzi', back: '橙子', sound: 'sounds/chengzi.mp3'),
-      Flashcard(front: 'míhóutáo', back: '猕猴桃', sound: 'sounds/mihoutao.mp3'),
-      Flashcard(front: 'pútáo', back: '葡萄', sound: 'sounds/putao.mp3'),
     ];
   }
 
@@ -137,7 +102,8 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(key, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+            Text(key,
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
             Divider(),
             Row(
               children: value.map((flashcard) {
@@ -171,34 +137,13 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
   @override
   Widget build(BuildContext context) {
     List<Flashcard> _flashcards;
-    if (_currentCategory == 'Vocales') {
-      _flashcards = _vowelFlashcards;
-    } else if (_currentCategory == 'Sílabas') {
-      _flashcards = _syllableFlashcards;
-    } else {
-      _flashcards = _fruitFlashcards;
-    }
+
+    _flashcards = _vowelFlashcards;
 
     return Scaffold(
       appBar: AppBar(
         title: Text(_currentCategory),
         backgroundColor: Colors.greenAccent,
-        actions: [
-          DropdownButton<String>(
-            value: _currentCategory,
-            items: <String>['Vocales', 'Sílabas', 'Frutas'].map((String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Text(value),
-              );
-            }).toList(),
-            onChanged: (String? newValue) {
-              if (newValue != null) {
-                _toggleCategory(newValue);
-              }
-            },
-          ),
-        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -209,7 +154,7 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
             : _currentCategory == 'Frutas'
                 ? GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2, // Number of columns
+                      crossAxisCount: 2,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
                     ),
@@ -237,7 +182,8 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
                     },
                   )
                 : Row(
-                    children: _buildFlashcardColumns(_flashcards, ['A', 'E', 'I', 'O', 'U', 'Ü']),
+                    children: _buildFlashcardColumns(
+                        _flashcards, ['A', 'E', 'I', 'O', 'U', 'Ü']),
                   ),
       ),
     );
@@ -259,9 +205,6 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
             GestureDetector(
               onTap: () {
                 _playSound(flashcards[index].sound);
-                if (_currentCategory == 'Frutas') {
-                  _flipFlashcard(flashcards, index);
-                }
               },
               child: Card(
                 elevation: 4.0,
