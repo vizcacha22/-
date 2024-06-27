@@ -1,3 +1,4 @@
+import 'package:LongLaoshi/presentation/submenu/chinese_submenu/zh_capitulo1.dart';
 import 'package:flutter/material.dart';
 
 class LearningChineseScreen extends StatelessWidget {
@@ -5,7 +6,7 @@ class LearningChineseScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cómo Empezar a Aprender Chino'),
+        title: Text('Chino'),
         backgroundColor: Colors.greenAccent,
       ),
       body: Padding(
@@ -13,15 +14,20 @@ class LearningChineseScreen extends StatelessWidget {
         child: ListView(
           children: [
             Text(
-              'Pasos para Empezar a Aprender Chino',
+              'Guia para Aprender Chino',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 16),
             ListTile(
               leading: Icon(Icons.book),
-              title: Text('1. Aprender Pinyin'),
-              subtitle: Text(
-                'Empieza con lo básico: el sistema de romanización Pinyin para la pronunciación.',
+              title: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ZhCapitulo1()),
+                  );
+                },
+                child: Text('1. No todo es motivación'),
               ),
             ),
             ListTile(

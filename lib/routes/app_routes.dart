@@ -4,10 +4,11 @@ import 'package:LongLaoshi/presentation/flashcards/flascards_chinese.dart';
 import 'package:LongLaoshi/presentation/flashcards/flashcards_japanese.dart';
 import 'package:LongLaoshi/presentation/auth/login_screen.dart';
 import 'package:LongLaoshi/presentation/auth/registro_screen.dart';
-import 'package:LongLaoshi/presentation/submenu/chinese_submenu.dart';
+import 'package:LongLaoshi/presentation/submenu/chinese_submenu/chinese_submenu.dart';
 import 'package:LongLaoshi/presentation/submenu/japanese_submenu.dart';
+import 'package:LongLaoshi/presentation/submenu/chinese_submenu/zh_capitulo1.dart';
 import 'package:flutter/material.dart';
-import '../presentation/inicio_screen/inicio_screen.dart'; // ignore_for_file: must_be_immutable
+import '../presentation/inicio_screen/inicio_screen.dart';
 
 class AppRoutes {
   static const String inicioScreen = '/inicio_screen';
@@ -30,6 +31,8 @@ class AppRoutes {
 
   static const String chinese = "/chinese";
 
+  static const String zh_chapter1 = "/zh_chapter1";
+
   static Map<String, WidgetBuilder> routes = {
     inicioScreen: (context) => InicioScreen(),
     initialRoute: (context) => InicioScreen(),
@@ -41,5 +44,6 @@ class AppRoutes {
     homeScreen: (context) => LanguageSelectionScreen(),
     japanese: (context) => LearningJapaneseScreen(),
     chinese: (context) => LearningChineseScreen(),
+    zh_chapter1: (context) => ZhCapitulo1()
   };
 }
