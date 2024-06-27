@@ -55,15 +55,16 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
       Flashcard(front: 'ú', sound: 'sounds/u2.mp3'),
       Flashcard(front: 'ǔ', sound: 'sounds/u3.mp3'),
       Flashcard(front: 'ù', sound: 'sounds/u4.mp3'),
-      Flashcard(front: 'ǖ', sound: 'sounds/ü1.mp3'),
-      Flashcard(front: 'ǘ', sound: 'sounds/ü2.mp3'),
-      Flashcard(front: 'ǚ', sound: 'sounds/ü3.mp3'),
-      Flashcard(front: 'ǜ', sound: 'sounds/ü4.mp3'),
+      Flashcard(front: 'ǖ', sound: 'sounds/u1.mp3'),
+      Flashcard(front: 'ǘ', sound: 'sounds/u2.mp3'),
+      Flashcard(front: 'ǚ', sound: 'sounds/u3.mp3'),
+      Flashcard(front: 'ǜ', sound: 'sounds/u4.mp3'),
     ];
   }
 
-  void _playSound(String soundPath) {
-    _audioPlayer.play(AssetSource(soundPath));
+  void _playSound(String soundPath) async {
+    await _audioPlayer.play(AssetSource(soundPath));
+    print(soundPath);
   }
 
   void _toggleCategory(String category) {
@@ -84,56 +85,6 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
     super.dispose();
   }
 
-  List<Widget> _buildSyllableRows(List<Flashcard> flashcards) {
-    List<Widget> rows = [];
-    Map<String, List<Flashcard>> syllableMap = {};
-
-    for (var flashcard in flashcards) {
-      String key = flashcard.front.substring(0, flashcard.front.length - 1);
-      if (syllableMap.containsKey(key)) {
-        syllableMap[key]!.add(flashcard);
-      } else {
-        syllableMap[key] = [flashcard];
-      }
-    }
-
-    syllableMap.forEach((key, value) {
-      rows.add(
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(key,
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-            Divider(),
-            Row(
-              children: value.map((flashcard) {
-                return GestureDetector(
-                  onTap: () {
-                    _playSound(flashcard.sound);
-                  },
-                  child: Card(
-                    elevation: 4.0,
-                    child: Container(
-                      padding: EdgeInsets.all(8.0),
-                      alignment: Alignment.center,
-                      child: Text(
-                        flashcard.front,
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                  ),
-                );
-              }).toList(),
-            ),
-            SizedBox(height: 20),
-          ],
-        ),
-      );
-    });
-
-    return rows;
-  }
-
   @override
   Widget build(BuildContext context) {
     List<Flashcard> _flashcards;
@@ -147,44 +98,10 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: _currentCategory == 'Sílabas'
-            ? ListView(
-                children: _buildSyllableRows(_flashcards),
-              )
-            : _currentCategory == 'Frutas'
-                ? GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10,
-                    ),
-                    itemCount: _flashcards.length,
-                    itemBuilder: (context, index) {
-                      final flashcard = _flashcards[index];
-                      return GestureDetector(
-                        onTap: () {
-                          _playSound(flashcard.sound);
-                          _flipFlashcard(_flashcards, index);
-                        },
-                        child: Card(
-                          elevation: 4.0,
-                          child: Container(
-                            alignment: Alignment.center,
-                            child: Text(
-                              flashcard.showFront
-                                  ? flashcard.front
-                                  : flashcard.back ?? '',
-                              style: TextStyle(fontSize: 30),
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  )
-                : Row(
-                    children: _buildFlashcardColumns(
-                        _flashcards, ['A', 'E', 'I', 'O', 'U', 'Ü']),
-                  ),
+        child: Row(
+          children: _buildFlashcardColumns(
+              _flashcards, ['A', 'E', 'I', 'O', 'U', 'Ü']),
+        ),
       ),
     );
   }
@@ -193,42 +110,46 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
       List<Flashcard> flashcards, List<String> headers) {
     List<Widget> columns = [];
     int index = 0;
+    int flashcardsLength = flashcards.length;
+
     for (String header in headers) {
       List<Widget> columnContent = [
         Text(header,
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
         Divider(),
       ];
-      for (int i = 0; i < 4; i++) {
-        if (index < flashcards.length) {
-          columnContent.add(
-            GestureDetector(
-              onTap: () {
-                _playSound(flashcards[index].sound);
-              },
-              child: Card(
-                elevation: 4.0,
-                child: Container(
-                  alignment: Alignment.center,
-                  child: Text(
-                    flashcards[index].showFront
-                        ? flashcards[index].front
-                        : flashcards[index].back ?? '',
-                    style: TextStyle(fontSize: 30),
-                  ),
+      for (int i = 0; i < 4 && index < flashcards.length; i++) {
+        final currentIndex = index;
+        columnContent.add(
+          GestureDetector(
+            child: Card(
+              elevation: 4.0,
+              child: Container(
+                alignment: Alignment.center,
+                child: Text(
+                  flashcards[currentIndex].showFront
+                      ? flashcards[currentIndex].front
+                      : flashcards[currentIndex].back ?? '',
+                  style: TextStyle(fontSize: 30),
                 ),
               ),
             ),
-          );
-          index++;
-        }
+            onTap: () {
+              print(currentIndex);
+              _playSound(flashcards[currentIndex].sound);
+            },
+          ),
+        );
+        index++;
       }
+
       columns.add(Expanded(
         child: Column(
           children: columnContent,
         ),
       ));
     }
+
     return columns;
   }
 }

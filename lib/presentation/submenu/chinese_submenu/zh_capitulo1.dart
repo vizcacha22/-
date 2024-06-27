@@ -5,7 +5,7 @@ class ZhCapitulo1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Capitulo 1'),
+        title: Text('Capitulo 1 📚'),
         backgroundColor: Colors.greenAccent,
       ),
       body: Padding(
