@@ -1,6 +1,6 @@
 // import 'package:LongLaoshi/presentation/test/test_japanese.dart';
 // import 'package:LongLaoshi/presentation/flashcards/util/search_vocabulary_japanese.dart';
-import 'package:LongLaoshi/presentation/tests/test_japanese_hiragana.dart';
+import 'package:LongLaoshi/presentation/tests/test_election.dart';
 import 'package:flutter/material.dart';
 
 class Flashcard {
@@ -6560,7 +6560,8 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => VocabularyTestScreenJP(flashcards: _flashcards),
+        // builder: (context) => HiraganaTestScreenJP(flashcards: _flashcards),
+        builder: (context) => TestSelectionScreen(flashcards: flashcards),
       ),
     );
   }
@@ -6644,7 +6645,7 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _startTest,
-        label: Text('Iniciar Test'),
+        label: Text('Escoger test'),
         icon: Icon(Icons.assignment),
         backgroundColor: Colors.indigoAccent,
       ),

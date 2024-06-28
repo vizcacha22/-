@@ -34,7 +34,7 @@ class LearningJapaneseScreen extends StatelessWidget {
             ),
             SizedBox(height: 16),
             ListTile(
-              leading: Icon(Icons.book),
+              leading: Icon(Icons.book, color: Colors.white),
               title: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -42,11 +42,12 @@ class LearningJapaneseScreen extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => NhCapitulo1()),
                   );
                 },
-                child: Text('1. Sudor y lágrimas'),
+                child: Text('1. Sudor y lágrimas',
+                    style: TextStyle(color: Colors.white)),
               ),
             ),
             ListTile(
-              leading: Icon(Icons.book),
+              leading: Icon(Icons.book, color: Colors.white),
               title: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -54,11 +55,12 @@ class LearningJapaneseScreen extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => NhCapitulo2()),
                   );
                 },
-                child: Text('2. La escritura Japonesa'),
+                child: Text('2. La escritura Japonesa',
+                    style: TextStyle(color: Colors.white)),
               ),
             ),
             ListTile(
-              leading: Icon(Icons.book),
+              leading: Icon(Icons.book, color: Colors.white),
               title: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -66,7 +68,8 @@ class LearningJapaneseScreen extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => NhCapitulo3()),
                   );
                 },
-                child: Text('3. Un poquito de palabras'),
+                child: Text('3. Un poquito de palabras',
+                    style: TextStyle(color: Colors.white)),
               ),
             ),
             SizedBox(height: 16),

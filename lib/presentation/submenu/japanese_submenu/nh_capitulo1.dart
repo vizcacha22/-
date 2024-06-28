@@ -19,8 +19,8 @@ class NhCapitulo1 extends StatelessWidget {
             SizedBox(height: 16),
             ListTile(
               subtitle: Text(
-                'Si piensas que esta app te dará todo a la mano y mágicamente te implantará el japonés en tu mente, entonces esto no es para ti. El aprendizaje de un idioma, en especial de uno con una escritura completamente diferente como el Japonés toma tiempo y disciplina.\nAhora sí, te propongo que te programes sesiones cortas (1 hora o incluso 30 minutos) y que practiques diario o interdiario. Si bien esto puede parecer poco y quizás estés altamente motivado para empezar con sesiones de 4 horas, no lo recomiendo. Lo que queremos es que el aprendizaje se vuelva un hábito y lo hagas aún si estás sin ganas. Esto es un camino largo, te tomará tiempo poder leer, escribir, escuchar y hablar japonés perfectamente pero te aseguro que todo valdrá la pena :).',
-              ),
+                  'Si crees que esta app te proporcionará todo de manera instantánea y mágicamente te implantará el japonés en la mente, entonces esto no es para ti. Aprender un idioma, especialmente uno con un sistema de escritura completamente diferente como el japonés, requiere tiempo y disciplina. El éxito dependerá de tu dedicación y esfuerzo.\n\nDicho esto, si estás decidido y sientes que puedes mantenerte constante durante este proceso de aprendizaje, te propongo un método simple pero efectivo. Programa sesiones cortas de estudio, de 30 minutos a 1 hora, y mantén esta rutina diariamente. Aunque pueda parecer poco y quizás estés muy motivado para empezar con sesiones de 4 horas, no lo recomiendo. Nuestro objetivo es convertir el aprendizaje en un hábito, para que lo hagas incluso en los días en los que no tengas ganas.\n\nEste es un camino largo y te tomará tiempo llegar a leer, escribir, escuchar y hablar japonés con fluidez, pero te aseguro que cada esfuerzo valdrá la pena.',
+                  style: TextStyle(fontSize: 16)),
             ),
           ],
         ),

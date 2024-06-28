@@ -2,17 +2,17 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:LongLaoshi/presentation/flashcards/vocabulary_japanese.dart';
 
-class VocabularyTestScreenJP extends StatefulWidget {
+class HiraganaTestScreenJP extends StatefulWidget {
   final List<Flashcard> flashcards;
 
-  const VocabularyTestScreenJP({Key? key, required this.flashcards})
+  const HiraganaTestScreenJP({Key? key, required this.flashcards})
       : super(key: key);
 
   @override
   _VocabularyTestScreenJPState createState() => _VocabularyTestScreenJPState();
 }
 
-class _VocabularyTestScreenJPState extends State<VocabularyTestScreenJP> {
+class _VocabularyTestScreenJPState extends State<HiraganaTestScreenJP> {
   late Flashcard _currentFlashcard;
   final TextEditingController _controller = TextEditingController();
   bool _isCorrect = false;
