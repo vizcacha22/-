@@ -19,6 +19,8 @@ class _VocabularyTestScreenJPState extends State<VocabularyTestScreenJP> {
   bool _showAnswer = false;
   bool _answered = false;
   late List<String> _options;
+  int _questionCounter = 0;
+  final int _maxQuestions = 30;
 
   @override
   void initState() {
@@ -27,6 +29,10 @@ class _VocabularyTestScreenJPState extends State<VocabularyTestScreenJP> {
   }
 
   void _generateRandomFlashcard() {
+    if (_questionCounter >= _maxQuestions) {
+      _showCompletionDialog();
+      return;
+    }
     setState(() {
       _currentFlashcard =
           widget.flashcards[_random.nextInt(widget.flashcards.length)];
@@ -34,6 +40,7 @@ class _VocabularyTestScreenJPState extends State<VocabularyTestScreenJP> {
       _showAnswer = false;
       _answered = false;
       _options = _generateOptions();
+      _questionCounter++;
     });
   }
 
@@ -58,13 +65,34 @@ class _VocabularyTestScreenJPState extends State<VocabularyTestScreenJP> {
       _showAnswer = true;
     });
 
-    Future.delayed(Duration(seconds: 4), () {
+    Future.delayed(Duration(seconds: 2), () {
       setState(() {
         _showAnswer = false;
         _answered = false;
       });
       _generateRandomFlashcard();
     });
+  }
+
+  void _showCompletionDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Prueba completada"),
+          content: Text("Has completado las 30 preguntas."),
+          actions: [
+            TextButton(
+              child: Text("Aceptar"),
+              onPressed: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -89,6 +117,11 @@ class _VocabularyTestScreenJPState extends State<VocabularyTestScreenJP> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
+              'Pregunta $_questionCounter de $_maxQuestions',
+              style: TextStyle(fontSize: 20, color: Colors.white),
+            ),
+            SizedBox(height: 16),
+            Text(
               _currentFlashcard.kanji,
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 48, color: Colors.white),
@@ -111,15 +144,19 @@ class _VocabularyTestScreenJPState extends State<VocabularyTestScreenJP> {
                 ElevatedButton(
                   onPressed: _answered ? null : () => _checkAnswer(option),
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 16.0),
+                    padding: EdgeInsets.symmetric(vertical: 25.0),
                     backgroundColor: Colors.indigoAccent,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
+                      borderRadius: BorderRadius.circular(10.0),
                     ),
                   ),
-                  child: Text(
-                    option,
-                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  child: Container(
+                    width: double.infinity,
+                    child: Text(
+                      option,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 18, color: Colors.black),
+                    ),
                   ),
                 ),
                 SizedBox(height: 8),

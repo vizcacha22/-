@@ -1604,7 +1604,7 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'カメラ',
-          hiragana: 'kamera',
+          hiragana: 'カメラ',
           romaji: 'kamera',
           meaning: 'Cámara - Katakana',
         ),
@@ -1628,7 +1628,7 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'カップ',
-          hiragana: 'kappu',
+          hiragana: 'カップ',
           romaji: 'kappu',
           meaning: 'Taza, vaso - Katakana',
         ),
@@ -1646,13 +1646,13 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'カレー',
-          hiragana: 'karee',
+          hiragana: 'カレー',
           romaji: 'karee',
           meaning: 'Curry',
         ),
         Flashcard(
           kanji: 'カレンダー',
-          hiragana: 'karendaa',
+          hiragana: 'カレンダー',
           romaji: 'karendaa',
           meaning: 'Calendario',
         ),
@@ -1957,31 +1957,31 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'コーヒー',
-          hiragana: 'kohii',
+          hiragana: 'コーヒー',
           romaji: 'kohii',
           meaning: 'Café - Katakana',
         ),
         Flashcard(
           kanji: 'コート',
-          hiragana: 'kooto',
+          hiragana: 'コート',
           romaji: 'kooto',
           meaning: 'Abrigo - Katakana',
         ),
         Flashcard(
           kanji: 'コピー',
-          hiragana: 'kopii',
+          hiragana: 'コピー',
           romaji: 'kopii',
           meaning: 'Copiar, fotocopiar - Katakana',
         ),
         Flashcard(
           kanji: 'コップ',
-          hiragana: 'koppu',
+          hiragana: 'コップ',
           romaji: 'koppu',
           meaning: 'Vaso, copa - Katakana',
         ),
         Flashcard(
           kanji: 'これ',
-          hiragana: 'kore',
+          hiragana: 'これ',
           romaji: 'kore',
           meaning: 'Esto (esto es...)',
         ),
@@ -2041,7 +2041,7 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
         ),
         Flashcard(
           kanji: 'ください',
-          hiragana: 'kudasai',
+          hiragana: 'ください',
           romaji: 'kudasai',
           meaning: 'Por favor - Expresión',
         ),
@@ -6645,8 +6645,14 @@ class VocabularyScreenState extends State<VocabularyScreenJP> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _startTest,
-        label: Text('Escoger test'),
-        icon: Icon(Icons.assignment),
+        label: Text(
+          'Escoger test',
+          style: TextStyle(color: Colors.black),
+        ),
+        icon: Icon(
+          Icons.assignment,
+          color: Colors.black,
+        ),
         backgroundColor: Colors.indigoAccent,
       ),
     );

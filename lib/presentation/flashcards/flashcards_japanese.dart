@@ -4,11 +4,13 @@ class Flashcard {
   final String front;
   final String back;
   bool showFront;
+  bool tapped;
 
   Flashcard({
     required this.front,
     required this.back,
     this.showFront = true,
+    this.tapped = false,
   });
 }
 
@@ -132,6 +134,8 @@ class FlashcardScreenState extends State<FlashcardScreenJP> {
   void _flipFlashcard(int index) {
     setState(() {
       _flashcards[index].showFront = !_flashcards[index].showFront;
+      // Only change color when flipped (showing back)
+      _flashcards[index].tapped = _flashcards[index].showFront == false;
     });
   }
 
@@ -179,7 +183,9 @@ class FlashcardScreenState extends State<FlashcardScreenJP> {
             return GestureDetector(
               onTap: () => _flipFlashcard(index),
               child: Card(
-                color: Colors.grey[850], // Darker card background
+                color: flashcard.tapped
+                    ? Colors.indigoAccent
+                    : Colors.grey[850], // Change color when flipped
                 elevation: 4.0,
                 child: Container(
                   alignment: Alignment.center,

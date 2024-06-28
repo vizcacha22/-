@@ -2,6 +2,27 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:LongLaoshi/presentation/flashcards/vocabulary_japanese.dart';
 
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        // Define el tema global aquí
+        textSelectionTheme: TextSelectionThemeData(
+          cursorColor: Colors.white, // Color del cursor
+        ),
+      ),
+      home: HiraganaTestScreenJP(
+        flashcards: [], // Aquí deberías pasar tus flashcards
+      ),
+    );
+  }
+}
+
 class HiraganaTestScreenJP extends StatefulWidget {
   final List<Flashcard> flashcards;
 
@@ -9,13 +30,16 @@ class HiraganaTestScreenJP extends StatefulWidget {
       : super(key: key);
 
   @override
-  _VocabularyTestScreenJPState createState() => _VocabularyTestScreenJPState();
+  _HiraganaTestScreenJPState createState() => _HiraganaTestScreenJPState();
 }
 
-class _VocabularyTestScreenJPState extends State<HiraganaTestScreenJP> {
+class _HiraganaTestScreenJPState extends State<HiraganaTestScreenJP> {
   late Flashcard _currentFlashcard;
   final TextEditingController _controller = TextEditingController();
   bool _isCorrect = false;
+  final Random _random = Random();
+  int _questionCounter = 0;
+  final int _maxQuestions = 30;
 
   @override
   void initState() {
@@ -24,12 +48,16 @@ class _VocabularyTestScreenJPState extends State<HiraganaTestScreenJP> {
   }
 
   void _generateRandomFlashcard() {
-    final random = Random();
+    if (_questionCounter >= _maxQuestions) {
+      _showCompletionDialog();
+      return;
+    }
+    final randomIndex = _random.nextInt(widget.flashcards.length);
     setState(() {
-      _currentFlashcard =
-          widget.flashcards[random.nextInt(widget.flashcards.length)];
+      _currentFlashcard = widget.flashcards[randomIndex];
       _isCorrect = false;
       _controller.clear();
+      _questionCounter++;
     });
   }
 
@@ -40,8 +68,29 @@ class _VocabularyTestScreenJPState extends State<HiraganaTestScreenJP> {
     });
 
     if (_isCorrect) {
-      Future.delayed(Duration(seconds: 4), _generateRandomFlashcard);
+      Future.delayed(Duration(seconds: 2), _generateRandomFlashcard);
     }
+  }
+
+  void _showCompletionDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Prueba completada"),
+          content: Text("Has completado las 30 preguntas."),
+          actions: [
+            TextButton(
+              child: Text("  Aceptar  "),
+              onPressed: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -65,6 +114,11 @@ class _VocabularyTestScreenJPState extends State<HiraganaTestScreenJP> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Text(
+              'Pregunta $_questionCounter de $_maxQuestions',
+              style: TextStyle(fontSize: 20, color: Colors.white),
+            ),
+            SizedBox(height: 16),
             Text(
               _currentFlashcard.hiragana,
               textAlign: TextAlign.center,
@@ -105,9 +159,19 @@ class _VocabularyTestScreenJPState extends State<HiraganaTestScreenJP> {
               ElevatedButton(
                 onPressed: _checkAnswer,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.indigoAccent,
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.indigoAccent, // Color del texto
+                  padding:
+                      EdgeInsets.symmetric(vertical: 20.0), // Espaciado interno
+                  shape: RoundedRectangleBorder(
+                    borderRadius:
+                        BorderRadius.circular(30.0), // Borde redondeado
+                  ),
                 ),
-                child: Text('Verificar'),
+                child: Text(
+                  '  Verificar  ',
+                  style: TextStyle(fontSize: 20),
+                ),
               ),
               SizedBox(height: 16),
               if (_controller.text.isNotEmpty && !_isCorrect)
