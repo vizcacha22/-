@@ -184,7 +184,7 @@ class FlashcardScreenState extends State<FlashcardScreenJP> {
               onTap: () => _flipFlashcard(index),
               child: Card(
                 color: flashcard.tapped
-                    ? Colors.indigoAccent
+                    ? Colors.indigo[800]
                     : Colors.grey[850], // Change color when flipped
                 elevation: 4.0,
                 child: Container(
