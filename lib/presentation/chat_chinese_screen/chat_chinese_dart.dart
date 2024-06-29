@@ -22,6 +22,7 @@ class ChatScreenState extends ConsumerState<ChatScreen> {
     id: '2',
     firstName: 'Ryu',
     lastName: 'Laoshi',
+    profileImage: 'assets/images/img_12fa4a85e35fafd.png',
   );
 
   List<ChatMessage> _messages = <ChatMessage>[];
@@ -140,84 +141,122 @@ class ChatScreenState extends ConsumerState<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Column(
-          children: [
-            SizedBox(height: 12.v),
-            Container(
-              margin: EdgeInsets.only(bottom: 1.v),
-              padding: EdgeInsets.symmetric(horizontal: 1.h),
-              child: Column(
-                children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 2.h),
-                      child: Row(
-                        children: [
-                          CustomImageView(
-                            imagePath: ImageConstant.img12fa4a85e35fafd,
-                            height: 123.v,
-                            width: 116.h,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(
-                              left: 17.h,
-                              top: 49.v,
-                              bottom: 24.v,
-                            ),
-                            child: Text(
-                              "lbl".tr,
-                              style:
-                                  CustomTextStyles.displayMediumInterOnPrimary,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              child: DashChat(
-                currentUser: _user,
-                messageOptions: const MessageOptions(
-                  currentUserContainerColor: Colors.black,
-                  containerColor: Color.fromRGBO(0, 166, 126, 1),
-                  textColor: Colors.white,
-                ),
-                onSend: (ChatMessage m) {
-                  getChatResponse(m);
-                },
-                messages: _messages,
-                typingUsers: _typingUsers,
-                inputOptions: InputOptions(
-                    inputDecoration: InputDecoration(
-                  hintText: "Escribe un mensaje",
-                )),
-                messageListOptions: MessageListOptions(
-                  typingBuilder: (context) {
-                    return Row(
-                      children: <Widget>[
-                        Text("Ryu Laoshi está escribiendo"),
-                        SizedBox(width: 6.0.v),
-                        SizedBox(
-                          width: 10.0.v,
-                          height: 10.0.h,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 1.5.v,
+    return Scaffold(
+      backgroundColor: Colors.black87,
+      appBar: AppBar(
+        backgroundColor: Colors.grey[700],
+        title: const Text('龙师 / 龍先生 (Profesor Dragón)'),
+      ),
+      body: Column(
+        children: [
+          SizedBox(height: 0.0),
+          Container(
+            margin: EdgeInsets.only(bottom: 0.0),
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            child: Column(
+              children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 16.0),
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          backgroundImage: AssetImage('assets/images/img_12fa4a85e35fafd.png'),
+                          radius: 30.0,
+                          backgroundColor: Colors.grey[800],
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 16.0, top: 16.0, bottom: 8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Text(
+                                "Ryu Laoshi",
+                                style: TextStyle(
+                                  fontSize: 24.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                "こんにちは",
+                                style: TextStyle(
+                                  fontSize: 14.0,
+                                  color: Colors.red,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
-                    );
-                  },
+                    ),
+                  ),
                 ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: DashChat(
+              currentUser: _user,
+              messageOptions: MessageOptions(
+                currentUserContainerColor: Colors.grey.shade500,
+                containerColor: Colors.grey[800]!,
+                textColor: Colors.white,
+                avatarBuilder: (user, onTap, longPress) {
+                  return CircleAvatar(
+                    backgroundImage: AssetImage(user.profileImage ?? 'assets/images/user_avatar.png'),
+                  );
+                },
+              ),
+              onSend: (ChatMessage m) {
+                getChatResponse(m);
+              },
+              messages: _messages,
+              typingUsers: _typingUsers,
+              inputOptions: InputOptions(
+                inputDecoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.grey[800],
+                  hintText: "Escribe un mensaje",
+                  hintStyle: TextStyle(color: Colors.white70),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: BorderSide.none,
+                  ),
+                ),
+                sendButtonBuilder: (void Function() onSend) {
+                  return IconButton(
+                    icon: Icon(Icons.send, color: Colors.grey),
+                    onPressed: onSend,
+                  );
+                },
+                inputTextStyle: TextStyle(color: Colors.blue.shade100),
+              ),
+              messageListOptions: MessageListOptions(
+                typingBuilder: (context) {
+                  return Row(
+                    children: <Widget>[
+                      Text(
+                        "Ryu Laoshi está escribiendo",
+                        style: TextStyle(color: Colors.white70),
+                      ),
+                      SizedBox(width: 6.0),
+                      SizedBox(
+                        width: 10.0,
+                        height: 10.0,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 1.5,
+                          color: Colors.white70,
+                        ),
+                      ),
+                    ],
+                  );
+                },
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
