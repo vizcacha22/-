@@ -77,7 +77,8 @@ class LanguageSelectionScreen extends StatelessWidget {
                     children: [
                       Icon(Icons.language, size: 28, color: Colors.white),
                       SizedBox(width: 10),
-                      Text('Japonés',
+                      Text(
+                        'Japonés',
                         style: TextStyle(
                           fontSize: 20,
                           fontFamily: 'Roboto',
@@ -85,8 +86,6 @@ class LanguageSelectionScreen extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-
-
                       SizedBox(width: 10),
                       Image.asset(
                         'assets/images/japan_flag.png',
@@ -108,7 +107,6 @@ class LanguageSelectionScreen extends StatelessWidget {
                     backgroundColor: Colors.green,
                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 26),
                     textStyle: TextStyle(
-
                       fontSize: 20,
                       fontFamily: 'Roboto',
                       fontWeight: FontWeight.bold,
@@ -124,7 +122,8 @@ class LanguageSelectionScreen extends StatelessWidget {
                     children: [
                       Icon(Icons.language, size: 28, color: Colors.white),
                       SizedBox(width: 12),
-                      Text('Chino',
+                      Text(
+                        'Chino',
                         style: TextStyle(
                           fontSize: 20,
                           fontFamily: 'Roboto',

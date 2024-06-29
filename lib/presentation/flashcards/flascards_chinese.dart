@@ -67,18 +67,6 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
     print(soundPath);
   }
 
-  void _toggleCategory(String category) {
-    setState(() {
-      _currentCategory = category;
-    });
-  }
-
-  void _flipFlashcard(List<Flashcard> flashcards, int index) {
-    setState(() {
-      flashcards[index].showFront = !flashcards[index].showFront;
-    });
-  }
-
   @override
   void dispose() {
     _audioPlayer.dispose();
@@ -110,8 +98,6 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
       List<Flashcard> flashcards, List<String> headers) {
     List<Widget> columns = [];
     int index = 0;
-    int flashcardsLength = flashcards.length;
-
     for (String header in headers) {
       List<Widget> columnContent = [
         Text(header,

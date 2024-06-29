@@ -1,8 +1,8 @@
-import 'package:LongLaoshi/presentation/flashcards/vocabulary_japanese.dart';
+import 'package:LongLaoshi/presentation/vocabulary/vocabulary_jp/vocabulary_japanese.dart';
 import 'package:flutter/material.dart';
 
-class LevelSelectionScreenJP extends StatelessWidget {
-  const LevelSelectionScreenJP({Key? key}) : super(key: key);
+class LevelSelectionScreenZH extends StatelessWidget {
+  const LevelSelectionScreenZH({Key? key}) : super(key: key);
 
   void _navigateToVocabularyScreen(BuildContext context, String level) {
     Navigator.push(
@@ -18,7 +18,7 @@ class LevelSelectionScreenJP extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Vocabulario Japonés',
+          'Vocabulario Chino',
           style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.indigoAccent,
@@ -38,11 +38,14 @@ class LevelSelectionScreenJP extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _buildLevelButton(context, 'JLPT5'),
-                _buildLevelButton(context, 'JLPT4'),
-                _buildLevelButton(context, 'JLPT3'),
-                _buildLevelButton(context, 'JLPT2'),
-                _buildLevelButton(context, 'JLPT1'),
+                _buildLevelButton(context, 'HSK0'),
+                _buildLevelButton(context, 'HSK1'),
+                _buildLevelButton(context, 'HSK2'),
+                _buildLevelButton(context, 'HSK3'),
+                _buildLevelButton(context, 'HSK4'),
+                _buildLevelButton(context, 'HSK5'),
+                _buildLevelButton(context, 'HSK6'),
+                _buildLevelButton(context, 'HSK7'),
               ],
             ),
           ),
