@@ -11,13 +11,13 @@ dependencies:
   flutter_riverpod: ^2.4.9
   equatable: ^2.0.5
   shared_preferences: ^2.2.2
-  connectivity_plus: ^5.0.2
-  intl: ^0.18.1
+  connectivity_plus: ^6.0.3
+  intl: ^0.19.0
   dash_chat_2: ^0.0.20
-  chat_gpt_sdk: ^2.2.8
-  firebase_core: ^2.31.1
-  firebase_auth: ^4.19.6
-  cloud_firestore: ^4.17.4
+  chat_gpt_sdk: ^3.0.8
+  firebase_core: ^3.1.1
+  firebase_auth: ^5.1.1
+  cloud_firestore: ^5.0.2
   google_sign_in: ^6.2.1
   font_awesome_flutter: ^10.7.0
   audioplayers: ^6.0.0

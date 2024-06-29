@@ -1,14 +1,14 @@
-import 'package:flutter/material.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:LongLaoshi/main.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:flutter/material.dart';
 
 // For checking internet connectivity
 abstract class NetworkInfoI {
   Future<bool> isConnected();
 
-  Future<ConnectivityResult> get connectivityResult;
+  Future<List<ConnectivityResult>> get connectivityResult;
 
-  Stream<ConnectivityResult> get onConnectivityChanged;
+  Stream<List<ConnectivityResult>> get onConnectivityChanged;
 }
 
 class NetworkInfo implements NetworkInfoI {
@@ -38,13 +38,13 @@ class NetworkInfo implements NetworkInfoI {
 
   // to check type of internet connectivity
   @override
-  Future<ConnectivityResult> get connectivityResult async {
+  Future<List<ConnectivityResult>> get connectivityResult async {
     return connectivity.checkConnectivity();
   }
 
   //check the type on internet connection on changed of internet connection
   @override
-  Stream<ConnectivityResult> get onConnectivityChanged =>
+  Stream<List<ConnectivityResult>> get onConnectivityChanged =>
       connectivity.onConnectivityChanged;
 }
 
