@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:LongLaoshi/presentation/flashcards/vocabulary_japanese.dart';
+import 'package:LongLaoshi/presentation/vocabulary/vocabulary_jp/vocabulary_japanese.dart';
 
 void main() {
   runApp(MyApp());

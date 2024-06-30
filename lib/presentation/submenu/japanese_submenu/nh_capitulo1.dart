@@ -21,7 +21,7 @@ class NhCapitulo1 extends StatelessWidget {
         child: ListView(
           children: [
             Text(
-              'Sudor y lágrimas',
+              'Dedicación y esfuerzo',
               style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -30,7 +30,7 @@ class NhCapitulo1 extends StatelessWidget {
             SizedBox(height: 16),
             ListTile(
               subtitle: Text(
-                'Si crees que esta app te proporcionará todo de manera instantánea y mágicamente te implantará el japonés en la mente, entonces esto no es para ti. Aprender un idioma, especialmente uno con un sistema de escritura completamente diferente como el japonés, requiere tiempo y disciplina. El éxito dependerá de tu dedicación y esfuerzo.\n\nDicho esto, si estás decidido y sientes que puedes mantenerte constante durante este proceso de aprendizaje, te propongo un método simple pero efectivo. Programa sesiones cortas de estudio, de 30 minutos a 1 hora, y mantén esta rutina diariamente. Aunque pueda parecer poco y quizás estés muy motivado para empezar con sesiones de 4 horas, no lo recomiendo. Nuestro objetivo es convertir el aprendizaje en un hábito, para que lo hagas incluso en los días en los que no tengas ganas.\n\nEste es un camino largo y te tomará tiempo llegar a leer, escribir, escuchar y hablar japonés con fluidez, pero te aseguro que cada esfuerzo valdrá la pena.',
+                '¡Hola! Hoy quiero hablarte sobre una forma interesante de aprender un idioma, especialmente uno con un sistema de escritura completamente diferente al nuestro, como es el japonés. Nuestro equipo ha desarrollado un método que creemos que es el más efectivo para dominar un nuevo idioma. Aprender japonés requiere tiempo, disciplina y constancia, pero con el enfoque correcto, el éxito está al alcance de tu mano.\n\nPrimero, es importante entender que dominar el japonés no sucederá de la noche a la mañana. Este proceso exige dedicación y esfuerzo constante. Sin embargo, si estás comprometido y dispuesto a mantener una rutina de aprendizaje, te propongo un método simple pero poderoso.\n\nLa clave está en la regularidad y la consistencia. Te recomiendo programar sesiones cortas de estudio, de entre 30 minutos y 1 hora, todos los días. Aunque puedas sentirte motivado para empezar con maratones de estudio de 4 horas, no es lo más efectivo. Nuestro objetivo es convertir el aprendizaje en un hábito diario, de manera que incluso en los días en los que te sientas menos motivado, sigas adelante con tu estudio.\n\nEste es un camino largo, y te tomará tiempo llegar a leer, escribir, escuchar y hablar japonés con fluidez. Sin embargo, cada pequeño paso te acercará a tu meta. Recuerda que cada esfuerzo que hagas será recompensado, y cada sesión de estudio te llevará un paso más cerca de dominar este fascinante idioma.\n\nAsí que, ¿estás listo para empezar este emocionante viaje? Con perseverancia y dedicación, aprender japonés puede ser una experiencia increíblemente gratificante. ¡Vamos juntos en esta aventura!',
                 style: TextStyle(fontSize: 16, color: Colors.white),
               ),
             ),

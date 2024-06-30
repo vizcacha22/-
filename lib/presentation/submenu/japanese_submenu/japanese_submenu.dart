@@ -1,6 +1,10 @@
 import 'package:LongLaoshi/presentation/submenu/japanese_submenu/nh_capitulo1.dart';
 import 'package:LongLaoshi/presentation/submenu/japanese_submenu/nh_capitulo2.dart';
 import 'package:LongLaoshi/presentation/submenu/japanese_submenu/nh_capitulo3.dart';
+import 'package:LongLaoshi/presentation/submenu/japanese_submenu/nh_capitulo4.dart';
+import 'package:LongLaoshi/presentation/submenu/japanese_submenu/nh_capitulo5.dart';
+import 'package:LongLaoshi/presentation/submenu/japanese_submenu/nh_capitulo6.dart';
+import 'package:LongLaoshi/presentation/submenu/japanese_submenu/nh_capitulo7.dart';
 import 'package:flutter/material.dart';
 
 class LearningJapaneseScreen extends StatelessWidget {
@@ -69,6 +73,58 @@ class LearningJapaneseScreen extends StatelessWidget {
                   );
                 },
                 child: Text('3. Un poquito de palabras',
+                    style: TextStyle(color: Colors.white)),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.book, color: Colors.white),
+              title: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NhCapitulo4()),
+                  );
+                },
+                child: Text('4. Introducción a la gramática básica',
+                    style: TextStyle(color: Colors.white)),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.book, color: Colors.white),
+              title: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NhCapitulo5()),
+                  );
+                },
+                child: Text('5. Conjugación de Verbos Básicos',
+                    style: TextStyle(color: Colors.white)),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.book, color: Colors.white),
+              title: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NhCapitulo6()),
+                  );
+                },
+                child: Text('6. Uso de Partículas en Japonés',
+                    style: TextStyle(color: Colors.white)),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.book, color: Colors.white),
+              title: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NhCapitulo7()),
+                  );
+                },
+                child: Text('7. Conjugación de Verbos en Japonés',
                     style: TextStyle(color: Colors.white)),
               ),
             ),
