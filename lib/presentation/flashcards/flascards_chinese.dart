@@ -73,7 +73,6 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
     super.dispose();
   }
 
-  @override
   Widget build(BuildContext context) {
     List<Flashcard> _flashcards;
 
@@ -82,27 +81,42 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
     return Scaffold(
       appBar: AppBar(
         title: Text(_currentCategory),
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Colors.red.shade700, // Color de fondo de la barra de navegación
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          children: _buildFlashcardColumns(
-              _flashcards, ['A', 'E', 'I', 'O', 'U', 'Ü']),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Colors.black, Colors.red.shade900], // Gradiente de fondo oscuro
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: _buildFlashcardColumns(
+              _flashcards,
+              ['A', 'E', 'I', 'O', 'U', 'Ü'],
+            ),
+          ),
         ),
       ),
     );
   }
 
   List<Widget> _buildFlashcardColumns(
-      List<Flashcard> flashcards, List<String> headers) {
+      List<Flashcard> flashcards,
+      List<String> headers,
+      ) {
     List<Widget> columns = [];
     int index = 0;
     for (String header in headers) {
       List<Widget> columnContent = [
-        Text(header,
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-        Divider(),
+        Text(
+          header,
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white), // Estilo del título de la columna
+        ),
+        Divider(color: Colors.white), // Separador blanco entre el título y las tarjetas
       ];
       for (int i = 0; i < 4 && index < flashcards.length; i++) {
         final currentIndex = index;
@@ -110,13 +124,14 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
           GestureDetector(
             child: Card(
               elevation: 4.0,
+              color: Colors.grey.shade800, // Color de fondo de la tarjeta
               child: Container(
                 alignment: Alignment.center,
                 child: Text(
                   flashcards[currentIndex].showFront
                       ? flashcards[currentIndex].front
                       : flashcards[currentIndex].back ?? '',
-                  style: TextStyle(fontSize: 30),
+                  style: TextStyle(fontSize: 30, color: Colors.white), // Estilo del texto dentro de la tarjeta
                 ),
               ),
             ),
@@ -129,11 +144,13 @@ class FlashcardScreenState extends State<FlashcardScreenCN> {
         index++;
       }
 
-      columns.add(Expanded(
-        child: Column(
-          children: columnContent,
+      columns.add(
+        Expanded(
+          child: Column(
+            children: columnContent,
+          ),
         ),
-      ));
+      );
     }
 
     return columns;
