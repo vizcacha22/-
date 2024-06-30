@@ -7,52 +7,80 @@ class LearningChineseScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Chino'),
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Colors.red.shade700,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView(
-          children: [
-            Text(
-              'Guia para Aprender Chino',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 16),
-            ListTile(
-              leading: Icon(Icons.book),
-              title: InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ZhCapitulo1()),
-                  );
-                },
-                child: Text('1. No todo es motivación'),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Colors.black, Colors.redAccent.shade400], //
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: ListView(
+            children: [
+              Text(
+                'Guía para Aprender Chino 🇨🇳',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
               ),
-            ),
-            ListTile(
-              leading: Icon(Icons.language),
-              title: Text('2. Vocabulario y Frases Básicas'),
-              subtitle: Text(
-                'Aprende vocabulario y frases comunes para empezar a construir tu base de lenguaje.',
+              SizedBox(height: 16),
+              ListTile(
+                leading: Icon(Icons.book, color: Colors.white),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ZhCapitulo1()),
+                    );
+                  },
+                  child: Text(
+                    '1. No todo es motivación',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
               ),
-            ),
-            Text(
-              'Recursos Recomendados',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 16),
-            ListTile(
-              leading: Icon(Icons.book),
-              title: Text('Libros de Texto'),
-              subtitle: Text('Integrated Chinese, HSK Standard Course'),
-            ),
-            ListTile(
-              leading: Icon(Icons.web),
-              title: Text('Sitios Web'),
-              subtitle: Text('ChineseClass101, Yoyo Chinese'),
-            ),
-          ],
+              ListTile(
+                leading: Icon(Icons.language, color: Colors.white),
+                title: Text(
+                  '2. Vocabulario y Frases Básicas',
+                  style: TextStyle(color: Colors.white),
+                ),
+                subtitle: Text(
+                  'Aprende vocabulario y frases comunes para empezar a construir tu base de lenguaje.',
+                  style: TextStyle(color: Colors.white70),
+                ),
+              ),
+              Text(
+                'Recursos Recomendados',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+              ),
+              SizedBox(height: 16),
+              ListTile(
+                leading: Icon(Icons.book, color: Colors.white),
+                title: Text(
+                  'Libros de Texto',
+                  style: TextStyle(color: Colors.white),
+                ),
+                subtitle: Text(
+                  'Integrated Chinese, HSK Standard Course',
+                  style: TextStyle(color: Colors.white70),
+                ),
+              ),
+              ListTile(
+                leading: Icon(Icons.web, color: Colors.white),
+                title: Text(
+                  'Sitios Web',
+                  style: TextStyle(color: Colors.white),
+                ),
+                subtitle: Text(
+                  'ChineseClass101, Yoyo Chinese',
+                  style: TextStyle(color: Colors.white70),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
