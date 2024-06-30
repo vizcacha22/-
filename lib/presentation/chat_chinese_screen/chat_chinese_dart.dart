@@ -1,9 +1,11 @@
+import 'dart:convert';
+
 import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:flutter/material.dart';
-import '../../core/app_export.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../core/app_export.dart';
 
 class ChatScreen extends ConsumerStatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
@@ -144,7 +146,7 @@ class ChatScreenState extends ConsumerState<ChatScreen> {
     return Scaffold(
       backgroundColor: Colors.black87,
       appBar: AppBar(
-        backgroundColor: Colors.grey[700],
+        backgroundColor: Colors.indigoAccent,
         title: const Text('龙师 / 龍先生 (Profesor Dragón)'),
       ),
       body: Column(
@@ -162,12 +164,14 @@ class ChatScreenState extends ConsumerState<ChatScreen> {
                     child: Row(
                       children: [
                         CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/img_12fa4a85e35fafd.png'),
+                          backgroundImage: AssetImage(
+                              'assets/images/img_12fa4a85e35fafd.png'),
                           radius: 30.0,
                           backgroundColor: Colors.grey[800],
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 16.0, top: 16.0, bottom: 8.0),
+                          padding: EdgeInsets.only(
+                              left: 16.0, top: 16.0, bottom: 8.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: const [
@@ -205,7 +209,8 @@ class ChatScreenState extends ConsumerState<ChatScreen> {
                 textColor: Colors.white,
                 avatarBuilder: (user, onTap, longPress) {
                   return CircleAvatar(
-                    backgroundImage: AssetImage(user.profileImage ?? 'assets/images/user_avatar.png'),
+                    backgroundImage: AssetImage(
+                        user.profileImage ?? 'assets/images/user_avatar.png'),
                   );
                 },
               ),
