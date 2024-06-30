@@ -33,7 +33,8 @@ class LevelSelectionScreenJP extends StatelessWidget {
         ),
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 32.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 32.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -41,7 +42,6 @@ class LevelSelectionScreenJP extends StatelessWidget {
                 _buildLevelButton(context, 'JLPT4', 'JLPT4'),
                 _buildLevelButton(context, 'JLPT3', 'JLPT3'),
                 _buildLevelButton(context, 'JLPT2', 'JLPT2'),
-                _buildLevelButton(context, 'JLPT1', 'JLPT1'),
               ],
             ),
           ),
@@ -50,12 +50,12 @@ class LevelSelectionScreenJP extends StatelessWidget {
     );
   }
 
-  Widget _buildLevelButton(BuildContext context, String level, String displayText) {
+  Widget _buildLevelButton(
+      BuildContext context, String level, String displayText) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: SizedBox(
         width: double.infinity,
-
         height: 60,
         child: ElevatedButton(
           onPressed: () => _navigateToVocabularyScreen(context, level),
@@ -75,7 +75,7 @@ class LevelSelectionScreenJP extends StatelessWidget {
             elevation: WidgetStateProperty.all<double>(5.0),
             // Fondo transparente para aplicar gradiente
             backgroundColor: WidgetStateProperty.resolveWith<Color>(
-                  (Set<WidgetState> states) {
+              (Set<WidgetState> states) {
                 if (states.contains(WidgetState.disabled)) {
                   return Colors.grey; // Color cuando está deshabilitado
                 }
