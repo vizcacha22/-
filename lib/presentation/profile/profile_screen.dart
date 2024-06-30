@@ -53,7 +53,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             const SizedBox(height: 40),
             itemProfile('Email', email!, Icons.email_outlined),
             const SizedBox(
-              height: 200,
+              height: 100,
             ),
             SizedBox(
               width: 200,
