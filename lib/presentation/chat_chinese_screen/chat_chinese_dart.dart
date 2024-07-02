@@ -146,7 +146,7 @@ class ChatScreenState extends ConsumerState<ChatScreen> {
     return Scaffold(
       backgroundColor: Colors.black87,
       appBar: AppBar(
-        backgroundColor: Colors.indigoAccent,
+        backgroundColor: Colors.grey.shade600,
         title: const Text('龙师 / 龍先生 (Profesor Dragón)'),
       ),
       body: Column(
