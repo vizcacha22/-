@@ -1,4 +1,8 @@
 import 'package:LongLaoshi/presentation/submenu/chinese_submenu/zh_capitulo1.dart';
+import 'package:LongLaoshi/presentation/submenu/chinese_submenu/zh_capitulo2.dart';
+import 'package:LongLaoshi/presentation/submenu/chinese_submenu/zh_capitulo3.dart';
+import 'package:LongLaoshi/presentation/submenu/chinese_submenu/zh_capitulo4.dart';
+import 'package:LongLaoshi/presentation/submenu/chinese_submenu/zh_capitulo5.dart';
 import 'package:flutter/material.dart';
 
 class LearningChineseScreen extends StatelessWidget {
@@ -41,15 +45,64 @@ class LearningChineseScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              ListTile(
-                leading: Icon(Icons.language, color: Colors.white),
-                title: Text(
-                  '2. Vocabulario y Frases Básicas',
-                  style: TextStyle(color: Colors.white),
+               ListTile(
+                leading: Icon(Icons.book, color: Colors.white),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ZhCapitulo2()),
+                    );
+                  },
+                  child: Text(
+                    '2. Introducción al Chino Mandarín',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
-                subtitle: Text(
-                  'Aprende vocabulario y frases comunes para empezar a construir tu base de lenguaje.',
-                  style: TextStyle(color: Colors.white70),
+              ),
+               ListTile(
+                leading: Icon(Icons.book, color: Colors.white),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ZhCapitulo3()),
+                    );
+                  },
+                  child: Text(
+                    '3. Pronunciación y tonos',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+               ListTile(
+                leading: Icon(Icons.book, color: Colors.white),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ZhCapitulo4()),
+                    );
+                  },
+                  child: Text(
+                    '4. Vocabuario básico',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+                ListTile(
+                leading: Icon(Icons.book, color: Colors.white),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ZhCapitulo5()),
+                    );
+                  },
+                  child: Text(
+                    '5. Gramática básica',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
               Text(

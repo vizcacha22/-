@@ -1,3 +1,4 @@
+import 'package:LongLaoshi/presentation/tests/test_election_zh.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
@@ -5382,6 +5383,15 @@ Flashcard(
     );
   }
 
+  void _startTest() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        // builder: (context) => HiraganaTestScreenJP(flashcards: _flashcards),
+        builder: (context) => TestSelectionScreen(flashcards: flashcards),
+      ),
+    );
+  }
   void _scrollToIndex(int index) {
     _scrollController.animateTo(
       index * 55.0, 
@@ -5471,6 +5481,18 @@ Flashcard(
             );
           },
         ),
+      ),
+       floatingActionButton: FloatingActionButton.extended(
+        onPressed: _startTest,
+        label: Text(
+          'Escoger test',
+          style: TextStyle(color: Colors.black),
+        ),
+        icon: Icon(
+          Icons.assignment,
+          color: Colors.black,
+        ),
+        backgroundColor: Colors.indigoAccent,
       ),
     );
   }
