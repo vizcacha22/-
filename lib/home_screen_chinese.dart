@@ -5,6 +5,8 @@ import 'package:LongLaoshi/presentation/submenu/chinese_submenu/chinese_submenu.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'presentation/vocabulary/vocabulary_zh/level_selection_chinese.dart';
+
 class HomeScreenCN extends ConsumerStatefulWidget {
   const HomeScreenCN({Key? key}) : super(key: key);
 
@@ -20,6 +22,7 @@ class HomeScreenState extends ConsumerState<HomeScreenCN> {
         children: [
           LearningChineseScreen(),
           FlashcardScreenCN(),
+          LevelSelectionScreenZH(),
           ChatScreen(),
           ProfileScreen(),
         ],

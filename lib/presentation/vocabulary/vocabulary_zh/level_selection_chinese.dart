@@ -1,5 +1,6 @@
-import 'package:LongLaoshi/presentation/vocabulary/vocabulary_jp/vocabulary_japanese.dart';
 import 'package:flutter/material.dart';
+
+import 'vocabulary_chinese.dart';
 
 class LevelSelectionScreenZH extends StatelessWidget {
   const LevelSelectionScreenZH({Key? key}) : super(key: key);
@@ -8,7 +9,7 @@ class LevelSelectionScreenZH extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => VocabularyScreenJP(level: level),
+        builder: (context) => VocabularyScreenZH(level: level),
       ),
     );
   }
@@ -21,12 +22,12 @@ class LevelSelectionScreenZH extends StatelessWidget {
           'Vocabulario Chino',
           style: TextStyle(color: Colors.black),
         ),
-        backgroundColor: Colors.indigoAccent,
+        backgroundColor: Colors.red.shade700,
       ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.black87, Colors.black],
+            colors: [Colors.black87, Colors.red.shade900],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -62,9 +63,9 @@ class LevelSelectionScreenZH extends StatelessWidget {
         height: 60,
         child: ElevatedButton(
           onPressed: () => _navigateToVocabularyScreen(context, level),
-          child: Text(level, style: TextStyle(fontSize: 24)),
+          child: Text(level, style: TextStyle(fontSize: 24,color: Colors.black)),
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.indigoAccent,
+            backgroundColor: Colors.red.shade700,
             padding: EdgeInsets.symmetric(vertical: 16),
           ),
         ),
