@@ -1,4 +1,4 @@
-import 'package:LongLaoshi/presentation/vocabulary/vocabulary_jp/vocabulary_japanese.dart';
+import 'package:LongLaoshi/screens/vocabulary/vocabulary_jp/vocabulary_japanese.dart';
 import 'package:flutter/material.dart';
 
 class LevelSelectionScreenJP extends StatelessWidget {

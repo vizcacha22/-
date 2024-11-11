@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:LongLaoshi/presentation/tests/test_japanese_hiragana.dart';
-import 'package:LongLaoshi/presentation/tests/test_japanese_vocabulary.dart';
-import 'package:LongLaoshi/presentation/vocabulary/vocabulary_jp/vocabulary_japanese.dart';
+import 'package:LongLaoshi/screens/tests/test_japanese_hiragana.dart';
+import 'package:LongLaoshi/screens/tests/test_japanese_vocabulary.dart';
+import 'package:LongLaoshi/screens/vocabulary/vocabulary_jp/vocabulary_japanese.dart';
 
 class TestSelectionScreen extends StatelessWidget {
   final List<Flashcard> flashcards;

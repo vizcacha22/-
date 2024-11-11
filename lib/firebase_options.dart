@@ -59,5 +59,4 @@ class DefaultFirebaseOptions {
     projectId: 'long-laoshi',
     storageBucket: 'long-laoshi.appspot.com',
   );
-
 }

@@ -1,4 +1,4 @@
-import 'package:LongLaoshi/presentation/auth/firebase_auth_service.dart';
+import 'package:LongLaoshi/screens/auth/firebase_auth_service.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatefulWidget {

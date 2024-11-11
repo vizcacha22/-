@@ -1,5 +1,4 @@
-import 'package:LongLaoshi/home_screen_chinese.dart';
-import 'package:LongLaoshi/home_screen_japanese.dart';
+import 'package:LongLaoshi/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class LanguageSelectionScreen extends StatelessWidget {
@@ -55,7 +54,9 @@ class LanguageSelectionScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomeScreenJP()),
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              HomeScreen(language: Language.japanese)),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -100,7 +101,9 @@ class LanguageSelectionScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomeScreenCN()),
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              HomeScreen(language: Language.chinese)),
                     );
                   },
                   style: ElevatedButton.styleFrom(

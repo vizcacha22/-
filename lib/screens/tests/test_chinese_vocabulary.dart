@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:LongLaoshi/presentation/vocabulary/vocabulary_zh/vocabulary_chinese.dart';
+import 'package:LongLaoshi/screens/vocabulary/vocabulary_zh/vocabulary_chinese.dart';
 
 class VocabularyTestScreenZH extends StatefulWidget {
   final List<Flashcard> flashcards;

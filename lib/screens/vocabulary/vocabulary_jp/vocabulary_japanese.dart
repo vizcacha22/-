@@ -1,6 +1,6 @@
 // import 'package:LongLaoshi/presentation/test/test_japanese.dart';
 // import 'package:LongLaoshi/presentation/flashcards/util/search_vocabulary_japanese.dart';
-import 'package:LongLaoshi/presentation/tests/test_election.dart';
+import 'package:LongLaoshi/screens/tests/test_election.dart';
 import 'package:flutter/material.dart';
 
 class Flashcard {

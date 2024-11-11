@@ -1,8 +1,8 @@
 import 'package:LongLaoshi/core/app_export.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:LongLaoshi/presentation/auth/firebase_auth_service.dart';
-import 'package:LongLaoshi/presentation/auth/login_screen.dart';
+import 'package:LongLaoshi/screens/auth/firebase_auth_service.dart';
+import 'package:LongLaoshi/screens/auth/login_screen.dart';
 import 'package:LongLaoshi/widgets/form_container.dart';
 
 class RegistroScreen extends StatefulWidget {

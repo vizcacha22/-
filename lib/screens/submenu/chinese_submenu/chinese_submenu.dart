@@ -1,8 +1,8 @@
-import 'package:LongLaoshi/presentation/submenu/chinese_submenu/zh_capitulo1.dart';
-import 'package:LongLaoshi/presentation/submenu/chinese_submenu/zh_capitulo2.dart';
-import 'package:LongLaoshi/presentation/submenu/chinese_submenu/zh_capitulo3.dart';
-import 'package:LongLaoshi/presentation/submenu/chinese_submenu/zh_capitulo4.dart';
-import 'package:LongLaoshi/presentation/submenu/chinese_submenu/zh_capitulo5.dart';
+import 'package:LongLaoshi/screens/submenu/chinese_submenu/zh_capitulo1.dart';
+import 'package:LongLaoshi/screens/submenu/chinese_submenu/zh_capitulo2.dart';
+import 'package:LongLaoshi/screens/submenu/chinese_submenu/zh_capitulo3.dart';
+import 'package:LongLaoshi/screens/submenu/chinese_submenu/zh_capitulo4.dart';
+import 'package:LongLaoshi/screens/submenu/chinese_submenu/zh_capitulo5.dart';
 import 'package:flutter/material.dart';
 
 class LearningChineseScreen extends StatelessWidget {
@@ -27,7 +27,10 @@ class LearningChineseScreen extends StatelessWidget {
             children: [
               Text(
                 'Guía para Aprender Chino 🇨🇳',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
               ),
               SizedBox(height: 16),
               ListTile(
@@ -45,7 +48,7 @@ class LearningChineseScreen extends StatelessWidget {
                   ),
                 ),
               ),
-               ListTile(
+              ListTile(
                 leading: Icon(Icons.book, color: Colors.white),
                 title: InkWell(
                   onTap: () {
@@ -60,7 +63,7 @@ class LearningChineseScreen extends StatelessWidget {
                   ),
                 ),
               ),
-               ListTile(
+              ListTile(
                 leading: Icon(Icons.book, color: Colors.white),
                 title: InkWell(
                   onTap: () {
@@ -75,7 +78,7 @@ class LearningChineseScreen extends StatelessWidget {
                   ),
                 ),
               ),
-               ListTile(
+              ListTile(
                 leading: Icon(Icons.book, color: Colors.white),
                 title: InkWell(
                   onTap: () {
@@ -90,7 +93,7 @@ class LearningChineseScreen extends StatelessWidget {
                   ),
                 ),
               ),
-                ListTile(
+              ListTile(
                 leading: Icon(Icons.book, color: Colors.white),
                 title: InkWell(
                   onTap: () {
@@ -107,7 +110,10 @@ class LearningChineseScreen extends StatelessWidget {
               ),
               Text(
                 'Recursos Recomendados',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
               ),
               SizedBox(height: 16),
               ListTile(

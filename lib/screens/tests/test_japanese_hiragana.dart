@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:LongLaoshi/presentation/vocabulary/vocabulary_zh/vocabulary_chinese.dart';
+import 'package:LongLaoshi/screens/vocabulary/vocabulary_jp/vocabulary_japanese.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,24 +16,24 @@ class MyApp extends StatelessWidget {
           cursorColor: Colors.white, // Color del cursor
         ),
       ),
-      home: HanziTestScreenZH(
+      home: HiraganaTestScreenJP(
         flashcards: [], // Aquí deberías pasar tus flashcards
       ),
     );
   }
 }
 
-class HanziTestScreenZH extends StatefulWidget {
+class HiraganaTestScreenJP extends StatefulWidget {
   final List<Flashcard> flashcards;
 
-  const HanziTestScreenZH({Key? key, required this.flashcards})
+  const HiraganaTestScreenJP({Key? key, required this.flashcards})
       : super(key: key);
 
   @override
-  _HanziTestScreenZHState createState() => _HanziTestScreenZHState();
+  _HiraganaTestScreenJPState createState() => _HiraganaTestScreenJPState();
 }
 
-class _HanziTestScreenZHState extends State<HanziTestScreenZH> {
+class _HiraganaTestScreenJPState extends State<HiraganaTestScreenJP> {
   late Flashcard _currentFlashcard;
   final TextEditingController _controller = TextEditingController();
   bool _isCorrect = false;
@@ -64,7 +64,7 @@ class _HanziTestScreenZHState extends State<HanziTestScreenZH> {
   void _checkAnswer() {
     setState(() {
       _isCorrect = _controller.text.trim().toLowerCase() ==
-          _currentFlashcard.pinyin.toLowerCase();
+          _currentFlashcard.romaji.toLowerCase();
     });
 
     if (_isCorrect) {
@@ -97,7 +97,7 @@ class _HanziTestScreenZHState extends State<HanziTestScreenZH> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Prueba de Hanzi'),
+        title: Text('Prueba de Hiragana y Katakana'),
         backgroundColor: Colors.indigoAccent,
       ),
       body: Container(
@@ -120,14 +120,14 @@ class _HanziTestScreenZHState extends State<HanziTestScreenZH> {
             ),
             SizedBox(height: 16),
             Text(
-              _currentFlashcard.hanzi,
+              _currentFlashcard.hiragana,
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 48, color: Colors.white),
             ),
             SizedBox(height: 16),
             if (_isCorrect) ...[
               Text(
-                _currentFlashcard.pinyin,
+                _currentFlashcard.kanji,
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 24, color: Colors.white),
               ),
@@ -144,13 +144,13 @@ class _HanziTestScreenZHState extends State<HanziTestScreenZH> {
                 style: TextStyle(color: Colors.white),
                 textAlign: TextAlign.center,
                 decoration: InputDecoration(
-                  hintText: 'Escribe el pinyin',
+                  hintText: 'Escribe el romaji',
                   hintStyle: TextStyle(color: Colors.grey),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.white),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red.shade400),
+                    borderSide: BorderSide(color: Colors.indigoAccent),
                   ),
                 ),
                 onSubmitted: (_) => _checkAnswer(),
@@ -160,7 +160,7 @@ class _HanziTestScreenZHState extends State<HanziTestScreenZH> {
                 onPressed: _checkAnswer,
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: Colors.red.shade400, // Color del texto
+                  backgroundColor: Colors.indigoAccent, // Color del texto
                   padding:
                       EdgeInsets.symmetric(vertical: 20.0), // Espaciado interno
                   shape: RoundedRectangleBorder(

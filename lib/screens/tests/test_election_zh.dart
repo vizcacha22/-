@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:LongLaoshi/presentation/tests/test_chinese_hanzi.dart';
-import 'package:LongLaoshi/presentation/tests/test_chinese_vocabulary.dart';
-import 'package:LongLaoshi/presentation/vocabulary/vocabulary_zh/vocabulary_chinese.dart';
+import 'package:LongLaoshi/screens/tests/test_chinese_hanzi.dart';
+import 'package:LongLaoshi/screens/tests/test_chinese_vocabulary.dart';
+import 'package:LongLaoshi/screens/vocabulary/vocabulary_zh/vocabulary_chinese.dart';
 
 class TestSelectionScreen extends StatelessWidget {
   final List<Flashcard> flashcards;

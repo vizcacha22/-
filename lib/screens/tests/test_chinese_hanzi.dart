@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:LongLaoshi/presentation/vocabulary/vocabulary_jp/vocabulary_japanese.dart';
+import 'package:LongLaoshi/screens/vocabulary/vocabulary_zh/vocabulary_chinese.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,24 +16,24 @@ class MyApp extends StatelessWidget {
           cursorColor: Colors.white, // Color del cursor
         ),
       ),
-      home: HiraganaTestScreenJP(
+      home: HanziTestScreenZH(
         flashcards: [], // Aquí deberías pasar tus flashcards
       ),
     );
   }
 }
 
-class HiraganaTestScreenJP extends StatefulWidget {
+class HanziTestScreenZH extends StatefulWidget {
   final List<Flashcard> flashcards;
 
-  const HiraganaTestScreenJP({Key? key, required this.flashcards})
+  const HanziTestScreenZH({Key? key, required this.flashcards})
       : super(key: key);
 
   @override
-  _HiraganaTestScreenJPState createState() => _HiraganaTestScreenJPState();
+  _HanziTestScreenZHState createState() => _HanziTestScreenZHState();
 }
 
-class _HiraganaTestScreenJPState extends State<HiraganaTestScreenJP> {
+class _HanziTestScreenZHState extends State<HanziTestScreenZH> {
   late Flashcard _currentFlashcard;
   final TextEditingController _controller = TextEditingController();
   bool _isCorrect = false;
@@ -64,7 +64,7 @@ class _HiraganaTestScreenJPState extends State<HiraganaTestScreenJP> {
   void _checkAnswer() {
     setState(() {
       _isCorrect = _controller.text.trim().toLowerCase() ==
-          _currentFlashcard.romaji.toLowerCase();
+          _currentFlashcard.pinyin.toLowerCase();
     });
 
     if (_isCorrect) {
@@ -97,7 +97,7 @@ class _HiraganaTestScreenJPState extends State<HiraganaTestScreenJP> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Prueba de Hiragana y Katakana'),
+        title: Text('Prueba de Hanzi'),
         backgroundColor: Colors.indigoAccent,
       ),
       body: Container(
@@ -120,14 +120,14 @@ class _HiraganaTestScreenJPState extends State<HiraganaTestScreenJP> {
             ),
             SizedBox(height: 16),
             Text(
-              _currentFlashcard.hiragana,
+              _currentFlashcard.hanzi,
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 48, color: Colors.white),
             ),
             SizedBox(height: 16),
             if (_isCorrect) ...[
               Text(
-                _currentFlashcard.kanji,
+                _currentFlashcard.pinyin,
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 24, color: Colors.white),
               ),
@@ -144,13 +144,13 @@ class _HiraganaTestScreenJPState extends State<HiraganaTestScreenJP> {
                 style: TextStyle(color: Colors.white),
                 textAlign: TextAlign.center,
                 decoration: InputDecoration(
-                  hintText: 'Escribe el romaji',
+                  hintText: 'Escribe el pinyin',
                   hintStyle: TextStyle(color: Colors.grey),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.white),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.indigoAccent),
+                    borderSide: BorderSide(color: Colors.red.shade400),
                   ),
                 ),
                 onSubmitted: (_) => _checkAnswer(),
@@ -160,7 +160,7 @@ class _HiraganaTestScreenJPState extends State<HiraganaTestScreenJP> {
                 onPressed: _checkAnswer,
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: Colors.indigoAccent, // Color del texto
+                  backgroundColor: Colors.red.shade400, // Color del texto
                   padding:
                       EdgeInsets.symmetric(vertical: 20.0), // Espaciado interno
                   shape: RoundedRectangleBorder(
